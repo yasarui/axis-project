@@ -1,0 +1,111 @@
+.payment-header {
+  margin-bottom: 15px;
+  h2 {
+    font-size: 24px;
+    color: #666;
+    margin: 0 0 10px;
+  }
+  .viewing {
+    font-size: 12px;
+    color: #666;
+    select {
+      margin: 0 10px;
+    }
+  }
+}
+.new-upload {
+  margin-bottom: 20px;
+  h3 {
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+}
+.templates {
+  margin-bottom: 10px;
+  .templates-col {
+    float: left;
+    width: 49%;
+    margin-left: 2%;
+    h3 {
+      color: #666;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+      span {
+        background: #787878;
+        color: #fff;
+        font-size: 11px;
+        padding: 1px 7px;
+        border-radius: 3px;
+        margin-left: 5px;
+      }
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    .templates-content {
+      border-radius: 8px;
+      background: #fff;
+      height: 150px;
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+          padding: 17px 40px;
+          font-size: 14px;
+          position: relative;
+          &.grey {
+            background: #fafafa;
+          }
+          .star {
+            position: absolute;
+            top: 16px;
+            left: 13px;
+            font-size: 14px;
+            color: #999;
+            &.selected i {
+              color: #fac917;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.custom-tamplate-wrap {
+  font-size: 13px;
+  text-align: right;
+  .common-btn {
+    margin-left: 10px;
+    float: right;
+  }
+}
+select {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+  font-size: 14px;
+  padding: 5px 0;
+  &:focus {
+    outline: none;
+  }
+}
+.common-btn {
+  background: #861f41;
+  color: #fff;
+  border-radius: 15px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background: #666;
+  }
+}
