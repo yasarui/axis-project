@@ -18,7 +18,7 @@ const UploadPayment = () => {
       </div>
       <div className="new-upload">
         <h3>New Upload</h3>
-        <UploadComponent />
+        <UploadComponent pageType="'uploadPage'" />
       </div>
       <div className="templates clearfix">
         <div className="templates-col">
