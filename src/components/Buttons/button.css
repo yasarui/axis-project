@@ -1,0 +1,18 @@
+.axis-button{
+    width: 137px;
+    height: 32px;
+    text-transform: uppercase;
+    background-color:#91214e;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+}
+.axis-button-outline{
+    width: 137px;
+    height: 32px;
+    text-transform: uppercase;
+    background-color:#fff;
+    border:2px solid #91214e;
+    color: #91214e;
+    border-radius: 20px;  
+}
