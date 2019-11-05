@@ -1,13 +1,32 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import './sidebar.scss';
+import { NavLink } from 'react-router-dom';
 
 const SideBar = () => {
     return(
       <div className="sidebar">
          <ul>
-            <li>  <a href="#"> <i class="fas fa-home"></i> Home </a> </li>
-            <li>  <a href="#"> <i class="fas fa-upload"></i> Invite </a> </li>
-            <li>  <a href="#"> <i class="fas fa-table"></i> Enquire </a> </li>
+            <li>  
+               <NavLink to="/" > 
+                  <Fragment> 
+                     <i class="fas fa-home"></i> Home 
+                  </Fragment> 
+               </NavLink> 
+            </li>
+            <li> 
+               <NavLink to="/initiate" > 
+                  <Fragment> 
+                     <i class="fas fa-upload"></i>  Initiate 
+                  </Fragment> 
+               </NavLink>
+            </li>
+            <li> 
+               <NavLink to="/enquire" > 
+                   <Fragment> 
+                      <i class="fas fa-table"></i> Enquire 
+                   </Fragment> 
+               </NavLink> 
+            </li>
          </ul>
       </div>
     )
