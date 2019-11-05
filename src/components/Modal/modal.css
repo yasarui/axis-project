@@ -1,0 +1,37 @@
+.Axis-modal{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.Axis-modal:focus{
+    outline:none;
+}
+.Axis-modal.Large{
+    width: 560px;
+    height: 360px;
+}
+.Axis-modal.Medium{
+    width: 360px;
+    height: 250px;
+}
+.Axis-modal.Small{
+    width: 360px;
+    height: 180px;
+}
+.Axis-modal .close{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border:1px solid #91214e;
+    padding:2px 5px;
+    font-size:14px;
+    color:#91214e;
+    z-index: 2;
+    background:none;
+    border-radius:4px;
+    cursor: pointer;
+}
+.Axis-modal .close:focus{
+    outline:none;
+}
