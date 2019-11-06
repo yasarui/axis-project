@@ -18,7 +18,7 @@ const UploadPayment = () => {
       </div>
       <div className="new-upload">
         <h3>New Upload</h3>
-        <UploadComponent pageType="'uploadPage'" />
+        <UploadComponent pageType="uploadPage" />
       </div>
       <div className="templates clearfix">
         <div className="templates-col">
@@ -34,9 +34,33 @@ const UploadPayment = () => {
           <h3>Custom Templates <span>5</span></h3>
           <div className="templates-content">
             <ul>
-              <li><span className="star"><i className="far fa-star"></i></span> Custom format 1</li>
-              <li className="grey"><span className="star"><i className="far fa-star"></i></span> Custom format 2</li>
-              <li><span className="star"><i className="far fa-star"></i></span> Custom format 3</li>
+              <li>
+                <span className="star"><i className="far fa-star"></i></span> 
+                Custom format 1
+                <div className="template-actions">
+                  <span title="Download"><i className="fas fa-download"></i></span>
+                  <span title="Edit"><i className="fas fa-edit"></i></span>
+                  <span title="Delete"><i className="far fa-trash-alt"></i></span>
+                </div>
+              </li>
+              <li className="grey">
+                <span className="star"><i className="far fa-star"></i></span> 
+                Custom format 2
+                <div className="template-actions">
+                  <span title="Download"><i className="fas fa-download"></i></span>
+                  <span title="Edit"><i className="fas fa-edit"></i></span>
+                  <span title="Delete"><i className="far fa-trash-alt"></i></span>
+                </div>
+              </li>
+              <li>
+                <span className="star"><i className="far fa-star"></i></span> 
+                Custom format 3
+                <div className="template-actions">
+                  <span title="Download"><i className="fas fa-download"></i></span>
+                  <span title="Edit"><i className="fas fa-edit"></i></span>
+                  <span title="Delete"><i className="far fa-trash-alt"></i></span>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

@@ -53,11 +53,25 @@
         padding: 0;
         li {
           list-style: none;
-          padding: 17px 40px;
+          padding: 17px 100px 17px 40px;
           font-size: 14px;
           position: relative;
           &.grey {
             background: #fafafa;
+          }
+          .template-actions {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            span {
+              margin: 0 8px;
+              font-size: 13px;
+              color: #861f41;
+              cursor: pointer;
+              &:hover {
+                color: #555;
+              }
+            }
           }
           .star {
             position: absolute;
