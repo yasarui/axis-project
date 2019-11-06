@@ -47,7 +47,7 @@ const CreateCustomTemplate = () => {
         <h3>Upload sample file</h3>
         <UploadComponent pageType='customTemplate' />
       </div> */}
-      <div className="new-upload data-fields">
+      {/* <div className="new-upload data-fields">
         <h3>Identify Data-Fileds</h3>
         <div className="data-fields-wrap clearfix">
           <div className="data-fields">
@@ -105,6 +105,53 @@ const CreateCustomTemplate = () => {
         <div className="data-field-btn">
           <span className="common-btn3">Procude</span>
           <span className="common-btn2">Back</span>
+        </div>
+      </div> */}
+      <div className="new-upload finalise-detail">
+        <h3>Finalise Details</h3>
+        <div className="finalise-detail-data">
+          <form class="finalise-detail-form">
+            <div class="form-group clearfix">
+              <label>Template Name</label>
+              <input type="text" />
+            </div>
+            <div class="form-group clearfix">
+              <label>No. of footers</label>
+              <input type="text" />
+            </div>
+            <div class="form-group clearfix">
+              <label>No. of headers</label>
+              <input type="text" />
+            </div>
+            <div class="form-group clearfix">
+              <label>File extension</label>
+              <select>
+                <option>Choose</option>
+                <option>Choose 1</option>
+                <option>Choose 2</option>
+              </select>
+            </div>
+            <div class="form-group clearfix">
+              <label>Delimiter</label>
+              <select>
+                <option></option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+              </select>
+            </div>
+            <div class="form-group clearfix">
+              <label>Date format</label>
+              <select>
+                <option>dd-mm-yyyy</option>
+                <option>mm-dd-yyyy</option>
+                <option>yyyy-mm-dd</option>
+              </select>
+            </div>
+            <div className="data-field-btn">
+              <span className="common-btn">Create</span>
+              <span className="common-btn2">Back</span>
+            </div>
+          </form>
         </div>
       </div>
     </div>
