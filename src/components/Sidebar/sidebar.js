@@ -7,21 +7,21 @@ const SideBar = () => {
       <div className="sidebar">
          <ul>
             <li>  
-               <NavLink to="/" > 
+               <NavLink to="/" exact activeClassName="active"> 
                   <Fragment> 
                      <i class="fas fa-home"></i> Home 
                   </Fragment> 
                </NavLink> 
             </li>
             <li> 
-               <NavLink to="/initiate" > 
+               <NavLink to="/initiate" exact activeClassName="active"> 
                   <Fragment> 
                      <i class="fas fa-upload"></i>  Initiate 
                   </Fragment> 
                </NavLink>
             </li>
             <li> 
-               <NavLink to="/enquire" > 
+               <NavLink to="/enquire" exact activeClassName="active"> 
                    <Fragment> 
                       <i class="fas fa-table"></i> Enquire 
                    </Fragment> 

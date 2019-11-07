@@ -17,9 +17,9 @@ const App = () => {
               <SideBar />
               <div className="content-section">
                  <Switch>
-                     <Route path="/" component={Dashboard} exact />
+                     <Route path="/"  component={Dashboard} exact />
                      <Route path="/initiate" component={Initiate} />
-                     <Route path="/enquire" component={Enquire} /> 
+                     <Route path="/enquire"  component={Enquire} /> 
                  </Switch>
               </div>
             </div>
