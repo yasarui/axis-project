@@ -1,0 +1,218 @@
+.custom-template-head {
+  h2 {
+    font-size: 24px;
+    color: #666;
+    margin: 0 0 10px;
+    float: left;
+  }
+  .common-btn2 {
+    float: right;
+  }
+}
+.template-steps {
+  max-width: 900px;
+  margin: 20px auto 30px;
+  text-align: center;
+  .template-steps-col {
+    float: left;
+    width: 33.33%;
+    font-size: 12px;
+    color: #888;
+    position: relative;
+    &:after {
+      position: absolute;
+      top: 9px;
+      left: -41%;
+      height: 1px;
+      width: 80%;
+      background: #888;
+      content: '';
+    }
+    &:first-child::after {
+      width: 0;
+      height: 0;
+    }
+    .step-count {
+      margin: 0 auto 8px;
+      font-size: 10px;
+      color: #666;
+      border: 1px solid #888;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      display: block;
+      }
+    }
+    .template-steps-col.active {
+      color: #861f41;
+      .step-count {
+        background: #861f41;
+        font-size: 14px;
+        color: #fff;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        border-color: #861f41;
+        margin-top: -6px;
+      }
+   }
+}
+.config-custom-format {
+  background: #fff;
+  padding: 15px;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(153,153,153,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(153,153,153,1);
+  box-shadow: 0px 0px 5px 0px rgba(153,153,153,1);
+  .config-custom-text {
+    padding-top: 15px;
+  }
+  p {
+    margin: 0 0 10px;
+  }
+  h3 {
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0 10px 15px 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+    position: relative;
+    .slide-arrow {
+      position: absolute;
+      top: -2px;
+      right: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  h4 {
+    color: #444;
+  }
+  ul li {
+    margin-bottom: 15px;
+  }
+  .common-btn2 {
+    float: right;
+  }
+}
+.data-fields-wrap {
+  .data-fields {
+    float: left;
+    width: 70%;
+    margin-right: 1%;
+    background: #fff;
+    border-radius: 5px;
+  }
+  .data-fields-lists {
+    float: left;
+    width: 29%;
+    background: #fff;
+    border-radius: 5px;
+  }
+}
+.custom-field-tabel {
+  width: 100%;
+  tr {
+    th {
+      font-size: 14px;
+      width: 50%;
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 600;
+      color: #666;
+    }
+    td {
+      font-size: 13px;
+      width: 50%;
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      height: 50px;
+      .custom-data-count {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+.data-fields-lists {
+  p {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 8px;
+  }
+  h3 {
+    font-size: 12px;
+    background: #ccc;
+    color: #555;
+    padding: 8px 10px;
+    margin: 0;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 10px 10px 10px 30px;
+    font-size: 13px;
+    color: #555;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    border-top: 1px solid #eee;
+    .plus-btn {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      color: #861f41;
+      font-size: 14px;
+    }
+  }
+}
+.data-field-btn {
+  margin-top: 15px;
+  span,
+  a {
+    margin-right: 10px;
+  }
+}
+.finalise-detail-data {
+  background: #fff;
+  border-radius: 5px;
+  padding: 15px;
+}
+.finalise-detail-form {
+  .form-group {
+    margin-bottom: 25px;
+    label {
+      float: left;
+      width: 120px;
+      color: #666;
+      margin-right: 20px;
+      font-size: 13px;
+      line-height: 24px;
+    }
+    input {
+      border: 0;
+      border-bottom: 1px solid #ddd;
+      padding: 4px 10px;
+      font-size: 13px;
+      min-width: 200px;
+      &:focus {
+        outline: none;
+      }
+    }
+    select {
+      border-bottom: 1px solid #ddd;
+      min-width: 220px;
+      font-size: 13px;
+    }
+  }
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

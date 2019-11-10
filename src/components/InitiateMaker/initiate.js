@@ -1,10 +1,17 @@
-import React from 'react';
-import './initiate.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import UploadPayment from './UploadPayment';
+import CustomTemplate from './CustomTemplate';
+import './initiate.scss';
 
-const Initiate = () => {
-    return(
-      <h1> Initiate ==> Maker </h1>  
+class Initiate extends Component {
+
+  render() {
+    return (
+      <UploadPayment />
+      // <CustomTemplate />
     )
+  }
 }
 
-export default Initiate
+export default Initiate;
