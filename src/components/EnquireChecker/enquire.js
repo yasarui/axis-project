@@ -3,7 +3,7 @@ import './enquire.css';
 
 const Enquire = () => {
     return(
-       <h1> Enquire Content </h1> 
+       <h1> Enquire Content ==> Checker </h1> 
     )
 }
 
