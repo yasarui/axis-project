@@ -1,5 +1,5 @@
 import React from 'react';
-import './dashboard.css';
+import './dashboard.scss';
 import { NavLink } from 'react-router-dom';
 import Progress from './Progress';
 import AdminMessagesData from '../fixture/maker_admin_alerts.json';
@@ -13,7 +13,9 @@ const Dashboard = () => {
            <h1 className="page-title" > Salary Payments </h1> 
            <NavLink to="/maker" > Maker </NavLink>
            <h2 className="sub-heading" > PENDING </h2>
-           <Progress />
+           <div className="checker-dashboard-progress-wrapper" >
+              <Progress />
+           </div>
            <h2 className="sub-heading"  > RECENT ACTIVITY </h2>
            <RecentActivity data={RecentActivityData.data} />
            <h2 className="sub-heading" > ADMIN ALERTS </h2>

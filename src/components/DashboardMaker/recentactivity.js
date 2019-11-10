@@ -25,16 +25,16 @@ const RecentActivity = ({data}) => {
                          {item.name} 
                       </td>
                       <td style={{"width":"157px"}}> 
-                        {item.created} <a className="view-details" href="#"> View Transactions </a>
+                      ₹{item.created} <a className="view-details" href="#"> View Transactions </a>
                       </td>
                       <td style={{"width":"157px"}}> 
-                         {item.accepted} <a className="view-details" href="#"> View Transactions </a>
+                      ₹{item.accepted} <a className="view-details" href="#"> View Transactions </a>
                       </td>
                       <td style={{"width":"157px"}}> 
-                         {item.putOnHold} <a className="view-details" href="#"> View Transactions </a>
+                      ₹{item.putOnHold} <a className="view-details" href="#"> View Transactions </a>
                       </td>
                       <td style={{"width":"157px"}} > 
-                        {item.rejected} <a className="view-details" href="#"> View Transactions </a>
+                      ₹{item.rejected} <a className="view-details" href="#"> View Transactions </a>
                       </td>
                       <td style={{"width":"222px"}} > 
                          <span className="date" > {moment(item.date).format('dddd MM-DD-YY')} </span>

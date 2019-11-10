@@ -1,130 +1,194 @@
 {
     "data":[
       {
-        "_id": "5dc6fa2a4d9c266ced75e306",
-        "name": "Phillips Dennis",
-        "date": "Sun Sep 07 2014 16:04:42 GMT+0530 (India Standard Time)",
-        "created": "$1,525.77",
-        "accepted": "$3,661.80",
-        "putOnHold": "$2,966.78",
-        "rejected": "$1,883.97"
+        "_id": "5dc8304de6e6b167d7ecc571",
+        "name": "Jamie Duran",
+        "date": "2014-08-09T05",
+        "time": "46:52 -06:-30",
+        "created": "2,511.13",
+        "accepted": "1,756.76",
+        "putOnHold": "2,554.18",
+        "rejected": "1,305.21"
       },
       {
-        "_id": "5dc6fa2a31dd05901bfad466",
-        "name": "Bass Joyner",
-        "date": "Tue Aug 02 2016 12:29:11 GMT+0530 (India Standard Time)",
-        "created": "$3,349.66",
-        "accepted": "$2,713.12",
-        "putOnHold": "$3,641.01",
-        "rejected": "$3,256.93"
+        "_id": "5dc8304d45dfa4ebd803772f",
+        "name": "Caroline Harmon",
+        "date": "2018-07-22T10",
+        "time": "14:47 -06:-30",
+        "created": "2,029.96",
+        "accepted": "2,232.11",
+        "putOnHold": "3,719.89",
+        "rejected": "3,042.41"
       },
       {
-        "_id": "5dc6fa2a2df02aba7af0c73a",
-        "name": "Gilliam Savage",
-        "date": "Sat Oct 31 2015 03:26:07 GMT+0530 (India Standard Time)",
-        "created": "$1,471.70",
-        "accepted": "$3,883.92",
-        "putOnHold": "$1,313.39",
-        "rejected": "$2,167.56"
+        "_id": "5dc8304d3d5723bca3d104b6",
+        "name": "Queen Hinton",
+        "date": "2017-05-08T04",
+        "time": "28:08 -06:-30",
+        "created": "3,736.87",
+        "accepted": "3,867.63",
+        "putOnHold": "2,252.46",
+        "rejected": "3,459.24"
       },
       {
-        "_id": "5dc6fa2a138aa1b7184b52f2",
-        "name": "Beverley Lang",
-        "date": "Wed Jul 24 2019 19:48:52 GMT+0530 (India Standard Time)",
-        "created": "$2,748.48",
-        "accepted": "$3,140.99",
-        "putOnHold": "$1,576.90",
-        "rejected": "$1,167.00"
+        "_id": "5dc8304d4939207c0f2b2598",
+        "name": "Arlene Compton",
+        "date": "2015-01-03T04",
+        "time": "39:35 -06:-30",
+        "created": "1,962.42",
+        "accepted": "1,050.29",
+        "putOnHold": "3,428.55",
+        "rejected": "3,060.04"
       },
       {
-        "_id": "5dc6fa2a4c21efa17a668f3a",
-        "name": "Fitzpatrick Booth",
-        "date": "Sun Aug 24 2014 23:50:35 GMT+0530 (India Standard Time)",
-        "created": "$2,459.80",
-        "accepted": "$3,191.58",
-        "putOnHold": "$2,542.34",
-        "rejected": "$1,077.12"
+        "_id": "5dc8304d9d64fa4910dba3fc",
+        "name": "Boyle Gentry",
+        "date": "2014-08-05T11",
+        "time": "34:46 -06:-30",
+        "created": "3,391.06",
+        "accepted": "3,321.89",
+        "putOnHold": "3,791.82",
+        "rejected": "3,561.15"
       },
       {
-        "_id": "5dc6fa2ac5512e315bac7db5",
-        "name": "Meredith Mason",
-        "date": "Thu May 19 2016 10:10:50 GMT+0530 (India Standard Time)",
-        "created": "$1,983.20",
-        "accepted": "$3,991.70",
-        "putOnHold": "$1,038.37",
-        "rejected": "$1,844.57"
+        "_id": "5dc8304dd9968d10e661af06",
+        "name": "Cherie Lynch",
+        "date": "2019-04-06T11",
+        "time": "23:46 -06:-30",
+        "created": "1,731.38",
+        "accepted": "1,643.81",
+        "putOnHold": "1,969.60",
+        "rejected": "3,614.81"
       },
       {
-        "_id": "5dc6fa2a9f8495476c1a860b",
-        "name": "Barbara Fowler",
-        "date": "Wed Nov 28 2018 10:00:29 GMT+0530 (India Standard Time)",
-        "created": "$3,139.46",
-        "accepted": "$1,908.28",
-        "putOnHold": "$2,224.17",
-        "rejected": "$2,282.80"
+        "_id": "5dc8304d6d6873439339a737",
+        "name": "Annette Moore",
+        "date": "2019-07-22T11",
+        "time": "36:31 -06:-30",
+        "created": "2,726.57",
+        "accepted": "1,246.47",
+        "putOnHold": "1,685.39",
+        "rejected": "2,840.78"
       },
       {
-        "_id": "5dc6fa2a5dc73eeb86decabe",
-        "name": "Hartman Carver",
-        "date": "Sat May 23 2015 04:36:26 GMT+0530 (India Standard Time)",
-        "created": "$3,826.85",
-        "accepted": "$3,570.96",
-        "putOnHold": "$1,923.83",
-        "rejected": "$1,288.19"
+        "_id": "5dc8304dac2b8f574de31361",
+        "name": "Monica Chapman",
+        "date": "2014-02-13T02",
+        "time": "59:15 -06:-30",
+        "created": "1,742.12",
+        "accepted": "1,197.78",
+        "putOnHold": "1,808.29",
+        "rejected": "3,936.25"
       },
       {
-        "_id": "5dc6fa2a0e67807daca555c1",
-        "name": "Barnes Mcpherson",
-        "date": "Wed Jul 15 2015 15:12:40 GMT+0530 (India Standard Time)",
-        "created": "$3,629.10",
-        "accepted": "$2,730.67",
-        "putOnHold": "$3,792.32",
-        "rejected": "$3,741.12"
+        "_id": "5dc8304d32e4970865a6dd26",
+        "name": "Tran Padilla",
+        "date": "2015-04-07T01",
+        "time": "17:31 -06:-30",
+        "created": "3,544.87",
+        "accepted": "2,324.28",
+        "putOnHold": "1,280.38",
+        "rejected": "2,959.92"
       },
       {
-        "_id": "5dc6fa2a9a24b67d10d39222",
-        "name": "Jerry Ball",
-        "date": "Wed Aug 28 2019 02:34:31 GMT+0530 (India Standard Time)",
-        "created": "$1,292.39",
-        "accepted": "$2,702.92",
-        "putOnHold": "$2,862.37",
-        "rejected": "$2,766.15"
+        "_id": "5dc8304dd9ceceb04fb983e6",
+        "name": "Margo Navarro",
+        "date": "2018-10-25T05",
+        "time": "23:49 -06:-30",
+        "created": "3,536.37",
+        "accepted": "1,272.96",
+        "putOnHold": "3,705.52",
+        "rejected": "1,533.63"
       },
       {
-        "_id": "5dc6fa2ae5250a18478e67d1",
-        "name": "Riggs Hendrix",
-        "date": "Wed Jun 10 2015 10:16:10 GMT+0530 (India Standard Time)",
-        "created": "$1,226.44",
-        "accepted": "$3,649.50",
-        "putOnHold": "$1,737.88",
-        "rejected": "$2,985.04"
+        "_id": "5dc8304dd886e1628d53682a",
+        "name": "Latonya Ball",
+        "date": "2019-02-11T08",
+        "time": "53:01 -06:-30",
+        "created": "1,681.02",
+        "accepted": "1,262.67",
+        "putOnHold": "3,127.50",
+        "rejected": "1,730.81"
       },
       {
-        "_id": "5dc6fa2ab066a487034a8041",
-        "name": "Turner Joseph",
-        "date": "Wed Jun 24 2015 13:47:52 GMT+0530 (India Standard Time)",
-        "created": "$2,631.25",
-        "accepted": "$2,623.55",
-        "putOnHold": "$2,773.42",
-        "rejected": "$2,948.15"
+        "_id": "5dc8304da4da9396d2e1a435",
+        "name": "Marci Patel",
+        "date": "2016-11-23T06",
+        "time": "18:41 -06:-30",
+        "created": "1,785.09",
+        "accepted": "3,823.28",
+        "putOnHold": "1,796.66",
+        "rejected": "1,277.41"
       },
       {
-        "_id": "5dc6fa2ab93c480a2acef00b",
-        "name": "Melisa Finley",
-        "date": "Wed Mar 06 2019 08:23:49 GMT+0530 (India Standard Time)",
-        "created": "$2,460.43",
-        "accepted": "$1,010.56",
-        "putOnHold": "$2,127.66",
-        "rejected": "$1,111.52"
+        "_id": "5dc8304dd35474f372506a3f",
+        "name": "Hines Rosario",
+        "date": "2015-01-03T06",
+        "time": "57:35 -06:-30",
+        "created": "2,821.62",
+        "accepted": "2,925.53",
+        "putOnHold": "3,569.20",
+        "rejected": "3,173.55"
       },
       {
-        "_id": "5dc6fa2a4a95efb7e349ca5e",
-        "name": "Carroll Baird",
-        "date": "Fri Aug 19 2016 05:53:18 GMT+0530 (India Standard Time)",
-        "created": "$3,226.24",
-        "accepted": "$2,316.00",
-        "putOnHold": "$2,734.10",
-        "rejected": "$1,522.35"
+        "_id": "5dc8304d118e536c29befb0f",
+        "name": "Hays Baird",
+        "date": "2017-02-12T05",
+        "time": "33:53 -06:-30",
+        "created": "1,703.42",
+        "accepted": "2,978.72",
+        "putOnHold": "1,173.64",
+        "rejected": "1,559.22"
+      },
+      {
+        "_id": "5dc8304dccd5c2eb437d77bc",
+        "name": "Mcguire Robles",
+        "date": "2018-05-01T03",
+        "time": "18:13 -06:-30",
+        "created": "1,447.83",
+        "accepted": "3,154.81",
+        "putOnHold": "3,374.44",
+        "rejected": "3,870.50"
+      },
+      {
+        "_id": "5dc8304db9c37a444d930116",
+        "name": "Melton Joyner",
+        "date": "2018-08-31T05",
+        "time": "21:07 -06:-30",
+        "created": "2,546.49",
+        "accepted": "2,863.46",
+        "putOnHold": "3,748.53",
+        "rejected": "3,247.20"
+      },
+      {
+        "_id": "5dc8304d0983573c3f12e087",
+        "name": "Mathis Reynolds",
+        "date": "2016-11-28T08",
+        "time": "57:17 -06:-30",
+        "created": "1,023.73",
+        "accepted": "3,293.24",
+        "putOnHold": "3,855.57",
+        "rejected": "2,020.70"
+      },
+      {
+        "_id": "5dc8304db700897e5d96f755",
+        "name": "Cherry Bauer",
+        "date": "2017-05-17T06",
+        "time": "50:16 -06:-30",
+        "created": "3,878.81",
+        "accepted": "2,326.14",
+        "putOnHold": "1,268.65",
+        "rejected": "1,568.40"
+      },
+      {
+        "_id": "5dc8304d3317816459a11ccc",
+        "name": "Spencer Macdonald",
+        "date": "2016-03-13T10",
+        "time": "10:09 -06:-30",
+        "created": "3,894.94",
+        "accepted": "3,451.02",
+        "putOnHold": "1,231.78",
+        "rejected": "2,858.99"
       }
     ]
 }
