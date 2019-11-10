@@ -17,6 +17,10 @@ class UploadPayment extends Component {
     this.setState({ listDataFromChild: dataFromChild });
   }
 
+  customTemplate = () => {
+    this.props.callbackFromParent('template');
+  }
+
   render() {
     return (
       <div className="upload-payment">
@@ -85,7 +89,7 @@ class UploadPayment extends Component {
             <option>ePayment & cheque</option>
             <option>ePayment & cheque</option>
           </select>
-          <Link to="/custom-template" className="common-btn">Create</Link>
+          <span className="common-btn" onClick={this.customTemplate}>Create</span>
         </div>
       </div>
     )

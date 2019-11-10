@@ -33,8 +33,13 @@ class CustomTemplate extends Component {
     }));
   }
 
+  paymentPage = () => {
+    this.props.callbackFromParent('payment');
+  }
+
   render() {
     let currentStep;
+    let configData;
     if (this.state.currentStep == 1) {
       currentStep =
         <div className="new-upload">
@@ -49,34 +54,38 @@ class CustomTemplate extends Component {
           <div className="data-fields-wrap clearfix">
             <div className="data-fields">
               <table class="custom-field-tabel">
-                <tr>
-                  <th>Your Data</th>
-                  <th>Set Format</th>
-                </tr>
-                <tr>
-                  <td><span className="custom-data-count">1</span> Custom data 1</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><span className="custom-data-count">2</span> Custom data 2</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><span className="custom-data-count">3</span> Custom data 3</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><span className="custom-data-count">4</span> Custom data 4</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><span className="custom-data-count">5</span> Custom data 5</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><span className="custom-data-count">5</span> Custom data 6</td>
-                  <td></td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th>Your Data</th>
+                    <th>Set Format</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span className="custom-data-count">1</span> Custom data 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span className="custom-data-count">2</span> Custom data 2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span className="custom-data-count">3</span> Custom data 3</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span className="custom-data-count">4</span> Custom data 4</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span className="custom-data-count">5</span> Custom data 5</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span className="custom-data-count">5</span> Custom data 6</td>
+                    <td></td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div className="data-fields-lists">
@@ -148,34 +157,15 @@ class CustomTemplate extends Component {
                 </select>
               </div>
               <div className="data-field-btn">
-                <Link className="common-btn" to="/upload-payment">Create</Link>
+                <span className="common-btn" onClick={this.paymentPage}>Create</span>
                 <span className="common-btn2" onClick={this.previousStep}>Back</span>
               </div>
             </form>
           </div>
         </div>
     }
-
-    return (
-      <div className="custom-template">
-        <div className="custom-template-head clearfix">
-          <h2>Create custom upload format</h2>
-          <Link to="/upload-payment" className="common-btn2">Cancel</Link>
-        </div>
-        <div className="template-steps clearfix">
-          <div className={"template-steps-col " + (this.state.currentStep==1 ? "active" : "")}>
-            <span className="step-count">1</span>
-            Upload Sample File
-        </div>
-        <div className={"template-steps-col " + (this.state.currentStep==2 ? "active" : "")}>
-            <span className="step-count">2</span>
-            Identify Data-fields
-        </div>
-        <div className={"template-steps-col " + (this.state.currentStep==3 ? "active" : "")}>
-            <span className="step-count">3</span>
-            Finalise Details
-        </div>
-        </div>
+    if (this.state.currentStep == 1 || this.state.currentStep == 2) {
+      configData =
         <div className="config-custom-format open">
           <h3>How to configure a custom format
           <span class="slide-arrow">
@@ -188,13 +178,37 @@ class CustomTemplate extends Component {
             <h4>Next steps</h4>
             <ul>
               <li>Column for your sample file are shown on the left under "Your data"</li>
-              <li>Column for your sample file are shown on the left under "Your data"</li>
-              <li>Column for your sample file are shown on the left under "Your data"</li>
-              <li>Column for your sample file are shown on the left under "Your data"</li>
+              <li>Match one of the mandatory or optional from the extreme right under "Choose format" to "Your Data" by dragging-and-dropping or clicking on "+"</li>
+              <li>If one of the optional fields match the meaning of your data, you can click "Create your own"</li>
+              <li>You can edit the name of any optional fields</li>
+              <li>You can only proceed when you have assigned all the mandatory fields under Choose Format to your data</li>
             </ul>
             <span className="common-btn2">Ok, Got It </span>
           </div>
         </div>
+    }
+
+    return (
+      <div className="custom-template">
+        <div className="custom-template-head clearfix">
+          <h2>Create custom upload format</h2>
+          <span className="common-btn2" onClick={this.paymentPage}>Cancel</span>
+        </div>
+        <div className="template-steps clearfix">
+          <div className={"template-steps-col " + (this.state.currentStep == 1 ? "active" : "")}>
+            <span className="step-count">1</span>
+            Upload Sample File
+        </div>
+          <div className={"template-steps-col " + (this.state.currentStep == 2 ? "active" : "")}>
+            <span className="step-count">2</span>
+            Identify Data-fields
+        </div>
+          <div className={"template-steps-col " + (this.state.currentStep == 3 ? "active" : "")}>
+            <span className="step-count">3</span>
+            Finalise Details
+        </div>
+        </div>
+        {configData}
         {currentStep}
       </div>
     )

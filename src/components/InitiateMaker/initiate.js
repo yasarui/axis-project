@@ -6,9 +6,36 @@ import './initiate.scss';
 
 class Initiate extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentTab: 'payment'
+    };
+    console.log(this.state.currentTab)
+  }
+
+  callbackFunction = (dataFromChild) => {
+    if (dataFromChild) {
+      this.setState(state => ({
+        currentTab: dataFromChild
+      }));
+    }
+  }
+
   render() {
+    let htmlData;
+    if (this.state.currentTab == 'payment') {
+      htmlData = <UploadPayment callbackFromParent={this.callbackFunction} />
+    }
+    if (this.state.currentTab == 'template') {
+      htmlData = <CustomTemplate callbackFromParent={this.callbackFunction} />
+    }
+
     return (
-      <UploadPayment />
+      <div>
+        {htmlData}
+      </div>
+      // <UploadPayment />
       // <CustomTemplate />
     )
   }

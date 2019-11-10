@@ -90,9 +90,7 @@ class Upload extends Component {
   }
 
   nextStep = () => {
-    // this.state.currentStep = this.state.currentStep+1;
     this.props.callbackFromParent(true);
-    console.log(this.state.uploadFile)
   }
 
   render() {

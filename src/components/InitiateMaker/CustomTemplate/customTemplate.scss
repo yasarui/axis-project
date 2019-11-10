@@ -92,8 +92,11 @@
   h4 {
     color: #444;
   }
-  ul li {
-    margin-bottom: 15px;
+  ul {
+    padding-left: 22px;
+    li {
+      margin-bottom: 15px;
+    }
   }
   .common-btn2 {
     float: right;
@@ -105,7 +108,7 @@
     width: 70%;
     margin-right: 1%;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
   }
   .data-fields-lists {
     float: left;
