@@ -15,9 +15,10 @@ class UploadComponent extends Component {
 
   componentDidMount() {
     this.dragAndDrop();
+    this.props.callbackFromParent(false);
   }
 
-  dragAndDrop(){
+  dragAndDrop() {
     var _this = this;
     function $id(id) {
       return document.getElementById(id);
@@ -57,7 +58,7 @@ class UploadComponent extends Component {
       }
     }
     function ParseFile(file) {
-      // _this.uploadFileList(file.name);
+      _this.uploadFileList(file.name);
       Output(
         "<div class='upload-list-wrap clearfix'><div class='upload-file-name'>" + file.name +
         "<span class='close-upload-file'><i class='fas fa-times-circle'></i></span></div></div>"
@@ -65,10 +66,14 @@ class UploadComponent extends Component {
     }
   }
 
-  // uploadFileList = (file) => {
-  //   this.setState.uploadFile({ file });
-  //   console.log(this.state.uploadFile)
-  // };
+  uploadFileList = (file) => {
+    var arrayList = [];
+    arrayList = this.state.uploadFile;
+    arrayList.push(file);
+    this.setState(state => ({
+      uploadFile: arrayList
+    }));
+  };
 
   uploadFiles = () => {
     this.setState(state => ({
@@ -85,7 +90,9 @@ class UploadComponent extends Component {
   }
 
   nextStep = () => {
-    this.state.currentStep = this.state.currentStep+1;
+    // this.state.currentStep = this.state.currentStep+1;
+    this.props.callbackFromParent(true);
+    console.log(this.state.uploadFile)
   }
 
   render() {
@@ -114,10 +121,10 @@ class UploadComponent extends Component {
         </div>
     }
 
-    if(this.props.pageType=='uploadPage'){
+    if (this.props.pageType == 'uploadPage' && this.state.uploadFile.length > 0) {
       uploadButton = <span className="common-btn" onClick={this.uploadFiles}>Upload</span>
     }
-    if(this.props.pageType=='customTemplate'){
+    if (this.props.pageType == 'customTemplate' && this.state.uploadFile.length > 0) {
       uploadButton = <span className="common-btn" onClick={this.nextStep}>Upload</span>
     }
 
@@ -125,9 +132,8 @@ class UploadComponent extends Component {
       <div className="upload-wrap">
         <div id="filedrag" className="new-upload-wrap">
           <div id="upload-tex">
-            <div id="messages">
-              {uploadButton}
-            </div>
+            <div id="messages"></div>
+            {uploadButton}
             <form id="upload">
               <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
               <p>Drag-and-drop salary payment file here</p>
