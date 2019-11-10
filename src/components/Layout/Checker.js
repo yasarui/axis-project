@@ -9,7 +9,7 @@ const Checker = () => {
     <Tabs className="main-layout">
         <TabList className="sidebar" >
             <Tab> <i className="fas fa-home"></i> Dashboard  </Tab>
-            <Tab> <i className="fas fa-upload"></i> Initiate </Tab>
+            <Tab> <i className="fas fa-check"></i> Approve </Tab>
             <Tab> <i className="fas fa-table"></i> Enquire </Tab>
         </TabList>
         <div className="content-section">

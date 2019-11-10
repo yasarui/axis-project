@@ -87,6 +87,15 @@
         }
       }
 
+      .checker-dashboard {
+         .progress-tiles-wrapper{
+           justify-content: flex-start;
+            .progress-tile{
+               margin-right:15px;
+            }
+         }
+      }
+
       //Common Styles for Table
       table{
         width:100%;
