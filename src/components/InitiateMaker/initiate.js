@@ -3,7 +3,7 @@ import './initiate.css';
 
 const Initiate = () => {
     return(
-      <h1> Initiate </h1>  
+      <h1> Initiate ==> Maker </h1>  
     )
 }
 
