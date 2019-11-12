@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/axis-project/precache-manifest.10be9ffa4792a8590ea08e9548bdf71e.js"
+  "/axis-project/precache-manifest.39a49f3355c13221332acfad07d4b12a.js"
 );
 
 self.addEventListener('message', (event) => {

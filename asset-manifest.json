@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/axis-project/static/css/main.1ac3d57b.chunk.css",
-    "main.js": "/axis-project/static/js/main.9d417e5f.chunk.js",
-    "main.js.map": "/axis-project/static/js/main.9d417e5f.chunk.js.map",
+    "main.js": "/axis-project/static/js/main.01195a87.chunk.js",
+    "main.js.map": "/axis-project/static/js/main.01195a87.chunk.js.map",
     "runtime-main.js": "/axis-project/static/js/runtime-main.550fd103.js",
     "runtime-main.js.map": "/axis-project/static/js/runtime-main.550fd103.js.map",
     "static/css/2.764ccc25.chunk.css": "/axis-project/static/css/2.764ccc25.chunk.css",
     "static/js/2.cc08ace0.chunk.js": "/axis-project/static/js/2.cc08ace0.chunk.js",
     "static/js/2.cc08ace0.chunk.js.map": "/axis-project/static/js/2.cc08ace0.chunk.js.map",
     "index.html": "/axis-project/index.html",
-    "precache-manifest.10be9ffa4792a8590ea08e9548bdf71e.js": "/axis-project/precache-manifest.10be9ffa4792a8590ea08e9548bdf71e.js",
+    "precache-manifest.39a49f3355c13221332acfad07d4b12a.js": "/axis-project/precache-manifest.39a49f3355c13221332acfad07d4b12a.js",
     "service-worker.js": "/axis-project/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/axis-project/static/css/2.764ccc25.chunk.css.map",
     "static/css/main.1ac3d57b.chunk.css.map": "/axis-project/static/css/main.1ac3d57b.chunk.css.map"
@@ -19,6 +19,6 @@
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.cc08ace0.chunk.js",
     "static/css/main.1ac3d57b.chunk.css",
-    "static/js/main.9d417e5f.chunk.js"
+    "static/js/main.01195a87.chunk.js"
   ]
 }
