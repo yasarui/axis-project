@@ -11,7 +11,7 @@ const Dashboard = () => {
     return (
        <div className="checker-dashboard" >
            <h1 className="page-title" > Salary Payments </h1> 
-           <NavLink to="/maker" > Maker </NavLink>
+           <NavLink to="/" > Maker </NavLink>
            <h2 className="sub-heading" > PENDING </h2>
            <div className="checker-dashboard-progress-wrapper" >
               <Progress />

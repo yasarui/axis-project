@@ -12,7 +12,7 @@ const App = () => {
     <div className="whole-wrapper">
         <Header />
         <Switch>
-           <Route path="/maker" component={Maker} />
+           <Route path="/" exact component={Maker} />
            <Route path="/checker" component={Checker} />
         </Switch>
     </div>
