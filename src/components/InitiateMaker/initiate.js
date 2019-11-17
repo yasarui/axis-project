@@ -11,7 +11,6 @@ class Initiate extends Component {
     this.state = {
       currentTab: 'payment'
     };
-    console.log(this.state.currentTab)
   }
 
   callbackFunction = (dataFromChild) => {

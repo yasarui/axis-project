@@ -8,7 +8,36 @@ class UploadPayment extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listDataFromChild: null
+      listDataFromChild: null,
+      standardTemplates: [
+        {
+          id: 1,
+          name: 'Axis Bank Account',
+          isFavorite: false
+        },
+        {
+          id: 2,
+          name: 'NEFT/RTGS/IMPS',
+          isFavorite: true
+        },
+      ],
+      customTemplate: [
+        {
+          id: 1,
+          name: 'Custom format 1',
+          isFavorite: false
+        },
+        {
+          id: 2,
+          name: 'Custom format 2',
+          isFavorite: true
+        },
+        {
+          id: 3,
+          name: 'Custom format 3',
+          isFavorite: false
+        }
+      ]
     };
   }
 
@@ -19,6 +48,21 @@ class UploadPayment extends Component {
 
   customTemplate = () => {
     this.props.callbackFromParent('template');
+  }
+
+  customTemplateFavorite = (index) => {
+    this.state.customTemplate[index].isFavorite = !this.state.customTemplate[index].isFavorite;
+    this.setState({ customTemplate: this.state.customTemplate });
+  }
+
+  customstandardTemplates = (index) => {
+    this.state.standardTemplates[index].isFavorite = !this.state.standardTemplates[index].isFavorite;
+    this.setState({ standardTemplates: this.state.standardTemplates });
+  }
+
+  removecustomTemplate(index) {
+    this.state.customTemplate.splice(index, 1);
+    this.setState({ customTemplate: this.state.customTemplate });
   }
 
   render() {
@@ -43,8 +87,13 @@ class UploadPayment extends Component {
             <h3>Standard Templates <span>2</span></h3>
             <div className="templates-content">
               <ul>
-                <li><span className="star"><i className="far fa-star"></i></span> Axis Bank Account</li>
-                <li className="grey"><span className="star selected"><i className="fas fa-star"></i></span> NEFT/RTGS/IMPS</li>
+              {this.state.standardTemplates.map((data, i) => {
+                return <li key={data} className={((i+1)%2==0 ? "grey" : "")}>
+                  {data.name}
+                  <span onClick={this.customstandardTemplates.bind(this, i)} className={"star " + (data.isFavorite ? "selected" : "")}>
+                    <i className={(data.isFavorite ? "fas fa-star" : "far fa-star")}></i></span>
+                </li>
+                })}
               </ul>
             </div>
           </div>
@@ -52,33 +101,18 @@ class UploadPayment extends Component {
             <h3>Custom Templates <span>5</span></h3>
             <div className="templates-content">
               <ul>
-                <li>
-                  <span className="star"><i className="far fa-star"></i></span>
-                  Custom format 1
-                <div className="template-actions">
-                    <span title="Download"><i className="fas fa-download"></i></span>
-                    <span title="Edit"><i className="fas fa-edit"></i></span>
-                    <span title="Delete"><i className="far fa-trash-alt"></i></span>
+              {this.state.customTemplate.map((data, i) => {
+                return <li key={data} className={((i+1)%2==0 ? "grey" : "")}>
+                  {data.name}
+                  <span onClick={this.customTemplateFavorite.bind(this, i)} className={"star " + (data.isFavorite ? "selected" : "")}>
+                    <i className={(data.isFavorite ? "fas fa-star" : "far fa-star")}></i></span>
+                  <div className="template-actions">
+                    <a href="./images/logo-white.png" title="Download" download><i className="fas fa-download"></i></a>
+                    <span onClick={this.customTemplate} title="Edit"><i className="fas fa-edit"></i></span>
+                    <span onClick={this.removecustomTemplate.bind(this, i)} title="Delete"><i className="far fa-trash-alt"></i></span>
                   </div>
                 </li>
-                <li className="grey">
-                  <span className="star"><i className="far fa-star"></i></span>
-                  Custom format 2
-                <div className="template-actions">
-                    <span title="Download"><i className="fas fa-download"></i></span>
-                    <span title="Edit"><i className="fas fa-edit"></i></span>
-                    <span title="Delete"><i className="far fa-trash-alt"></i></span>
-                  </div>
-                </li>
-                <li>
-                  <span className="star"><i className="far fa-star"></i></span>
-                  Custom format 3
-                <div className="template-actions">
-                    <span title="Download"><i className="fas fa-download"></i></span>
-                    <span title="Edit"><i className="fas fa-edit"></i></span>
-                    <span title="Delete"><i className="far fa-trash-alt"></i></span>
-                  </div>
-                </li>
+                })}
               </ul>
             </div>
           </div>
