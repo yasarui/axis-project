@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './enquire.css';
+import EnquireFilter from '../EnquireFilter';
+import EnquireTable from '../EnquireTable';
 
-const Enquire = () => {
-    return(
-       <h1> Enquire Content ==> Maker </h1> 
+class Enquire extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="payment-header">
+          <div className="viewing">
+            Viewing as
+            <select>
+              <option>Marker</option>
+              <option>Checker</option>
+            </select>
+          </div>
+        </div>
+        <EnquireFilter />
+        <EnquireTable tabType="standard"/>
+        <EnquireTable tabType="custom"/>
+        <EnquireTable tabType="custom" selectedFilter="2" />
+      </div>
     )
+  }
 }
 
 export default Enquire;
