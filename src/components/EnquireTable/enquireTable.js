@@ -89,6 +89,120 @@ class EnquireTable extends Component {
         </div>
       </div>
     }
+    if(this.props.selectedFilter=='3'){
+      selectedFilterData = <div>
+        <div className="current-filter-action clearfix">
+          <div className="find-column form-group">
+            <label>Find Column</label>
+            <input type="text" placeholder="Enter column name" />
+          </div>
+          <div className="all-column">
+            <label>Show</label>
+            <select>
+              <option>All</option>
+            </select>
+            <span>Columns</span>
+          </div>
+        </div>
+        <div className="custom-filter-table-wrap">
+          <div className="custom-filter-table">
+            <table className="fixed-table-header">
+              <tbody>
+                <tr>
+                  <td className="column-name">Column</td>
+                  <td className="column-data form-group">
+                    <div className="date-formate">
+                      <label>From</label>
+                      <input type="text" placeholder="dd-mm-yyyy" />
+                    </div>
+                    <div className="date-formate form-group">
+                      <label>To</label>
+                      <input type="text" placeholder="dd-mm-yyyy" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="column-name">Column</td>
+                  <td className="column-data">
+                    <div className="form-group tag-input">
+                      <input type="text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="column-name">Column</td>
+                  <td className="column-data">
+                    <div className="form-group tag-input">
+                      <input type="text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="column-name">Column</td>
+                  <td className="column-data">
+                    <div className="form-group tag-input">
+                      <select>
+                        <option>Select</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="column-name">Column</td>
+                  <td className="column-data">
+                    <div className="custom-radio-btn clearfix">
+                      <label class="radio-button-wrap">Selected
+                        <input type="radio" name="radio" checked="checked" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="radio-button-wrap">Unselected
+                        <input type="radio" name="radio" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="radio-button-wrap">Unselected
+                        <input type="radio"  name="radio" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="radio-button-wrap">Unselected
+                        <input type="radio"  name="radio" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="column-name">Column</td>
+                  <td className="column-data">
+                    <div className="custom-checkbox clearfix">
+                      <label class="checkbox-wrap">Selected
+                        <input type="checkbox" checked="checked" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox-wrap">Unselected
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox-wrap">Unselected
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox-wrap">Unselected
+                        <input type="checkbox"  />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="custom-filter-button clearfix">
+          <span className="common-btn">Apply</span>
+          <span className="common-btn2">Clear</span>
+        </div>
+      </div>
+    }
     if (this.props.tabType == 'standard') {
       filterData = <div className="custom-filter-wrap clearfix">
         <div className="custom-filter-col1 clearfix">
@@ -150,7 +264,7 @@ class EnquireTable extends Component {
               <span className="reset-filter-txt">Reset</span>
             </div>
           </div>
-          <div className="custom-filter-col3">
+          <div className={"custom-filter-col3 " + (this.props.selectedFilter=='3' ? "active" : "")}>
           <div className="custom-filter-top clearfix">
             <div className="view-type column">
               <label>Active Filters</label>

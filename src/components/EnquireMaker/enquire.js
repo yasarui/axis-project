@@ -24,6 +24,7 @@ class Enquire extends Component {
         <EnquireTable tabType="standard"/>
         <EnquireTable tabType="custom"/>
         <EnquireTable tabType="custom" selectedFilter="2" />
+        <EnquireTable tabType="custom" selectedFilter="3" />
       </div>
     )
   }
