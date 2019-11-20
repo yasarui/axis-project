@@ -21,10 +21,10 @@ class Enquire extends Component {
           </div>
         </div>
         <EnquireFilter />
-        <EnquireTable tabType="standard"/>
-        <EnquireTable tabType="custom"/>
-        <EnquireTable tabType="custom" selectedFilter="2" />
-        <EnquireTable tabType="custom" selectedFilter="3" />
+        <EnquireTable pageType="maker" tabType="standard"/>
+        <EnquireTable pageType="maker" tabType="custom"/>
+        <EnquireTable pageType="maker" tabType="custom" selectedFilter="2" />
+        <EnquireTable pageType="maker" tabType="custom" selectedFilter="3" />
       </div>
     )
   }

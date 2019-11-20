@@ -288,6 +288,17 @@ class EnquireTable extends Component {
         {selectedFilterData}
       </div>
     }
+    let checkerHeading;
+    let checkerTableData;
+    if (this.props.pageType == 'checker') {
+      checkerHeading = <td style={{ "width": "120px" }} >Action</td>;
+      checkerTableData = <td style={{ "width": "120px" }} >
+        <select className="approve-dropdown">
+          <option>Accept</option>
+          <option>Accept1</option>
+        </select>
+      </td>;
+    }
     return (
       <div className="enquire-table-wrap">
         <ul className="enquire-tab clearfix">
@@ -300,6 +311,7 @@ class EnquireTable extends Component {
         <table className="fixed-table-header">
           <tbody>
             <tr className="table-head">
+              {checkerHeading}
               <td style={{ "width": "120px" }} >Column</td>
               <td style={{ "width": "120px" }} >Column</td>
               <td style={{ "width": "120px" }} >Column</td>
@@ -310,6 +322,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} >Column</td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
@@ -320,6 +333,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} ></td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
@@ -330,6 +344,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} ></td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
@@ -340,6 +355,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} ></td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
@@ -350,6 +366,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} ></td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
@@ -360,6 +377,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} ></td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
@@ -370,6 +388,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} ></td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
@@ -380,6 +399,7 @@ class EnquireTable extends Component {
               <td style={{ "width": "120px" }} ></td>
             </tr>
             <tr>
+              {checkerTableData}
               <td style={{ "width": "120px" }} >XXXXX</td>
               <td style={{ "width": "120px" }} ></td>
               <td style={{ "width": "120px" }} ></td>
