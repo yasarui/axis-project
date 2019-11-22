@@ -6,7 +6,7 @@ const RecentActivity = ({data}) => {
           <thead>
              <tr>
                <th style={{"width":"110px"}} > Batch ID </th>
-               <th style={{"width":"210px"}}> Staff </th>
+               <th style={{"width":"198px"}}> Staff </th>
                <th style={{"width":"157px"}}> Created </th>
                <th style={{"width":"157px"}}> Accepted </th>
                <th style={{"width":"157px"}}> Put on hold </th>
@@ -21,7 +21,7 @@ const RecentActivity = ({data}) => {
                       <td style={{"width":"104px"}} > 
                         <i class="icon fa fa-eye" aria-hidden="true"></i> {item._id.substr(1,5)}
                       </td>
-                      <td style={{"width":"202px"}} > 
+                      <td style={{"width":"210px"}} > 
                          {item.name} 
                       </td>
                       <td style={{"width":"157px"}}> 

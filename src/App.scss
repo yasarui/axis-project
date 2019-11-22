@@ -45,17 +45,66 @@
       box-sizing: border-box;
       padding:20px;
       overflow-y:scroll;
+      position: relative;
+      
       .page-title{
          font-weight:400;
          font-size:28px;
          letter-spacing:-1px;
          margin-top:0;
       }
+
+      .last-updated-time{
+         position: absolute;
+         right:20px;
+         top:60px;
+         font-size:12px;
+         color:#888;
+         i{
+           color:#98144E;
+           margin-left:5px;
+           cursor:pointer;
+         }
+      }
+    
+      .route-select{
+        width: 172px;
+        position: relative;
+        span{
+          font-size:12px;
+          margin-right:5px;
+        }
+        select{
+          width:82px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          font-size:14px;
+          border-bottom: 1px solid #636e72;
+          position: relative;
+        }
+        &:after{
+          content:"";
+          position: absolute;
+          top:5px;
+          right: 25px;
+          width: 8px;
+          height: 8px;
+          border-style: solid;
+          border-color: #98144E;
+          border-width: 0px 2px 2px 0px;
+          transform: rotate(45deg);
+          pointer-events: none;
+        }
+      }
+
+
       .sub-heading{
          font-size:14px;
-         font-weight:500;
+         font-weight:bold;
          text-transform:uppercase;
          letter-spacing:0px;
+         color:#666;
       }
 
       .progress-tiles-wrapper{
@@ -64,7 +113,7 @@
          justify-content: space-between;
          
         .progress-tile{
-          width:248px;
+          width:280px;
           height: 73px;
           box-sizing:border-box;
           color:#fff;
@@ -72,6 +121,8 @@
           text-align:center;
           border-radius:4px;
           padding-top:15px;
+          margin-bottom:10px;
+          box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
           cursor: pointer;
           span{
             display:block;
@@ -90,6 +141,23 @@
            background-color:#fff;
            color:#4A4A4A;
            border-top:3px solid #98144E
+        }
+        /** The below css is used only on Dashboard Maker - batches Table **/
+        .progress-tile.active{
+          background-color:#fff;
+          color:#4A4A4A;
+          border-top:3px solid #98144E;
+          box-shadow:none;
+          position: relative;
+        }
+        .progress-tile.active::after{
+          content:"";
+          width:100%;
+          height: 10px;
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          background:#fff;
         }
       }
 
@@ -113,13 +181,13 @@
         background:#fff;
         border-collapse: separate;
         border-radius:10px;
-        thead{
-          //box-shadow: 0 2px 15px 0 rgba(0,0,0,0.15);
+        tbody{
+          border:1px solid #E7E7E7;
         }
         tr{
 
           td{
-            padding:8px;
+            padding:12px 20px;
             font-size:14px;
             border-right:1px solid #E7E7E7;
             span.date{
@@ -136,11 +204,18 @@
           }
           th{
             padding:15px 10px;
+            padding-left:30px;
             box-sizing: border-box;
             text-align:left;
-            color:#B3B3B3;
+            color:#333;
             font-weight:500;
             font-size:12px;
+            border-right:1px solid #e7e7e7;
+            position: relative;
+            box-sizing: border-box;
+          }
+          th:last-child{
+            border-right:none;
           }
           td:last-child{
             border-right:none;
@@ -154,6 +229,59 @@
            font-size:11px;
            color:#98144E;
            margin-top:5px;
+        }
+
+        .checkbox-wrapper{
+           cursor: pointer;
+           input[type="checkbox"]{
+             display: none;
+           }
+           input[type="checkbox"] + .label-text::before{
+              content:"";
+              width:15px;
+              height: 15px;
+              display: inline-block;
+              margin-right:10px;
+              border:1.5px solid #d1ccc0;
+              border-radius: 4px;
+              vertical-align: text-bottom;
+              text-align:center;
+           }
+           input[type="checkbox"]:checked + .label-text::before{
+             content:'\2713';
+             color:#fff;
+             background-color:#98144E;
+             border-color:#98144E;
+           }
+        }
+
+        .sortIconsWrapper{
+             display:flex;
+             flex-direction: column;
+             position: absolute;
+             left: 7px;
+             top:16px;
+            .headerSortUp{
+              padding: 0;
+              margin:0;
+              width: 0; 
+              height: 0; 
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid #888;
+              margin-bottom:2px;
+              cursor: pointer;
+            }
+            .headerSortDown{
+              padding:0;
+              margin:0;
+              width: 0; 
+              height: 0; 
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 5px solid #888;
+              cursor: pointer;
+            }
         }
      }
       
@@ -187,6 +315,11 @@
           background: #999; 
         }
        }
+      
+      .batches-table{
+        border-top-left-radius:0;
+        border-top-right-radius:0;
+      }
 
     }  
 }

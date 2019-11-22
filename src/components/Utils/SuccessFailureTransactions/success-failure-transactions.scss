@@ -1,0 +1,15 @@
+.transactions-details{
+    display: flex;
+    justify-content: space-between;
+
+    .success-count{
+        i{
+            color:#6AC259;
+        }
+    }
+    .failure-count{
+        i{
+            color:#EC5F48
+        }
+    }
+}
