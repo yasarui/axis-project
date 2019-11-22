@@ -109,7 +109,7 @@ class CustomTemplate extends Component {
             </div>
           </div>
           <div className="data-field-btn">
-            <span className="common-btn3" onClick={this.nextStep}>Procude</span>
+            <span className="common-btn3" onClick={this.nextStep}>Proceed</span>
             <span className="common-btn2" onClick={this.previousStep}>Back</span>
           </div>
         </div>
@@ -195,12 +195,18 @@ class CustomTemplate extends Component {
           <span className="common-btn2" onClick={this.paymentPage}>Cancel</span>
         </div>
         <div className="template-steps clearfix">
-          <div className={"template-steps-col " + (this.state.currentStep == 1 ? "active" : "")}>
-            <span className="step-count">1</span>
+          <div className={"template-steps-col " + (this.state.currentStep == 1 ? "active" : "") + (this.state.currentStep > 1 ? "completed" : "")}>
+            <span className="step-count">
+              <span className="count">1</span>
+              <span className="comp-tick"><i class="fas fa-check"></i></span>
+            </span>
             Upload Sample File
         </div>
-          <div className={"template-steps-col " + (this.state.currentStep == 2 ? "active" : "")}>
-            <span className="step-count">2</span>
+          <div className={"template-steps-col " + (this.state.currentStep == 2 ? "active" : "") + (this.state.currentStep > 2 ? "completed" : "")}>
+            <span className="step-count">
+              <span className="count">2</span>
+              <span className="comp-tick"><i class="fas fa-check"></i></span>
+            </span>
             Identify Data-fields
         </div>
           <div className={"template-steps-col " + (this.state.currentStep == 3 ? "active" : "")}>

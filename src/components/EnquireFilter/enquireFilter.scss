@@ -1,0 +1,68 @@
+.enquire-wrap {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  .enquire-filter {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-left: 1px solid #ddd;
+    min-height: 70px;
+    &:first-child {
+      border: 0;
+    }
+    label {
+      font-size: 12px;
+      color: #777;
+      margin: 4px 10px 0 0;
+      float: left;
+    }
+    i {
+      color: #98144E;
+      margin: 4px 0 0 5px;
+
+    }
+    .enquire-filters {
+      float: left;
+      span {
+        font-size: 12px;
+        color: #777;
+        margin: 0 5px;
+      }
+      input {
+        width: 77px;
+        border: 0;
+        font-size: 13px;
+        color: #000;
+        &:focus {
+          outline: none;
+        }
+      }
+      ::placeholder {
+        color: #000; 
+      } 
+      :-ms-input-placeholder {
+        color: #000; 
+      } 
+      ::-ms-input-placeholder {
+        color: #000; 
+      }
+      select {
+        font-size: 12px;
+        min-width: 140px;
+        padding: 0;
+        padding-bottom: 4px;
+      }
+    }
+    .error-msg {
+      margin-top: 8px;
+    }
+  }
+}
+.error-msg {
+  font-size: 12px;
+  color: #ff0000;
+  margin: 0;
+  display: block;
+}

@@ -50,7 +50,6 @@ class Upload extends Component {
       e.target.className = (e.type == "dragover" ? "hover" : "");
     }
     function FileSelectHandler(e) {
-      console.log(e)
       FileDragHover(e);
       var files = e.target.files || e.dataTransfer.files;
       for (var i = 0, f; f = files[i]; i++) {

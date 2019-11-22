@@ -44,17 +44,38 @@
       display: block;
       }
     }
-    .template-steps-col.active {
-      color: #861f41;
-      .step-count {
-        background: #861f41;
-        font-size: 14px;
-        color: #fff;
-        width: 28px;
-        height: 28px;
-        line-height: 28px;
-        border-color: #861f41;
-        margin-top: -6px;
+    .template-steps-col {
+      &.active {
+        color: #861f41;
+        .step-count {
+          background: #861f41;
+          font-size: 14px;
+          color: #fff;
+          width: 28px;
+          height: 28px;
+          line-height: 28px;
+          border-color: #861f41;
+          margin-top: -6px;
+        }
+      }
+      .count {
+        display: block;
+      }
+      .comp-tick {
+        display: none;
+      }
+      &.completed {
+        color: #861f41;
+        span {
+          border-color: #861f41;
+        }
+        .count {
+          display: none;
+        }
+        .comp-tick {
+          display: block;
+          color: #861f41;
+        }
       }
    }
 }
@@ -215,7 +236,7 @@
     }
   }
 }
-table {
+.main-layout .content-section table.custom-field-tabel {
   border-collapse: collapse;
   border-spacing: 0;
 }
