@@ -31,7 +31,7 @@ const AdminAlerts = ({messages}) => {
         <table className="admin-alerts-table fixed-table-header">
            <thead>
               <tr>
-                <th style={{"width":"84.6%"}}> 
+                <th style={{"width":"84.15%"}}> 
                    Message
                 </th>
                 <th style={{"width":"10%"}}> 

@@ -79,7 +79,9 @@ const RecentActivity = ({data}) => {
                   return (
                     <tr>
                       <td style={{"width":"104px"}} > 
-                        <i class="icon fa fa-eye" aria-hidden="true"></i> {item._id.substr(1,5)}
+                        <i class="icon fa fa-eye" aria-hidden="true"></i>
+                        &nbsp;&nbsp;
+                        {item._id.substr(1,5)}
                       </td>
                       <td style={{"width":"202px"}} > 
                          {item.name} 

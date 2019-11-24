@@ -4,4 +4,23 @@
         padding:0;
         margin:0;
     }
+    .maker-remainder-section{
+        background: #fff;
+        box-sizing: border-box;
+        padding:15px 10px;
+        font-size:14px;
+        button{
+          width:180px;
+          font-size:13px;
+          margin-right:10px;
+          background:#fff;
+          border:2px solid #98144E;
+          color:#98144E;
+          font-weight:bold;
+        }
+        span{
+          color:#888;
+          font-size:12px;
+        }
+    }
 }
