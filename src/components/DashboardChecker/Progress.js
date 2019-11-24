@@ -1,28 +1,32 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import BatchesTable from './components/batchtable';
 import AccountsTable from './components/accountstable';
 import TransactionsTable from './components/transactionstable';
 
 const Progress = () => {
+   const [ showTab , setShowTab ] = useState(false);
+   const handleClick = () => {
+       console.log("Product tile has been clicked");
+   }
    return(
     <Tabs>
         <TabList>
-            <div className="progress-tiles-wrapper">
+            <div className={"progress-tiles-wrapper "+(showTab ? 'show-tab':'')}>
                 <Tab>
-                    <div className="progress-tile">
+                    <div className="progress-tile" onClick={()=>setShowTab(true)} >
                         <span className="text"> BATCHES </span>
                         <span className="count"> 15 </span>
                     </div>
                 </Tab>
                 <Tab>
-                    <div className="progress-tile">
+                    <div className="progress-tile" onClick={()=>setShowTab(true)} >
                         <span className="text"> ACCOUNTS </span>
                         <span className="count"> 3 </span>              
                     </div>
                 </Tab>
                 <Tab>
-                    <div className="progress-tile">
+                    <div className="progress-tile" onClick={()=>setShowTab(true)} >
                         <span className="text"> TRANSACTIONS </span>
                         <span className="count"> 1300 </span>              
                     </div>
@@ -30,13 +34,13 @@ const Progress = () => {
             </div>
         </TabList>
         <TabPanel>
-            <BatchesTable />
+            {showTab && <BatchesTable /> }
         </TabPanel>
         <TabPanel>
-            <AccountsTable/>
+            { showTab && <AccountsTable/> }
         </TabPanel>
         <TabPanel>
-            <TransactionsTable />
+            { showTab && <TransactionsTable /> }
         </TabPanel>
     </Tabs>
    )

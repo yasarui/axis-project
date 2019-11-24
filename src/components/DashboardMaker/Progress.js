@@ -114,7 +114,7 @@ const Progress = () => {
                             </td>
                             <td style={{"width":"183px"}} >  
                                 <span className="date"> 
-                                {moment(item.created).format('dddd DD-MM-YY')} 
+                                    {moment(item.created).format('dddd DD-MM-YY')} 
                                 </span>
                                 <span className="time"> 
                                     {moment(item.created).format('h:mm:ss a')} 
