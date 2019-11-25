@@ -8,7 +8,7 @@ const Progress = () => {
    return(
     <Tabs>
         <TabList>
-            <div className="progress-tiles-wrapper">
+            <div className="progress-tiles-wrapper clearfix">
                 <Tab>
                     <div className="progress-tile">
                         <span className="text"> BATCHES </span>

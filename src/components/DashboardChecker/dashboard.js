@@ -29,7 +29,7 @@ const Dashboard = () => {
                 </select>
            </div>
            <p className="last-updated-time" > 
-              Last updated { lastUpdatedTime } <i class="fas fa-redo"></i> 
+              <span>Last updated</span> { lastUpdatedTime } <i class="fas fa-redo"></i> 
            </p>
            <h2 className="sub-heading" > PENDING </h2>
            <div className="checker-dashboard-progress-wrapper" >

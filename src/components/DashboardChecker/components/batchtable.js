@@ -17,6 +17,7 @@ class BatchTable extends React.Component{
     render(){
       return(
          <Fragment>
+           <div className="table-wrap">
            <table>
              <thead>
                 <tr>
@@ -45,6 +46,7 @@ class BatchTable extends React.Component{
                  })}
              </tbody>
            </table>
+           </div>
          </Fragment>
       )
     }

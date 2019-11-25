@@ -32,7 +32,7 @@ const Progress = () => {
 
    return(
         <Fragment>
-             <div className="progress-tiles-wrapper">
+             <div className="progress-tiles-wrapper clearfix">
                 <div className={"progress-tile " + (batchesTable ? 'active':'')} onClick={()=>showBatchesTable(true)} >
                     <span className="text"> BATCHES </span>
                     <span className="count"> 15 </span>
@@ -50,7 +50,7 @@ const Progress = () => {
                     <span className="count"> 235 </span>              
                 </div>
              </div>
-           {batchesTable &&  <table className="fixed-table-header batches-table">
+           {batchesTable &&  <div className="table-wrap"><table className="fixed-table-header batches-table">
                <thead>
                   <tr>
                      <th style={{"width":"121px"}}> 
@@ -146,7 +146,7 @@ const Progress = () => {
                       )
                    })}
                </tbody>
-            </table> }
+            </table></div> }
     </Fragment>
    )
 }

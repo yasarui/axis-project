@@ -26,6 +26,7 @@ const RecentActivity = ({data}) => {
    }
 
    return (
+      <div className="table-wrap">
        <table className="fixed-table-header">
           <thead>
              <tr>
@@ -105,6 +106,7 @@ const RecentActivity = ({data}) => {
               })} 
           </tbody>
        </table>
+      </div>
    )
 }
 

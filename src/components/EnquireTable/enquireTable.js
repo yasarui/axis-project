@@ -49,20 +49,7 @@ class EnquireTable extends Component {
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
-            </ul>
-          </div>
-          <div className="avliable-column-list even-row clearfix">
-            <ul>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-            </ul>
-          </div>
-          <div className="avliable-column-list clearfix">
-            <ul>
+              <li className="even-row">Column</li>
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
@@ -70,10 +57,13 @@ class EnquireTable extends Component {
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
-            </ul>
-          </div>
-          <div className="avliable-column-list even-row clearfix">
-            <ul>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li className="even-row">Column</li>
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
@@ -308,109 +298,111 @@ class EnquireTable extends Component {
         <div className="enquire-table-filter">
           {filterData}
         </div>
-        <table className="fixed-table-header">
-          <tbody>
-            <tr className="table-head">
-              {checkerHeading}
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="table-wrap">
+          <table className="fixed-table-header">
+            <tbody>
+              <tr className="table-head">
+                {checkerHeading}
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     )
   }
