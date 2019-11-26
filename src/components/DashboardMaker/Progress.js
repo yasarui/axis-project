@@ -4,12 +4,16 @@ import batchesJson from '../fixture/batches_data.json';
 import moment from 'moment';
 import Button from '../Buttons';
 import { ProgressBar,SuccessFailureTransactions }  from '../Utils';
+import AxisModal from '../Modal';
+import ActivityHistory from '../Utils/ActivityHistory';
 
 const Progress = () => {
 
    const [ batchesData , setBatchesData ] = useState(batchesJson.data)
 
-   const [ batchesTable,showBatchesTable ] = useState(false)
+   const [ batchesTable,showBatchesTable ] = useState(false);
+
+   const [ isHistoryPopup,setHistoryPopup ] = useState(false)
 
    const sortAssending = (e,key) => {
         let temp = [...batchesData];
@@ -125,6 +129,9 @@ const Progress = () => {
                                     </td>
                                     <td style={{"width":"196px"}} >
                                         {item.name}
+                                        <a class="view-details" onClick={()=>setHistoryPopup(true)} href="#"> 
+                                           View History 
+                                        </a>
                                     </td>
                                     <td style={{"width":"200px"}} >
                                         <span className="date"> 
@@ -165,6 +172,9 @@ const Progress = () => {
                        <span> rows at a time </span>
                     </div>           
             </Fragment>}
+            <AxisModal isOpen={isHistoryPopup} size="Extra-Large" overlayColor="black" closeModal={()=>setHistoryPopup(false)} >
+               <ActivityHistory />
+            </AxisModal>
     </Fragment>
    )
 }

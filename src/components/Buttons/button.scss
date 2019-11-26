@@ -7,6 +7,20 @@
     border: none;
     border-radius: 20px;
 }
+.axis-button-multi-text{
+    width:100%;
+    background-color:#91214e;
+    height:46px;
+    color:#fff;
+    text-align:center;
+    padding:8px;
+    border-radius:20px;
+    border:none;
+    small{
+      opacity:.5;
+      display:block;
+    }
+}
 .axis-button-outline{
     width: 137px;
     height: 32px;
@@ -15,7 +29,18 @@
     border:2px solid #91214e;
     color: #91214e;
     border-radius: 20px; 
-    border:none; 
+}
+.axis-button-outline-full-size{
+    border:2px solid #91214e;
+    background:#fff;
+    border-radius:15px;
+    padding:6px;
+    text-transform:uppercase;
+    width: 100%;
+    display:block;
+    color:#91214e;
+    text-align:center;
+    font-weight:600;
 }
 .axis-success-button{
     width: 137px;

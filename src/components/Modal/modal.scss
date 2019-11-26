@@ -1,0 +1,101 @@
+.Axis-modal{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    box-sizing:border-box;
+    padding:20px;
+}
+.Axis-modal:focus{
+    outline:none;
+}
+.Axis-modal.Extra-Large{
+    width:1000px;
+    height: 550px;
+}
+.Axis-modal.Large{
+    width: 560px;
+    height: 360px;
+}
+.Axis-modal.Medium{
+    width: 360px;
+    height: 250px;
+}
+.Axis-modal.Small{
+    width: 370px;
+    height: 180px;
+    background:#fff;
+}
+.Axis-modal .close{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border:1px solid #91214e;
+    padding:2px 5px;
+    font-size:14px;
+    color:#91214e;
+    z-index: 2;
+    background:none;
+    border-radius:4px;
+    cursor: pointer;
+}
+.Axis-modal .close:focus{
+    outline:none;
+}
+.Axis-modal{
+    background:#fff;
+    .popup-title{
+       font-size:18px;
+       color:#666;
+       margin-top:0;
+       span.count {
+            background: #787878;
+            color: #fff;
+            font-size: 11px;
+            padding: 1px 7px;
+            border-radius: 3px;
+            margin-left: 5px;
+       }
+    }
+    .grey-text{
+       color:#B3B3B3;
+       font-size:13px;
+    }
+    .full-size-button{
+        width:100%;
+        display:block;
+    }
+    table{
+        width:100%;
+        th{
+          text-align:left;
+          color:#B3B3B3;
+          font-size:14px;
+          font-weight: 500;
+          padding-bottom:5px;
+        }
+        td{
+          color:#666;
+          font-weight:bold;
+        }
+    }
+    button{
+        margin-bottom:15px;
+    }
+}
+.axis-black-overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.axis-transparent-overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0);    
+}

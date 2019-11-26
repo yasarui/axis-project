@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import './button.css';
+import './button.scss';
 
 const Button = (props) => {   
     switch(props.variant){
@@ -7,6 +7,10 @@ const Button = (props) => {
            return (
             <button className="axis-button-outline"> {props.children} </button>
            )
+        case 'outline-full':
+            return (
+            <button className="axis-button-outline-full-size"> {props.children} </button>
+            )
         case 'success':
             return (
              <button className="axis-success-button"> accept </button>
@@ -23,6 +27,10 @@ const Button = (props) => {
            return(
              <button className="axis-disable-button"> No Action </button>
            )
+        case 'axis-multi-line-text':
+            return(
+              <button className="axis-button-multi-text"> {props.children} </button>
+            )
         default :
            return(
             <button className="axis-button"> {props.children} </button>

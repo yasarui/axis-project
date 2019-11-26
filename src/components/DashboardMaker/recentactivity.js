@@ -1,10 +1,24 @@
-import React,{ useState } from 'react';
+import React,{ useState,Fragment,useEffect } from 'react';
 import moment from 'moment';
 import { ProgressBar,SuccessFailureTransactions }  from '../Utils';
+import Modal from 'react-modal';
+import AxisModal from '../Modal';
+import ViewDetails from '../Utils/ViewDetails';
+
+const EmptyTd = () => {
+   return (
+      <div className="empty-td">
+          <span className="empty-td-span"></span>
+      </div>
+   )
+}
+
+
 const RecentActivity = ({data}) => {
    
-   const [ recentData,setRecentData ] = useState(data);
-
+   const [recentData,setRecentData] = useState(data);
+   const [modalIsOpen,setModalIsOpen] = useState(false);
+   
    const sortAssending = (e,key) => {
         let temp = [...recentData];
         temp.sort((a,b)=>{
@@ -25,19 +39,26 @@ const RecentActivity = ({data}) => {
         setRecentData(temp)
    }
 
+   const openViewDetailsModal = () => {
+      console.log("I am inside recent activity ")
+      setModalIsOpen(true);
+      console.log("Modal state is ",modalIsOpen);
+   }
+
    return (
+     <Fragment>
        <table className="fixed-table-header">
           <thead>
              <tr>
-               <th style={{"width":"118px"}} > Batch ID </th>
-               <th style={{"width":"188px"}}> 
+               <th style={{"width":"119px"}} > Batch ID </th>
+               <th style={{"width":"183px"}}> 
                    Staff
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'name')} className="headerSortUp"></span>
                      <span onClick={(e)=>sortDessending(e,'name')} className="headerSortDown"></span>
                    </div>
               </th>
-               <th style={{"width":"159px"}}> 
+               <th style={{"width":"156px"}}> 
                    Created
                    <div className="sortIconsWrapper">
                      <span  onClick={(e)=>sortAssending(e,'created')} className="headerSortUp"></span>
@@ -58,7 +79,7 @@ const RecentActivity = ({data}) => {
                      <span onClick={(e)=>sortDessending(e,'putOnHold')} className="headerSortDown"></span>
                    </div>
                </th>
-               <th style={{"width":"159px"}}> 
+               <th style={{"width":"162px"}}> 
                    Rejected
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'rejected')} className="headerSortUp"></span>
@@ -86,17 +107,37 @@ const RecentActivity = ({data}) => {
                       <td style={{"width":"202px"}} > 
                          {item.name} 
                       </td>
-                      <td style={{"width":"157px"}}> 
-                      {(index % 2 == 0)?  <ProgressBar width={`${(index)}0`} /> :  <SuccessFailureTransactions /> }
+                      <td style={{"width":"157px"}}>
+                        {(index % 2 == 0)?  <ProgressBar width={`${(index)}0`} /> :  <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)}  /> }
                       </td>
                       <td style={{"width":"157px"}}> 
-                      ₹{item.accepted} <a className="view-details" href="#"> View Transactions </a>
+                         { index < 3 ? ( <EmptyTd /> ) : 
+                            ( (index % 2 == 0 ) ? <td></td> : <Fragment> 
+                               <bold> XX </bold> 
+                               <span className="amount">(₹{item.accepted})</span> 
+                               <a className="view-details" href="#"> View Transactions </a>  
+                            </Fragment>)
+                         }
                       </td>
                       <td style={{"width":"157px"}}> 
-                      ₹{item.putOnHold} <a className="view-details" href="#"> View Transactions </a>
+                         {
+                           index < 3 ? (<EmptyTd />) : 
+                             ( (index % 3 == 0) ? <td></td> : <Fragment>
+                                <bold> XX </bold> 
+                                <span className="amount">(₹{item.putOnHold})</span> 
+                                <a className="view-details" href="#"> View Transactions </a>         
+                             </Fragment>)
+                         }
                       </td>
                       <td style={{"width":"157px"}} > 
-                      ₹{item.rejected} <a className="view-details" href="#"> View Transactions </a>
+                        {
+                          index < 3 ? (<EmptyTd />) :
+                             ((index % 4 == 0 ) ? <td></td> : <Fragment>
+                                <bold> XX </bold> 
+                                <span className="amount">(₹{item.rejected})</span> 
+                                <a className="view-details" href="#"> View Transactions </a>          
+                             </Fragment>)
+                        }
                       </td>
                       <td style={{"width":"222px"}} > 
                          <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
@@ -107,6 +148,10 @@ const RecentActivity = ({data}) => {
               })} 
           </tbody>
        </table>
+       <AxisModal isOpen={modalIsOpen} size="Medium" closeModal={()=>setModalIsOpen(false)}> 
+            <ViewDetails />
+       </AxisModal>
+     </Fragment>
    )
 }
 
