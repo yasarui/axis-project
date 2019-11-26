@@ -60,7 +60,7 @@ class BatchTable extends React.Component{
                   <th style={{"width":"181px"}}> Actions </th>
                 </tr>
              </thead>
-             <tbody style={{"height":"300px"}} >
+             <tbody style={{"height":"300px"}} className="tbody-shadow" >
                  {this.state.data.map((item,index)=>{
                     return(
                        <tr>

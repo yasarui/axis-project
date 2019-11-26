@@ -17,7 +17,7 @@ const Checker = () => {
             <Dashboard />
         </TabPanel>
         <TabPanel>
-            <Initiate />
+            <Dashboard tab={true} />
         </TabPanel>
         <TabPanel>
             <Enquire />

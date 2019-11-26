@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import './dashboard.scss';
 import { NavLink } from 'react-router-dom';
 import Progress from './Progress';
+import ProgressEmpty from './ProgressEmpty';
 import AdminMessagesData from '../fixture/maker_admin_alerts.json';
 import RecentActivityData from '../fixture/maker_recent_activity.json';
 import AdminAlerts from '../AdminAlerts';
@@ -9,7 +10,7 @@ import RecentActivity from './recentactivity';
 import { useHistory } from "react-router-dom";
 import moment from 'moment';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
 
     const [showTab,setShowTab] = useState(false)
 
@@ -34,8 +35,8 @@ const Dashboard = () => {
               Last updated { lastUpdatedTime } <i class="fas fa-redo"></i> 
            </p>
            <h2 className="sub-heading" > PENDING </h2>
-           <div className="checker-dashboard-progress-wrapper" >
-              <Progress />
+           <div className="checker-dashboard-progress-wrapper">
+              { (props.tab) ? <Progress /> : <ProgressEmpty/> }
            </div>
            <h2 className="sub-heading"  > RECENT ACTIVITY </h2>
            <RecentActivity data={RecentActivityData.data} />

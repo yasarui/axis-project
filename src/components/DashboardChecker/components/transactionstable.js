@@ -65,7 +65,7 @@ class TransactionsTable extends React.Component{
                   <th> Actions </th>
                 </tr>
              </thead>
-             <tbody>
+             <tbody className="tbody-shadow">
                 {this.state.data.map((item,index)=>{
                     return(
                       <tr>

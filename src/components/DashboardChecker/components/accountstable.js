@@ -51,7 +51,7 @@ class AccountsTable extends React.Component{
                         <th> Action </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="tbody-shadow" >
                         {this.state.data.map((item,index)=>{
                             return(
                             <tr>
