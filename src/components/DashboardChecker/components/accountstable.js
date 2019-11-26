@@ -17,49 +17,50 @@ class AccountsTable extends React.Component{
     render(){
        return(
           <Fragment>
-                <table className="has-bottom">
+                <table className="has-bottom fixed-table-header">
                     <thead style={{"borderBottom":"1px solid #e7e7e7"}} >
                         <tr>
-                        <th> 
+                        <th style={{"width":"252px"}} > 
                             Debit Account 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th> 
+                        <th style={{"width":"219px"}} > 
                             Debit Account Name 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th> 
+                        <th style={{"width":"192px"}} > 
                             Current Balance 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th> 
+                        <th style={{"width":"239px"}} > 
                             Amount Under Approval 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th> Action </th>
+                        <th style={{"width":"245px"}} > Action </th>
                         </tr>
                     </thead>
-                    <tbody className="tbody-shadow" >
+                    <tbody style={{"height":"300px"}} className="tbody-shadow" >
                         {this.state.data.map((item,index)=>{
                             return(
                             <tr>
-                                <td> <i class="fas fa-eye icon"></i> {item.account_number} </td>
-                                <td> {item.name} </td>
-                                <td> ₹​{item.amount} </td>
-                                <td> ₹​{item.amount} </td>
-                                <td> <Button variant={item.button} > {item.button} </Button> </td>
+                                <td style={{"width":"274px"}} > 
+                                    <i class="fas fa-eye icon"></i> {item.account_number}</td>
+                                <td style={{"width":"215px"}}> {item.name} </td>
+                                <td style={{"width":"181px"}}> ₹​{item.amount} </td>
+                                <td style={{"width":"245px"}}> ₹​{item.amount} </td>
+                                <td style={{"width":"245px"}} > <Button variant={item.button} > {item.button} </Button> </td>
                             </tr>
                             )
                         })}

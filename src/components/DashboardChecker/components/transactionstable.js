@@ -17,63 +17,65 @@ class TransactionsTable extends React.Component{
     render(){
        return(
         <Fragment>
-          <table>
+          <table className="fixed-table-header">
              <thead>
                 <tr>
-                  <th> 
+                  <th style={{"width":"189px"}} > 
                       Column
                       <div className="sortIconsWrapper">
                           <span className="headerSortUp"></span>
                           <span className="headerSortDown"></span>
                       </div> 
                   </th>
-                  <th> 
+                  <th style={{"width":"170px"}}> 
                        Column 
                        <div className="sortIconsWrapper">
                           <span className="headerSortUp"></span>
                           <span className="headerSortDown"></span>
                       </div>
                   </th>
-                  <th> 
+                  <th style={{"width":"160px"}} > 
                       Column 
                       <div className="sortIconsWrapper">
                           <span className="headerSortUp"></span>
                           <span className="headerSortDown"></span>
                       </div>                
                   </th>
-                  <th> 
+                  <th style={{"width":"160px"}}> 
                       Column
                       <div className="sortIconsWrapper">
                           <span className="headerSortUp"></span>
                           <span className="headerSortDown"></span>
                       </div> 
                   </th>
-                  <th> 
+                  <th style={{"width":"158px"}} > 
                       Column 
                       <div className="sortIconsWrapper">
                           <span className="headerSortUp"></span>
                           <span className="headerSortDown"></span>
                       </div>
                   </th>
-                  <th> 
+                  <th style={{"width":"161px"}} > 
                       Column 
                       <div className="sortIconsWrapper">
                           <span className="headerSortUp"></span>
                           <span className="headerSortDown"></span>
                       </div>
                   </th>
-                  <th> Actions </th>
+                  <th style={{"width":"170px"}} > Actions </th>
                 </tr>
              </thead>
-             <tbody className="tbody-shadow">
+             <tbody style={{"height":"300px"}} className="tbody-shadow">
                 {this.state.data.map((item,index)=>{
                     return(
                       <tr>
-                         <td> <button className="axis-success-button"> accept </button> </td>
-                         <td> XXXXX </td>
-                         <td></td>
-                         <td></td>
-                         <td></td>
+                         <td style={{"width":"150px"}} > <button className="axis-success-button"> accept </button> </td>
+                         <td style={{"width":"170px"}}> XXXXX </td>
+                         <td style={{"width":"170px"}}></td>
+                         <td style={{"width":"170px"}}></td>
+                         <td style={{"width":"170px"}}></td>
+                         <td style={{"width":"170px"}}></td>
+                         <td style={{"width":"170px"}}></td>
                       </tr>
                     )
                 })}
