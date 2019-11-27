@@ -8,3 +8,20 @@
       border-bottom-left-radius: 0 !important;
     }
 }
+
+.transactions-tab-filter{
+   width:100%;
+   display:flex;
+   background:#fff;
+   section{
+     width:25%;
+     font-size:14px;
+     box-sizing:border-box;
+     padding-left:10px;
+     
+     label{
+       color:#B3B3B3;
+       font-size:12px;
+     }
+   }
+}

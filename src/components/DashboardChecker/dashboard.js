@@ -36,7 +36,7 @@ const Dashboard = (props) => {
            </p>
            <h2 className="sub-heading" > PENDING </h2>
            <div className="checker-dashboard-progress-wrapper">
-              { (props.tab) ? <Progress /> : <ProgressEmpty/> }
+              { (props.tab) ? <Progress /> : <ProgressEmpty setTabIndex={props.setTabIndex} /> }
            </div>
            <h2 className="sub-heading"  > RECENT ACTIVITY </h2>
            <RecentActivity data={RecentActivityData.data} />

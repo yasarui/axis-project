@@ -12,21 +12,21 @@ const Progress = () => {
    return(
     <Tabs>
         <TabList>
-            <div className={"progress-tiles-wrapper "+(showTab ? 'show-tab':'')}>
+            <div className="progress-tiles-wrapper">
                 <Tab>
-                    <div className="progress-tile" onClick={()=>setShowTab(true)} >
+                    <div className="progress-tile">
                         <span className="text"> BATCHES </span>
                         <span className="count"> 15 </span>
                     </div>
                 </Tab>
                 <Tab>
-                    <div className="progress-tile" onClick={()=>setShowTab(true)} >
+                    <div className="progress-tile">
                         <span className="text"> ACCOUNTS </span>
                         <span className="count"> 3 </span>              
                     </div>
                 </Tab>
                 <Tab>
-                    <div className="progress-tile" onClick={()=>setShowTab(true)} >
+                    <div className="progress-tile">
                         <span className="text"> TRANSACTIONS </span>
                         <span className="count"> 1300 </span>              
                     </div>
@@ -34,13 +34,13 @@ const Progress = () => {
             </div>
         </TabList>
         <TabPanel>
-            {showTab && <BatchesTable /> }
+            <BatchesTable />
         </TabPanel>
         <TabPanel>
-            { showTab && <AccountsTable/> }
+            <AccountsTable/> 
         </TabPanel>
         <TabPanel>
-            { showTab && <TransactionsTable /> }
+            <TransactionsTable />
         </TabPanel>
     </Tabs>
    )

@@ -7,7 +7,8 @@
       "lastDate": "2018-02-14T04",
       "pending": "XX",
       "amount": "1,130.93",
-      "button":"success"
+      "button":"success",
+      "iconClr":"green-clr"
     },
     {
       "_id": "5dc809781d87f82a0dfc0377",
@@ -16,7 +17,8 @@
       "lastDate": "2016-10-11T11",
       "pending": "XX",
       "amount": "3,562.83",
-      "button":"success"
+      "button":"success",
+      "iconClr":"green-clr"
     },
     {
       "_id": "5dc809789ea2b2182ce2fc77",
@@ -25,7 +27,8 @@
       "lastDate": "2018-01-29T07",
       "pending": "XX",
       "amount": "1,222.87",
-      "button":"warning"
+      "button":"warning",
+      "iconClr":"orange-clr"
     },
     {
       "_id": "5dc80978a171fcc1e3006d93",
@@ -34,7 +37,8 @@
       "lastDate": "2018-09-14T09",
       "pending": "XX",
       "amount": "2,741.91",
-      "button":"danger"
+      "button":"danger",
+      "iconClr":"red-clr"
     },
     {
       "_id": "5dc80978896cd6f2530a6467",
@@ -43,7 +47,8 @@
       "lastDate": "2018-07-04T03",
       "pending": "XX",
       "amount": "3,594.72",
-      "button":"warning"
+      "button":"warning",
+      "iconClr":"orange-clr"
     },
     {
       "_id": "5dc80978b29ef15c2730e3ea",
@@ -52,7 +57,8 @@
       "lastDate": "2014-11-28T09",
       "pending": "XX",
       "amount": "1,312.27",
-      "button":"danger"
+      "button":"danger",
+      "iconClr":"red-clr"
     },
     {
       "_id": "5dc8097800b90841dd6ee995r",
@@ -61,7 +67,8 @@
       "lastDate": "2014-03-30T07",
       "pending": "XX",
       "amount": "1,299.14",
-      "button":"warning"
+      "button":"warning",
+      "iconClr":"orange-clr"
     },
     {
       "_id": "5dc80978ada777a522b9910f",
@@ -70,7 +77,8 @@
       "lastDate": "2018-05-08T07",
       "pending": "XX",
       "amount": "3,968.82",
-      "button":"danger"
+      "button":"danger",
+      "iconClr":"red-clr"
     },
     {
       "_id": "5dc80978b2f89e2a74e0c080",
@@ -79,7 +87,8 @@
       "lastDate": "2016-10-02T08",
       "pending": "XX",
       "amount": "1,330.23",
-      "button":"success"
+      "button":"success",
+      "iconClr":"green-clr"
     },
     {
       "_id": "5dc80978fd5cda55dd2c565d",
@@ -88,7 +97,8 @@
       "lastDate": "2019-04-12T04",
       "pending": "XX",
       "amount": "3,879.69",
-      "button":"disable"
+      "button":"disable",
+      "iconClr":"grey-clr"
     },
     {
       "_id": "5dc80978ffeb5803719e183f",
@@ -97,7 +107,8 @@
       "lastDate": "2016-02-25T07",
       "pending": "XX",
       "amount": "2,471.07",
-      "button":"success"
+      "button":"success",
+      "iconClr":"green-clr"
     },
     {
       "_id": "5dc80978f44add5a4127f4d9",
@@ -106,7 +117,8 @@
       "lastDate": "2018-05-12T10",
       "pending": "XX",
       "amount": "2,251.87",
-      "button":"success"
+      "button":"success",
+      "iconClr":"green-clr"
     }
   ]
 }

@@ -164,7 +164,7 @@ body{
         }
       }
       
-      .progress-tiles-wrapper.show-tab {
+      .progress-tiles-wrapper {
           .react-tabs__tab--selected .progress-tile{
             background-color:#fff;
             color:#4A4A4A;
@@ -262,9 +262,16 @@ body{
         i.icon{
           color:#98144E
         }
+
+        .small-icon{
+          font-size:10px;
+          margin-left:10px;
+        }
+
         .textalign-right{
           text-align: right;
         }
+        
         a.view-details{
            display: block;
            font-size:11px;

@@ -17,6 +17,32 @@ class TransactionsTable extends React.Component{
     render(){
        return(
         <Fragment>
+          <div className="transactions-tab-filter" >
+              <section>
+                  <label> View </label>
+                  <select>
+                      <option value="default" > Default </option>
+                   </select>
+              </section>
+              <section>
+                 <p> <label> Date range </label>
+                 <bold> dd-mm-yyyy </bold>
+                 <label> to </label>
+                 <bold> dd-mm-yyyy </bold> </p>
+              </section>
+              <section>
+                  <label> Account Number </label>
+                  <select>
+                      <option> XXXX XXXX XXXX </option>
+                  </select>
+              </section>
+              <section>
+                  <label> Payment Method </label>
+                  <select>
+                      <option> ePayment @ Cheque </option>
+                  </select>
+              </section>              
+          </div>
           <table className="fixed-table-header">
              <thead>
                 <tr>

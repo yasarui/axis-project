@@ -1,17 +1,17 @@
 import React from 'react';
 
-const ProgressEmpty = () => {
+const ProgressEmpty = (props) => {
    return (
       <div className="progress-tiles-wrapper">
-            <div className="progress-tile">
+            <div className="progress-tile" onClick={()=>props.setTabIndex(1)} >
                 <span className="text"> BATCHES </span>
                 <span className="count"> 15 </span>
             </div> 
-            <div className="progress-tile">
+            <div className="progress-tile" onClick={()=>props.setTabIndex(1)}>
                 <span className="text"> ACCOUNTS </span>
                 <span className="count"> 3 </span>              
             </div>   
-            <div className="progress-tile">
+            <div className="progress-tile" onClick={()=>props.setTabIndex(1)}>
                 <span className="text"> TRANSACTIONS </span>
                 <span className="count"> 1300 </span>              
              </div>    

@@ -87,8 +87,12 @@ class BatchTable extends React.Component{
                                   {moment(item.lastDate).format('h:mm:ss a')} 
                             </span>  
                           </td>
-                          <td style={{"width":"164px"}} className="textalign-right"> {item.pending} </td>
-                          <td style={{"width":"191px"}}> ₹​{item.amount} </td>
+                          <td style={{"width":"164px"}} className="textalign-right"> 
+                             {item.pending} 
+                          </td>
+                          <td style={{"width":"191px"}}> ₹​{item.amount} 
+                              <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
+                          </td>
                           <td style={{"width":"181px"}}> <Button variant={item.button} > Accept </Button> </td>
                        </tr>
                     )
@@ -103,16 +107,16 @@ class BatchTable extends React.Component{
                         <td style={{"width":"125px"}}></td>
                         <td style={{"width":"159px"}}></td>
                         <td style={{"width":"90px"}} > 
-                            <span className="green-clr" > XXXX </span>
-                            <span className="orange-clr" > XX </span>
+                            <span className="green-clr"> XXXX  </span> 
+                            <span className="orange-clr"> XX  </span>
                             <span className="red-clr"> XX </span>
-                            <span className="grey-clr" > X </span>
+                            <span className="grey-clr"> X </span>
                         </td>
                         <td style={{"width":"122px"}} >
-                            <span className="green-clr" > ₹ XX,XX,XXX </span>
-                            <span className="orange-clr"> ₹ XX,XXX </span>
-                            <span className="red-clr"> ₹ XX,XXX </span>
-                            <span className="grey-clr"> ₹ X,XXX </span>
+                            <span className="green-clr" > ₹ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+                            <span className="orange-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+                            <span className="red-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+                            <span className="grey-clr"> ₹ X,XXX <i class="fas fa-circle small-icon"></i> </span>
                         </td>
                         <td> 
                             <Button> AUTHORISE </Button>

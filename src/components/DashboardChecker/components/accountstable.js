@@ -58,8 +58,20 @@ class AccountsTable extends React.Component{
                                 <td style={{"width":"274px"}} > 
                                     <i class="fas fa-eye icon"></i> {item.account_number}</td>
                                 <td style={{"width":"215px"}}> {item.name} </td>
-                                <td style={{"width":"181px"}}> ₹​{item.amount} </td>
-                                <td style={{"width":"245px"}}> ₹​{item.amount} </td>
+                                <td style={{"width":"181px"}}> 
+                                  ₹​{item.amount} &nbsp;&nbsp;
+                                  {(item.button == "danger") ?                                   <span className="red-clr"> 
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                  </span> : 
+                                  <span className="green-clr"> 
+                                    <i class="far fa-check-circle"></i> 
+                                  </span> }
+
+                                </td>
+                                <td style={{"width":"245px"}}> 
+                                    ₹​{item.amount} 
+                                    <span className={item.iconClr}> <i class="fas fa-circle small-icon"></i> </span> 
+                                </td>
                                 <td style={{"width":"245px"}} > <Button variant={item.button} > {item.button} </Button> </td>
                             </tr>
                             )
@@ -72,13 +84,13 @@ class AccountsTable extends React.Component{
                          <td style={{"width":"233px"}} ></td>
                          <td style={{"width":"174px"}}></td>
                          <td style={{"width":"140px"}} >
-                            <span> Sufficient 2 </span>
-                            <span> Insufficient 1 </span> 
+                            <span> Sufficient 4 <i class="far fa-check-circle green-clr"></i> </span>
+                            <span> Insufficient 2  <i class="fas fa-exclamation-triangle red-clr"></i> </span> 
                          </td>
                          <td style={{"width":"204px"}} >
-                            <span className="green-clr" > ₹​ XX,XX,XXX </span>
-                            <span className="orange-clr"> ₹​ XX,XXX </span>
-                            <span className="red-clr"> ₹​ XX,XXX </span> 
+                            <span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+                            <span className="orange-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+                            <span className="red-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span> 
                          </td>
                          <td>
                             <Button> AUTHORISE </Button>                             
