@@ -32,10 +32,10 @@ const Dashboard = (props) => {
                 </select>
            </div>
            <p className="last-updated-time" > 
-              Last updated { lastUpdatedTime } <i class="fas fa-redo"></i> 
+              <span>Last updated</span> { lastUpdatedTime } <i class="fas fa-redo"></i> 
            </p>
            <h2 className="sub-heading" > PENDING </h2>
-           <div className="checker-dashboard-progress-wrapper">
+           <div className="checker-dashboard-progress-wrapper clearfix">
               { (props.tab) ? <Progress /> : <ProgressEmpty setTabIndex={props.setTabIndex} /> }
            </div>
            <h2 className="sub-heading"  > RECENT ACTIVITY </h2>

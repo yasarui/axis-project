@@ -47,7 +47,8 @@ const RecentActivity = ({data}) => {
 
    return (
      <Fragment>
-       <table className="fixed-table-header">
+        <div className="table-wrap">
+          <table className="fixed-table-header">
           <thead>
              <tr>
                <th style={{"width":"119px"}} > Batch ID </th>
@@ -148,6 +149,7 @@ const RecentActivity = ({data}) => {
               })} 
           </tbody>
        </table>
+       </div>
        <AxisModal isOpen={modalIsOpen} size="Medium" closeModal={()=>setModalIsOpen(false)}> 
             <ViewDetails />
        </AxisModal>
