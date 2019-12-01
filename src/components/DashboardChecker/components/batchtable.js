@@ -18,88 +18,89 @@ class BatchTable extends React.Component{
     render(){
       return(
          <Fragment>
-           <table className="fixed-table-header has-bottom">
-             <thead>
-                <tr>
-                  <th style={{"width":"113px"}}> Batch ID </th>
-                  <th style={{"width":"184px"}}> 
-                     Created
-                     <div className="sortIconsWrapper">
-                          <span className="headerSortUp"></span>
-                          <span className="headerSortDown"></span>
-                      </div>
-                  </th>
-                  <th style={{"width":"164px"}}> 
-                     Last action 
+          <div className="table-wrap">
+            <table className="fixed-table-header has-bottom">
+              <thead>
+                  <tr>
+                    <th style={{"width":"113px"}}> Batch ID </th>
+                    <th style={{"width":"184px"}}> 
+                      Created
                       <div className="sortIconsWrapper">
-                          <span className="headerSortUp"></span>
-                          <span className="headerSortDown"></span>
-                      </div>
-                  </th>
-                  <th style={{"width":"201px"}}> 
-                      Last action date 
-                      <div className="sortIconsWrapper">
-                          <span className="headerSortUp"></span>
-                          <span className="headerSortDown"></span>
-                      </div>
-                  </th>
-                  <th style={{"width":"133px"}}> 
-                      Transactions Pending 
-                      <div className="sortIconsWrapper">
-                          <span className="headerSortUp"></span>
-                          <span className="headerSortDown"></span>
-                      </div>
-                  </th>
-                  <th style={{"width":"165px"}}> 
-                       Amount Pending approval
-                       <div className="sortIconsWrapper">
-                          <span className="headerSortUp"></span>
-                          <span className="headerSortDown"></span>
-                      </div>
-                  </th>
-                  <th style={{"width":"181px"}}> Actions </th>
-                </tr>
-             </thead>
-             <tbody style={{"height":"300px"}} className="tbody-shadow" >
-                 {this.state.data.map((item,index)=>{
-                    return(
-                       <tr>
-                          <td style={{"width":"101px"}} >  
-                              <i class="fas fa-eye icon"></i> {item._id.substr(1,5)} 
-                          </td>
-                          <td style={{"width":"162px"}} >  
+                            <span className="headerSortUp"></span>
+                            <span className="headerSortDown"></span>
+                        </div>
+                    </th>
+                    <th style={{"width":"164px"}}> 
+                      Last action 
+                        <div className="sortIconsWrapper">
+                            <span className="headerSortUp"></span>
+                            <span className="headerSortDown"></span>
+                        </div>
+                    </th>
+                    <th style={{"width":"201px"}}> 
+                        Last action date 
+                        <div className="sortIconsWrapper">
+                            <span className="headerSortUp"></span>
+                            <span className="headerSortDown"></span>
+                        </div>
+                    </th>
+                    <th style={{"width":"133px"}}> 
+                        Transactions Pending 
+                        <div className="sortIconsWrapper">
+                            <span className="headerSortUp"></span>
+                            <span className="headerSortDown"></span>
+                        </div>
+                    </th>
+                    <th style={{"width":"165px"}}> 
+                        Amount Pending approval
+                        <div className="sortIconsWrapper">
+                            <span className="headerSortUp"></span>
+                            <span className="headerSortDown"></span>
+                        </div>
+                    </th>
+                    <th style={{"width":"181px"}}> Actions </th>
+                  </tr>
+              </thead>
+              <tbody style={{"height":"300px"}} className="tbody-shadow" >
+                  {this.state.data.map((item,index)=>{
+                      return(
+                        <tr>
+                            <td style={{"width":"101px"}} >  
+                                <i class="fas fa-eye icon"></i> {item._id.substr(1,5)} 
+                            </td>
+                            <td style={{"width":"162px"}} >  
+                              <span className="date" > 
+                                    {moment(item.date).format('dddd DD-MM-YY')} 
+                              </span>
+                              <span className="time"> 
+                                    {moment(item.date).format('h:mm:ss a')} 
+                              </span>   
+                            </td>
+                            <td style={{"width":"177px"}} > 
+                                {item.name}
+                                <a class="view-details" href="#"> View Transactions </a>
+                            </td>
+                            <td style={{"width":"180px"}} > 
                             <span className="date" > 
-                                  {moment(item.date).format('dddd DD-MM-YY')} 
-                            </span>
-                            <span className="time"> 
-                                  {moment(item.date).format('h:mm:ss a')} 
-                            </span>   
-                          </td>
-                          <td style={{"width":"177px"}} > 
-                              {item.name}
-                              <a class="view-details" href="#"> View Transactions </a>
-                          </td>
-                          <td style={{"width":"180px"}} > 
-                           <span className="date" > 
-                                  {moment(item.lastDate).format('dddd DD-MM-YY')} 
-                            </span>
-                            <span className="time"> 
-                                  {moment(item.lastDate).format('h:mm:ss a')} 
-                            </span>  
-                          </td>
-                          <td style={{"width":"164px"}} className="textalign-right"> 
-                             {item.pending} 
-                          </td>
-                          <td style={{"width":"191px"}}> ₹​{item.amount} 
-                              <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
-                          </td>
-                          <td style={{"width":"181px"}}> <Button variant={item.button} > Accept </Button> </td>
-                       </tr>
-                    )
-                 })}
-             </tbody>
-           </table>
-           <table className="bottom-table">
+                                    {moment(item.lastDate).format('dddd DD-MM-YY')} 
+                              </span>
+                              <span className="time"> 
+                                    {moment(item.lastDate).format('h:mm:ss a')} 
+                              </span>  
+                            </td>
+                            <td style={{"width":"164px"}} className="textalign-right"> 
+                              {item.pending} 
+                            </td>
+                            <td style={{"width":"191px"}}> ₹​{item.amount} 
+                                <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
+                            </td>
+                            <td style={{"width":"181px"}}> <Button variant={item.button} > Accept </Button> </td>
+                        </tr>
+                      )
+                  })}
+              </tbody>
+            </table>
+            <table className="bottom-table">
                 <tbody>
                     <tr>
                         <td style={{"width":"73px"}} ></td>
@@ -124,6 +125,7 @@ class BatchTable extends React.Component{
                     </tr>
                 </tbody>
             </table>
+          </div>
          </Fragment>
       )
     }

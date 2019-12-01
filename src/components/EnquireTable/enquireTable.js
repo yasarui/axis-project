@@ -49,20 +49,7 @@ class EnquireTable extends Component {
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
-            </ul>
-          </div>
-          <div className="avliable-column-list even-row clearfix">
-            <ul>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-              <li>Column</li>
-            </ul>
-          </div>
-          <div className="avliable-column-list clearfix">
-            <ul>
+              <li className="even-row">Column</li>
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
@@ -70,10 +57,13 @@ class EnquireTable extends Component {
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
-            </ul>
-          </div>
-          <div className="avliable-column-list even-row clearfix">
-            <ul>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li>Column</li>
+              <li className="even-row">Column</li>
               <li>Column</li>
               <li>Column</li>
               <li>Column</li>
@@ -106,95 +96,97 @@ class EnquireTable extends Component {
         </div>
         <div className="custom-filter-table-wrap">
           <div className="custom-filter-table">
-            <table className="fixed-table-header">
-              <tbody>
-                <tr>
-                  <td className="column-name">Column</td>
-                  <td className="column-data form-group">
-                    <div className="date-formate">
-                      <label>From</label>
-                      <input type="text" placeholder="dd-mm-yyyy" />
-                    </div>
-                    <div className="date-formate form-group">
-                      <label>To</label>
-                      <input type="text" placeholder="dd-mm-yyyy" />
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="column-name">Column</td>
-                  <td className="column-data">
-                    <div className="form-group tag-input">
-                      <input type="text" />
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="column-name">Column</td>
-                  <td className="column-data">
-                    <div className="form-group tag-input">
-                      <input type="text" />
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="column-name">Column</td>
-                  <td className="column-data">
-                    <div className="form-group tag-input">
-                      <select>
-                        <option>Select</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="column-name">Column</td>
-                  <td className="column-data">
-                    <div className="custom-radio-btn clearfix">
-                      <label class="radio-button-wrap">Selected
-                        <input type="radio" name="radio" checked="checked" />
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="radio-button-wrap">Unselected
-                        <input type="radio" name="radio" />
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="radio-button-wrap">Unselected
-                        <input type="radio"  name="radio" />
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="radio-button-wrap">Unselected
-                        <input type="radio"  name="radio" />
-                        <span class="checkmark"></span>
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="column-name">Column</td>
-                  <td className="column-data">
-                    <div className="custom-checkbox clearfix">
-                      <label class="checkbox-wrap">Selected
-                        <input type="checkbox" checked="checked" />
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="checkbox-wrap">Unselected
-                        <input type="checkbox" />
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="checkbox-wrap">Unselected
-                        <input type="checkbox" />
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="checkbox-wrap">Unselected
-                        <input type="checkbox"  />
-                        <span class="checkmark"></span>
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table-wrap">
+              <table className="fixed-table-header">
+                <tbody>
+                  <tr>
+                    <td className="column-name">Column</td>
+                    <td className="column-data form-group">
+                      <div className="date-formate">
+                        <label>From</label>
+                        <input type="text" placeholder="dd-mm-yyyy" />
+                      </div>
+                      <div className="date-formate form-group">
+                        <label>To</label>
+                        <input type="text" placeholder="dd-mm-yyyy" />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="column-name">Column</td>
+                    <td className="column-data">
+                      <div className="form-group tag-input">
+                        <input type="text" />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="column-name">Column</td>
+                    <td className="column-data">
+                      <div className="form-group tag-input">
+                        <input type="text" />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="column-name">Column</td>
+                    <td className="column-data">
+                      <div className="form-group tag-input">
+                        <select>
+                          <option>Select</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="column-name">Column</td>
+                    <td className="column-data">
+                      <div className="custom-radio-btn clearfix">
+                        <label class="radio-button-wrap">Selected
+                          <input type="radio" name="radio" checked="checked" />
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-button-wrap">Unselected
+                          <input type="radio" name="radio" />
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-button-wrap">Unselected
+                          <input type="radio"  name="radio" />
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-button-wrap">Unselected
+                          <input type="radio"  name="radio" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="column-name">Column</td>
+                    <td className="column-data">
+                      <div className="custom-checkbox clearfix">
+                        <label class="checkbox-wrap">Selected
+                          <input type="checkbox" checked="checked" />
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-wrap">Unselected
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-wrap">Unselected
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-wrap">Unselected
+                          <input type="checkbox"  />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
         <div className="custom-filter-button clearfix">
@@ -308,109 +300,111 @@ class EnquireTable extends Component {
         <div className="enquire-table-filter">
           {filterData}
         </div>
-        <table className="fixed-table-header">
-          <tbody>
-            <tr className="table-head">
-              {checkerHeading}
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-              <td style={{ "width": "120px" }} >Column</td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-            <tr>
-              {checkerTableData}
-              <td style={{ "width": "120px" }} >XXXXX</td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-              <td style={{ "width": "120px" }} ></td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="table-wrap">
+          <table className="fixed-table-header">
+            <tbody>
+              <tr className="table-head">
+                {checkerHeading}
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+                <td style={{ "width": "120px" }} >Column</td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+              <tr>
+                {checkerTableData}
+                <td style={{ "width": "120px" }} >XXXXX</td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+                <td style={{ "width": "120px" }} ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     )
   }

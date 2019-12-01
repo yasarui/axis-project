@@ -31,10 +31,10 @@ const AdminAlerts = ({messages}) => {
         <table className="admin-alerts-table fixed-table-header">
            <thead>
               <tr>
-                <th style={{"width":"84.15%"}}> 
+                <th className="head-message">
                    Message
                 </th>
-                <th style={{"width":"10%"}}> 
+                <th className="head-date">
                   <div className="sortIconsWrapper">
                      <span className="headerSortUp" onClick={()=>sortTableAssending()} ></span>
                      <span className="headerSortDown" onClick={()=>sortTableDesending()} ></span>
@@ -47,8 +47,8 @@ const AdminAlerts = ({messages}) => {
               {adminMessages.map((item,index)=>{
                  return(
                     <tr>
-                      <td style={{"width":"90%"}} > {item.message} </td>
-                      <td style={{"width":"10%"}}> 
+                      <td className="body-message"> {item.message} </td>
+                      <td className="body-date">
                          <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
                          <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>
                       </td>
