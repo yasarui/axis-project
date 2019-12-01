@@ -8,18 +8,23 @@ class Checker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hideMenu: false
+      hideMenu: false,
+      tabIndex:0
     }
-    const [tabIndex,setTabIndex] = useState(0);
+    //sconst [tabIndex,setTabIndex] = useState(0);
   }
 
   hideMenu = () => {
     this.props.callbackFromChecker(false);
   }
 
+  handleTabSelect = (index) => {
+    this.setState({tabIndex:index})
+  }
+
   render() {
    return(
-    <Tabs className="main-layout" selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex(tabIndex) }>
+    <Tabs className="main-layout" selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex:tabIndex}) }>
       <div className={"sidebar " + (this.props.hideMenuChecker ? "open" : "")}>
         <div class="sidebar-menu">
           <span onClick={this.hideMenu} className="mobile-menu-close"><i class="fas fa-times"></i></span>
@@ -32,7 +37,7 @@ class Checker extends Component {
       </div>
         <div className="content-section">
         <TabPanel>
-            <Dashboard setTabIndex={setTabIndex} />
+            <Dashboard setTabIndex={this.handleTabSelect} />
         </TabPanel>
         <TabPanel>
             <Dashboard tab={true} />
