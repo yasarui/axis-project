@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Upload from '../../Upload';
 import './payment.scss';
+import RouteSelect from '../../Utils/RouteSelect';
 
 class UploadPayment extends Component {
 
@@ -70,13 +71,7 @@ class UploadPayment extends Component {
       <div className="upload-payment">
         <div className="payment-header">
           <h2>Upload Payments</h2>
-          <div className="viewing">
-            Viewing as
-            <select>
-              <option>Marker</option>
-              <option>Checker</option>
-            </select>
-          </div>
+          <RouteSelect />
         </div>
         <div className="new-upload">
           <h3>New Upload</h3>

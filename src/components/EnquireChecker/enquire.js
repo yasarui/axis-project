@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './enquire.css';
 import EnquireFilter from '../EnquireFilter';
 import EnquireTable from '../EnquireTable';
+import RouteSelect from '../Utils/RouteSelect'
 
 class Enquire extends Component {
   constructor(props) {
@@ -12,13 +13,7 @@ class Enquire extends Component {
     return (
       <div>
         <div className="payment-header">
-          <div className="viewing">
-            Viewing as
-            <select>
-              <option>Marker</option>
-              <option>Checker</option>
-            </select>
-          </div>
+          <RouteSelect />
         </div>
         <EnquireFilter />
         <EnquireTable pageType="checker" tabType="standard"/>

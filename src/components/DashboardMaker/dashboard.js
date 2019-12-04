@@ -7,28 +7,17 @@ import AdminMessagesData from "../fixture/maker_admin_alerts.json";
 import RecentActivityData from "../fixture/maker_recent_activity.json";
 import RecentActivity from "./recentactivity";
 import SelectDropDown from "./selectDropDown";
+import RouteSelect from '../Utils/RouteSelect';
 import { useHistory } from "react-router-dom";
 import moment from 'moment';
 
 const Dashboard = () => {
   
   const [ lastUpdatedTime,setLastUpdatedTime ] = useState(moment().format('hh:mm a, dddd Do-MMM-YYYY'))
- 
-  let history = useHistory();
-
-  const handleChange = (e) => {
-    history.push(`${e.target.value}`);
-  };
-
   return (
     <div className="maker-dashboard">
       <h1 className="page-title"> Salary Payments </h1>
-      <div className="route-select">
-         <span> Viewing as </span> <select onChange={handleChange}>
-          <option value="/"> Maker </option>
-          <option value="/checker"> Checker </option>
-        </select>
-      </div>
+      <RouteSelect />
       <p className="last-updated-time" > 
           <span>Last updated</span> { lastUpdatedTime } <i class="fas fa-redo"></i> 
       </p>
