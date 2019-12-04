@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './enquire.css';
 import EnquireFilter from '../EnquireFilter';
-import EnquireTable from '../EnquireTable';
+//import EnquireTable from '../EnquireTable';
+import EnquireTable from '../EnquireTableNew';
 
 class Enquire extends Component {
   constructor(props) {
@@ -21,10 +22,13 @@ class Enquire extends Component {
           </div>
         </div>
         <EnquireFilter />
-        <EnquireTable pageType="maker" tabType="standard"/>
-        <EnquireTable pageType="maker" tabType="custom"/>
-        <EnquireTable pageType="maker" tabType="custom" selectedFilter="2" />
-        <EnquireTable pageType="maker" tabType="custom" selectedFilter="3" />
+        {/* <EnquireTable pageType="maker" tabType="standard"/> */}
+        {/* <EnquireTable pageType="maker" tabType="custom"/> */}
+        {/* <EnquireTable pageType="maker" tabType="custom" selectedFilter="2" /> */}
+        {/*<EnquireTable pageType="maker" tabType="custom" selectedFilter="3" /> */}
+        
+        <EnquireTable />
+
       </div>
     )
   }

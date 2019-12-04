@@ -200,7 +200,7 @@ class EnquireTable extends Component {
         <div className="custom-filter-col1 clearfix">
           <div className="custom-filter-top clearfix">
             <div className="view-type">
-              <label>View</label>
+              <label>View Yasar</label>
               <select>
                 <option>Default</option>
                 <option>Custom</option>
