@@ -8,6 +8,7 @@ class EnquireTable extends React.Component{
         super(props);
         this.state = {
             selectedHeader:null,
+            hideColumn:{},
             data:[]
         }
     }
@@ -28,7 +29,6 @@ class EnquireTable extends React.Component{
        }
     }
     sortAssending = (key) =>{
-        console.log("Sort Assending Button has been clicked ",key)
         let temp = [...this.state.data];
         temp.sort((a,b)=>{
             if(a[key] < b[key]) return -1;
@@ -38,7 +38,6 @@ class EnquireTable extends React.Component{
         this.setState({data:temp})
     }
     sortDesending = (key) => {
-        console.log("Sort Assending Button has been clicked ",key)
         let temp = [...this.state.data];
         temp.sort((a,b)=>{
             if(a[key] < b[key]) return 1;
@@ -47,63 +46,99 @@ class EnquireTable extends React.Component{
         })
         this.setState({data:temp})
     }
-    hideColumn = (index) =>{
-        console.log("Hide Column has been Implemented ",index);
+    hideColumn = (value) =>{
+       let newObj = {}
+       newObj[value] = value;
+       let hideColumn = this.state.hideColumn;
+          hideColumn = {...hideColumn,...newObj}
+       this.setState({
+           hideColumn
+       })
+    }
+    filterByCol = (e,col) => {
+        e.stopPropagation()
+        let searchVal = e.target.value;
+        let temp = [...enquireTableData.data];
+        if(searchVal.length > 0){
+            temp = temp.filter(ele => ele[col].toString().includes(searchVal));
+        }
+        this.setState({
+            data:temp
+        })
     }
     render(){
       const actionProps = {
             sortAssending:this.sortAssending,
             sortDesending:this.sortDesending,
-            hideColumn:this.hideColumn
+            hideColumn:this.hideColumn,
+            filterByCol:this.filterByCol
       }
       return(
         <table className="enquiry-table" >
             <thead>
                 <tr>
                     <th onClick={()=>this.openAction()} > Action </th>
-                    <th className={this.state.selectedHeader === 1 ? "active":""} onClick={()=>this.openAction(1)} > 
-                         Batch ID 
-                         {this.state.selectedHeader === 1 ? 
-                         <Actions {...actionProps} tableIndex="1" columnName="_id" />: ""}
-                    </th>
-                    <th className={this.state.selectedHeader === 2 ? "active":""} onClick={()=>this.openAction(2)}> 
-                        Staff 
-                        {this.state.selectedHeader === 2 ? 
-                        <Actions {...actionProps} tableIndex="2" columnName="name" />: ""}
-                    </th>
-                    <th className={this.state.selectedHeader === 3 ? "active":""} onClick={()=>this.openAction(3)} > 
-                        Created
-                        {this.state.selectedHeader === 3 ? 
-                        <Actions {...actionProps} tableIndex="3" columnName="created" />: ""}
-                    </th>
-                    <th className={this.state.selectedHeader === 4 ? "active":""} onClick={()=>this.openAction(4)}> 
-                         Accepted 
-                         {this.state.selectedHeader === 4 ? 
-                         <Actions {...actionProps} tableIndex="4" columnName="accepted" />: ""}
-                    </th>
-                    <th className={this.state.selectedHeader === 5 ? "active":""} onClick={()=>this.openAction(5)}> 
-                         Rejected 
-                         {this.state.selectedHeader === 5 ? 
-                         <Actions {...actionProps} tableIndex="5" columnName="rejected" />: ""}
-                    </th>
-                    <th className={this.state.selectedHeader === 6 ? "active":""} onClick={()=>this.openAction(6)}> 
-                         Put on Hold 
-                         {this.state.selectedHeader === 6 ? 
-                         <Actions {...actionProps} tableIndex="6" columnName="putOnHold" />: ""}
-                    </th>
+                    {!this.state.hideColumn._id &&
+                        <th className={this.state.selectedHeader === 1 ? "active":""} 
+                            onClick={()=>this.openAction(1)} > 
+                            Batch ID 
+                            {this.state.selectedHeader === 1 ? 
+                            <Actions {...actionProps} tableIndex="1" columnName="_id" />: ""}
+                        </th>
+                    }
+                    {!this.state.hideColumn.name &&
+                        <th className={this.state.selectedHeader === 2 ? "active":""} 
+                            onClick={()=>this.openAction(2)}> 
+                            Staff 
+                            {this.state.selectedHeader === 2 ? 
+                            <Actions {...actionProps} tableIndex="2" columnName="name" />: ""}
+                        </th>
+                    }
+                    {!this.state.hideColumn.created &&
+                        <th className={this.state.selectedHeader === 3 ? "active":""} 
+                            onClick={()=>this.openAction(3)} > 
+                            Created
+                            {this.state.selectedHeader === 3 ? 
+                            <Actions {...actionProps} tableIndex="3" columnName="created" />: ""}
+                        </th>
+                    }
+                    {!this.state.hideColumn.accepted &&
+                        <th className={this.state.selectedHeader === 4 ? "active":""} 
+                            onClick={()=>this.openAction(4)}> 
+                            Accepted 
+                            {this.state.selectedHeader === 4 ? 
+                            <Actions {...actionProps} tableIndex="4" columnName="accepted" />: ""}
+                        </th>
+                    }
+                    {!this.state.hideColumn.rejected &&
+                        <th className={this.state.selectedHeader === 5 ? "active":""} 
+                            onClick={()=>this.openAction(5)}> 
+                            Rejected 
+                            {this.state.selectedHeader === 5 ? 
+                            <Actions {...actionProps} tableIndex="5" columnName="rejected" />: ""}
+                        </th>
+                    }
+                    {!this.state.hideColumn.putOnHold &&
+                        <th className={this.state.selectedHeader === 6 ? "active":""} 
+                            onClick={()=>this.openAction(6)}> 
+                            Put on Hold 
+                            {this.state.selectedHeader === 6 ? 
+                            <Actions {...actionProps} tableIndex="6" columnName="putOnHold" />: ""}
+                        </th>
+                    }
                 </tr>
             </thead>
             <tbody>
                 {this.state.data.map((item,index)=>{
                     return (
                         <tr>
-                        <td> <Button variant="success"> Accept </Button> </td>
-                        <td> {item._id} </td>
-                        <td> {item.name} </td>
-                        <td> {item.created} </td>
-                        <td> {item.accepted} </td>
-                        <td> {item.rejected} </td>
-                        <td> {item.putOnHold} </td>
+                            <td> <Button variant="success"> Accept </Button> </td>
+                            { !this.state.hideColumn._id && <td> {item._id} </td> }
+                            { !this.state.hideColumn.name && <td> {item.name} </td> }
+                            { !this.state.hideColumn.created && <td> {item.created} </td> }
+                            { !this.state.hideColumn.accepted && <td> {item.accepted} </td> }
+                            { !this.state.hideColumn.rejected && <td> {item.rejected} </td> }
+                            { !this.state.hideColumn.putOnHold && <td> {item.putOnHold} </td> }
                         </tr>
                     )
                 })}

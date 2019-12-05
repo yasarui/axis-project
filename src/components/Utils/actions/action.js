@@ -1,7 +1,7 @@
 import React from 'react';
 import './actions.scss';
 
-const Actions = ({sortAssending,sortDesending,columnName,hideColumn,tableIndex}) => {
+const Actions = ({sortAssending,sortDesending,columnName,hideColumn,filterByCol,tableIndex}) => {
    return(
     <div className="actions">
         <ul>
@@ -10,12 +10,12 @@ const Actions = ({sortAssending,sortDesending,columnName,hideColumn,tableIndex})
             </li>
             <li onClick={()=>sortDesending(columnName)}> 
                 <i class="fas fa-sort-amount-down"></i> Sort Desending </li>
-            <li> 
+            <li onClick={(e)=> e.stopPropagation() } > 
                 <i class="fa fa-filter" aria-hidden="true"></i> 
                  Filter 
-                <input type="text" /> <br/>
+                <input type="text" onChange={(e)=>filterByCol(e,columnName)} /> <br/>
             </li>
-            <li onClick={()=>hideColumn(tableIndex)} >  
+            <li onClick={()=>hideColumn(columnName)} >  
                 <i class="fa fa-eye-slash" aria-hidden="true"></i> 
                 Hide 
             </li>
