@@ -76,6 +76,12 @@
     table{
       th{
         border-bottom:1px solid #e7e7e7;
+        cursor: pointer;
+      }
+      th.active{
+        background-color:#98144E;
+        color:#fff !important;
       }
     }
 }
+
