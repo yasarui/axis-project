@@ -452,3 +452,21 @@
    border-bottom:none !important;
    border-top:5px solid #98144E;
 }
+
+.axis-tags-wrapper{
+  border-bottom:1px solid #aaa;
+  .axis-tags{
+    border:1px solid #E7E7E7;
+    font-size:11px;
+    padding: 6px 8px;
+    display: inline-block;
+    margin-bottom:10px;
+    margin-right:10px;
+    border-radius:20px;
+    i{
+      color:#98144E;
+      display: inline-block;
+      margin-left:5px;
+    }
+  }
+}

@@ -165,34 +165,44 @@ const CustomFilter = (props) => {
                     <div className="custom-filter-table-wrap">
                         <div className="custom-filter-table">
                             <div className="table-wrap">
-                                <table className="fixed-table-header">
+                                <table>
                                     <tbody>
                                         <tr>
                                             <td className="column-name">Column</td>
                                             <td className="column-data form-group">
                                                 <div className="date-formate">
                                                     <label>From</label>
-                                                    <input type="text" placeholder="dd-mm-yyyy" />
+                                                    <input  type="text" placeholder="dd-mm-yyyy" />
                                                 </div>
                                                 <div className="date-formate form-group">
                                                     <label>To</label>
-                                                    <input type="text" placeholder="dd-mm-yyyy" />
+                                                    <input  type="text" placeholder="dd-mm-yyyy" />
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td className="column-name">Column</td>
                                             <td className="column-data">
-                                                <div className="form-group tag-input">
-                                                    <input type="text" />
+                                                <div className="axis-tags-wrapper">
+                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i>  </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td className="column-name">Column</td>
                                             <td className="column-data">
-                                                <div className="form-group tag-input">
-                                                    <input type="text" />
+                                                <div className="axis-tags-wrapper">
+                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>  
+                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>  
+                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>                       
                                                 </div>
                                             </td>
                                         </tr>
