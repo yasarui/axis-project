@@ -89,15 +89,25 @@
   -moz-box-shadow: 0px 0px 5px 0px rgba(153,153,153,1);
   box-shadow: 0px 0px 5px 0px rgba(153,153,153,1);
   .config-custom-text {
-    padding-top: 15px;
+    padding: 15px 0 0 10px;
+    display: none;
+  }
+  &.open {
+    .config-custom-text {
+      display: block;
+    }
+    h3 {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+    }
   }
   p {
     margin: 0 0 10px;
   }
   h3 {
-    border-bottom: 1px solid #ddd;
+    
     margin: 0;
-    padding: 0 10px 15px 10px;
+    padding: 0 10px 0 10px;
     font-size: 14px;
     text-transform: uppercase;
     color: #666;
@@ -108,13 +118,16 @@
       right: 10px;
       font-size: 16px;
       cursor: pointer;
+      color: #861f41;
     }
   }
   h4 {
     color: #444;
+    margin-bottom: 12px;
   }
   ul {
     padding-left: 22px;
+    margin-top: 0;
     li {
       margin-bottom: 15px;
     }
@@ -138,35 +151,12 @@
     border-radius: 5px;
   }
 }
-.custom-field-tabel {
-  width: 100%;
-  tr {
-    th {
-      font-size: 14px;
-      width: 50%;
-      border: 1px solid #ddd;
-      text-align: left;
-      padding: 8px 10px;
-      font-weight: 600;
-      color: #666;
-    }
-    td {
-      font-size: 13px;
-      width: 50%;
-      border: 1px solid #ddd;
-      padding: 8px 10px;
-      height: 50px;
-      .custom-data-count {
-        margin-right: 8px;
-      }
-    }
-  }
-}
+
 .data-fields-lists {
   p {
-    font-size: 12px;
+    font-size: 13px;
     color: #666;
-    margin: 5px 8px;
+    margin: 10px 8px;
   }
   h3 {
     font-size: 12px;
@@ -197,7 +187,7 @@
   }
 }
 .data-field-btn {
-  margin-top: 15px;
+  margin-top: 40px;
   span,
   a {
     margin-right: 10px;
@@ -239,4 +229,44 @@
 .main-layout .content-section table.custom-field-tabel {
   border-collapse: collapse;
   border-spacing: 0;
+}
+#filedrag {
+  .success-upload-msg {
+    color: #0db30d;
+    font-size: 13px;
+    span {
+      border: 1px solid #0db30d;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      font-size: 8px;
+      line-height: 17px;
+      margin-right: 5px;
+    }
+  }
+}
+.main-layout .content-section .custom-field-tabel {
+  width: 100%;
+  tr {
+    th {
+      font-size: 14px;
+      width: 50%;
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 600;
+      color: #666;
+    }
+    td {
+      font-size: 13px;
+      width: 50%;
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      height: 50px;
+      .custom-data-count {
+        margin-right: 8px;
+      }
+    }
+  }
 }

@@ -14,7 +14,7 @@
   }
 }
 .new-upload {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   h3 {
     color: #666;
     font-size: 14px;
@@ -49,11 +49,17 @@
       border-radius: 8px;
       background: #fff;
       height: 150px;
+      .no-template-msg {
+        font-size: 13px;
+        color: #777;
+        text-align: center;
+        padding-top: 66px;
+      }
       ul {
         padding: 0;
         li {
           list-style: none;
-          padding: 17px 100px 17px 40px;
+          padding: 17px 110px 17px 40px;
           font-size: 14px;
           position: relative;
           &.grey {
@@ -71,6 +77,9 @@
               cursor: pointer;
               &:hover {
                 color: #555;
+              }
+              img {
+                max-width: 18px;
               }
             }
           }

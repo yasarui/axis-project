@@ -57,7 +57,8 @@ class EnquireTable extends React.Component{
             hideColumn:this.hideColumn
       }
       return(
-        <table className="enquiry-table" >
+        <div className="table-wrap">
+          <table className="enquiry-table" >
             <thead>
                 <tr>
                     <th onClick={()=>this.openAction()} > Action </th>
@@ -109,8 +110,9 @@ class EnquireTable extends React.Component{
                 })}
             </tbody>
         </table>        
+        </div>
       )
-    }
+    } 
 }
 
 export default EnquireTable;
