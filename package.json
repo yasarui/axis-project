@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://yasarui.github.io/axis-project",
   "dependencies": {
+    "@wojtekmaj/react-daterange-picker": "^2.5.0",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "react": "^16.11.0",
