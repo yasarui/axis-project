@@ -11,7 +11,7 @@ import RouteSelect from '../Utils/RouteSelect';
 import { useHistory } from "react-router-dom";
 import moment from 'moment';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   
   const [ lastUpdatedTime,setLastUpdatedTime ] = useState(moment().format('hh:mm a, dddd Do-MMM-YYYY'))
   return (
@@ -22,7 +22,7 @@ const Dashboard = () => {
           <span>Last updated</span> { lastUpdatedTime } <i class="fas fa-redo"></i> 
       </p>
       <h2 className="sub-heading"> PENDING </h2>
-      <Progress />
+      <Progress {...props} />
       <h2 className="sub-heading"> RECENT ACTIVITY </h2>
       <RecentActivity data={RecentActivityData.data} />
       <h2 className="sub-heading"> ADMIN ALERTS </h2>

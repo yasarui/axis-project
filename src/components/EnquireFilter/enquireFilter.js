@@ -15,7 +15,6 @@ class EnquireFilter extends Component {
             <input type="text" placeholder="dd-mm-yyyy" />
             <span>to</span>
             <input type="text" placeholder="dd-mm-yyyy" />
-            <p className="error-msg">Lorem ipsum dolor sit</p>
           </div>
           <i class="fas fa-calendar-alt"></i>
         </div>

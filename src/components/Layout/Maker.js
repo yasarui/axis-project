@@ -8,30 +8,41 @@ class Maker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hideMenu: false
+      hideMenu: false,
+      selectedIndex: 0
     }
   }
 
-  hideMenu = () => {
+  hideMenu = (index) => {
     this.props.callbackFromMaker(false);
+    this.setState({
+      selectedIndex:index
+    })
+  }
+
+  setSelectedIndex = (index) => {
+     console.log("Set selected index function is running");
+     this.setState({
+       selectedIndex:index
+     })
   }
 
   render() {
    return(
-    <Tabs className="main-layout">
+    <Tabs className="main-layout" selectedIndex={this.state.selectedIndex} >
       <div className={"sidebar " + (this.props.hideMenuMaker ? "open" : "")}>
         <div class="sidebar-menu">
           <span onClick={this.hideMenu} className="mobile-menu-close"><i class="fas fa-times"></i></span>
         <TabList>
-            <Tab onClick={this.hideMenu}> <i className="fas fa-home"></i> Dashboard  </Tab>
-            <Tab onClick={this.hideMenu}> <i className="fas fa-upload"></i> Initiate </Tab>
-            <Tab onClick={this.hideMenu}> <i className="fas fa-table"></i> Enquire </Tab>
+            <Tab onClick={()=>this.hideMenu(0)}> <i className="fas fa-home"></i> Dashboard  </Tab>
+            <Tab onClick={()=>this.hideMenu(1)}> <i className="fas fa-upload"></i> Initiate </Tab>
+            <Tab onClick={()=>this.hideMenu(2)}> <i className="fas fa-table"></i> Enquire </Tab>
         </TabList>
       </div>
     </div>
         <div className="content-section">
         <TabPanel>
-            <Dashboard />
+            <Dashboard setSelectedIndex={this.setSelectedIndex} />
         </TabPanel>
         <TabPanel>
             <Initiate />

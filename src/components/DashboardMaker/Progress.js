@@ -7,7 +7,7 @@ import { ProgressBar,SuccessFailureTransactions }  from '../Utils';
 import AxisModal from '../Modal';
 import ActivityHistory from '../Utils/ActivityHistory';
 
-const Progress = () => {
+const Progress = (props) => {
 
    const [ batchesData , setBatchesData ] = useState(batchesJson.data)
 
@@ -42,15 +42,15 @@ const Progress = () => {
                     <span className="text"> BATCHES </span>
                     <span className="count"> 15 </span>
                 </div>
-                <div className="progress-tile">
+                <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile">
                     <span className="text"> APPROVED TRANSACTIONS </span>
                     <span className="count"> 1300 </span>              
                 </div>
-                <div className="progress-tile">
+                <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile">
                     <span className="text"> TRANSACTIONS ON HOLD </span>
                     <span className="count"> 130 </span>              
                 </div>
-                <div className="progress-tile">
+                <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile">
                     <span className="text"> REJECTED TRANSACTIONS </span>
                     <span className="count"> 235 </span>              
                 </div>
