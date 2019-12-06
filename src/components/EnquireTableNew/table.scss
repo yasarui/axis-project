@@ -448,3 +448,7 @@
 .enquiry-table{
   min-height:568px;
 }
+.enquire-table-wrap .react-tabs__tab--selected > div{
+   border-bottom:none !important;
+   border-top:5px solid #98144E;
+}
