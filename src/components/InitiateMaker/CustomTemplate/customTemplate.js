@@ -9,7 +9,8 @@ class CustomTemplate extends Component {
     super(props);
     this.state = {
       currentStep: 1,
-      uploadSuccess: false
+      uploadSuccess: false,
+      showDesc: true
     };
   }
 
@@ -35,6 +36,12 @@ class CustomTemplate extends Component {
 
   paymentPage = () => {
     this.props.callbackFromParent('payment');
+  }
+
+  showHideDesc = () => {
+    this.setState(state => ({
+      showDesc: !this.state.showDesc
+    }));
   }
 
   render() {
@@ -166,11 +173,10 @@ class CustomTemplate extends Component {
     }
     if (this.state.currentStep == 1 || this.state.currentStep == 2) {
       configData =
-        <div className="config-custom-format open">
+        <div className={"config-custom-format " + (this.state.showDesc ? "open" : "")}>
           <h3>How to configure a custom format
-          <span class="slide-arrow">
-              <i class="fas fa-chevron-up"></i>
-              {/* <i class="fas fa-chevron-down"></i> */}
+          <span onClick={this.showHideDesc} class="slide-arrow">
+              <i class={(this.state.showDesc ? "fas fa-chevron-up" : "fas fa-chevron-down")}></i>
             </span>
           </h3>
           <div className="config-custom-text clearfix">
@@ -183,7 +189,7 @@ class CustomTemplate extends Component {
               <li>You can edit the name of any optional fields</li>
               <li>You can only proceed when you have assigned all the mandatory fields under Choose Format to your data</li>
             </ul>
-            <span className="common-btn2">Ok, Got It </span>
+            <span onClick={this.showHideDesc} className="common-btn2">Ok, Got It </span>
           </div>
         </div>
     }

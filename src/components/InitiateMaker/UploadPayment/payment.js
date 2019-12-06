@@ -23,21 +23,21 @@ class UploadPayment extends Component {
         },
       ],
       customTemplate: [
-        {
-          id: 1,
-          name: 'Custom format 1',
-          isFavorite: false
-        },
-        {
-          id: 2,
-          name: 'Custom format 2',
-          isFavorite: true
-        },
-        {
-          id: 3,
-          name: 'Custom format 3',
-          isFavorite: false
-        }
+        // {
+        //   id: 1,
+        //   name: 'Custom format 1',
+        //   isFavorite: false
+        // },
+        // {
+        //   id: 2,
+        //   name: 'Custom format 2',
+        //   isFavorite: true
+        // },
+        // {
+        //   id: 3,
+        //   name: 'Custom format 3',
+        //   isFavorite: false
+        // }
       ]
     };
   }
@@ -67,6 +67,10 @@ class UploadPayment extends Component {
   }
 
   render() {
+    let customTemplateDefaultMsg;
+    if(this.state.customTemplate.length==0){
+      customTemplateDefaultMsg = <p className="no-template-msg">No custom template has been created</p>;
+    }
     return (
       <div className="upload-payment">
         <div className="payment-header">
@@ -79,7 +83,7 @@ class UploadPayment extends Component {
         </div>
         <div className="templates clearfix">
           <div className="templates-col">
-            <h3>Standard Templates <span>2</span></h3>
+            <h3>Standard Templates <span>{this.state.standardTemplates.length}</span></h3>
             <div className="templates-content">
               <ul>
               {this.state.standardTemplates.map((data, i) => {
@@ -87,14 +91,20 @@ class UploadPayment extends Component {
                   {data.name}
                   <span onClick={this.customstandardTemplates.bind(this, i)} className={"star " + (data.isFavorite ? "selected" : "")}>
                     <i className={(data.isFavorite ? "fas fa-star" : "far fa-star")}></i></span>
+                    <div className="template-actions">
+                      <a href="./images/logo-white.png" title="Download" download>
+                        <img src="./images/download1.png" />
+                      </a>
+                    </div>
                 </li>
                 })}
               </ul>
             </div>
           </div>
           <div className="templates-col">
-            <h3>Custom Templates <span>5</span></h3>
+            <h3>Custom Templates <span>{this.state.customTemplate.length}</span></h3>
             <div className="templates-content">
+              {customTemplateDefaultMsg}
               <ul>
               {this.state.customTemplate.map((data, i) => {
                 return <li key={data} className={((i+1)%2==0 ? "grey" : "")}>
@@ -102,9 +112,15 @@ class UploadPayment extends Component {
                   <span onClick={this.customTemplateFavorite.bind(this, i)} className={"star " + (data.isFavorite ? "selected" : "")}>
                     <i className={(data.isFavorite ? "fas fa-star" : "far fa-star")}></i></span>
                   <div className="template-actions">
-                    <a href="./images/logo-white.png" title="Download" download><i className="fas fa-download"></i></a>
-                    <span onClick={this.customTemplate} title="Edit"><i className="fas fa-edit"></i></span>
-                    <span onClick={this.removecustomTemplate.bind(this, i)} title="Delete"><i className="far fa-trash-alt"></i></span>
+                    <a href="./images/logo-white.png" title="Download" download>
+                      <img src="./images/download1.png" />
+                    </a>
+                    <span onClick={this.customTemplate} title="Edit">
+                      <img src="./images/edit1.png" />
+                    </span>
+                    <span onClick={this.removecustomTemplate.bind(this, i)} title="Delete">
+                    <img src="./images/delete1.png" />
+                    </span>
                   </div>
                 </li>
                 })}

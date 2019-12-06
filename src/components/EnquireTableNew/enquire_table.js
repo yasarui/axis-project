@@ -74,7 +74,8 @@ class EnquireTable extends React.Component{
             filterByCol:this.filterByCol
       }
       return(
-        <table className="enquiry-table" >
+        <div className="table-wrap">
+          <table className="enquiry-table" >
             <thead>
                 <tr>
                     <th onClick={()=>this.openAction()} > Action </th>
@@ -144,8 +145,9 @@ class EnquireTable extends React.Component{
                 })}
             </tbody>
         </table>        
+        </div>
       )
-    }
+    } 
 }
 
 export default EnquireTable;

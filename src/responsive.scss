@@ -25,6 +25,7 @@
     .table-wrap {
       width: 100%;
       overflow-x: auto;
+      border-radius: 5px;
       table {
         width: 1200px;
         padding-bottom: 10px;
@@ -185,6 +186,7 @@
       }
       .route-select select {
         font-size: 12px;
+        border-radius: 0;
         &:after {
           top: 7px;
           width: 6px;
@@ -277,6 +279,16 @@
       }
     }
   }
+  .main-layout .table-wrap {
+    border-radius: 5px;
+  }
+  .transactions-tab-filter {
+    display: block;
+    section {
+      width: 100%;
+      padding-bottom: 20px;
+    }
+  }
 }
 @media screen and (min-width:100px) and (max-width:700px) {
   .main-layout .content-section .progress-tiles-wrapper {
@@ -348,7 +360,7 @@
       }
       .progress-tiles-wrapper {
         .progress-tile {
-          height: 60px;
+          height: 70px;
           width: 100px;
           span.text {
             min-height: 25px;
@@ -442,5 +454,11 @@
   .main-layout .content-section .checker-dashboard .progress-tiles-wrapper .progress-tile {
     margin-right: 5px;
     width: 85px;
+  }
+}
+@media screen and (min-width:100px) and (max-width:400px) {
+  .main-layout .content-section .last-updated-time {
+    right: 10px;
+    max-width: 150px;
   }
 }

@@ -17,6 +17,7 @@ class AccountsTable extends React.Component{
     render(){
        return(
           <Fragment>
+            <div className="table-wrap">
                 <table className="has-bottom fixed-table-header">
                     <thead style={{"borderBottom":"1px solid #e7e7e7"}} >
                         <tr>
@@ -78,6 +79,8 @@ class AccountsTable extends React.Component{
                         })}
                     </tbody>
                 </table>
+            </div>
+            <div className="table-wrap">
                 <table className="bottom-table">
                     <tbody>
                        <tr>
@@ -98,6 +101,7 @@ class AccountsTable extends React.Component{
                        </tr>
                     </tbody>
                 </table>
+            </div>
           </Fragment>
        ) 
     }
