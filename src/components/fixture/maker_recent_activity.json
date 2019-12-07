@@ -8,7 +8,8 @@
         "created": "2,511.13",
         "accepted": "1,756.76",
         "putOnHold": "2,554.18",
-        "rejected": "1,305.21"
+        "rejected": "1,305.21",
+        "uploaded":"10"
       },
       {
         "_id": "45dfa4ebd803772f",
@@ -18,7 +19,8 @@
         "created": "2,029.96",
         "accepted": "2,232.11",
         "putOnHold": "3,719.89",
-        "rejected": "3,042.41"
+        "rejected": "3,042.41",
+        "uploaded":"20"        
       },
       {
         "_id": "723bca3d104b6",
@@ -28,7 +30,8 @@
         "created": "3,736.87",
         "accepted": "3,867.63",
         "putOnHold": "2,252.46",
-        "rejected": "3,459.24"
+        "rejected": "3,459.24",
+        "uploaded":"30"
       },
       {
         "_id": "8304d4939207c0f2b2598",
@@ -38,7 +41,8 @@
         "created": "1,962.42",
         "accepted": "1,050.29",
         "putOnHold": "3,428.55",
-        "rejected": "3,060.04"
+        "rejected": "3,060.04",
+        "uploaded":"40"
       },
       {
         "_id": "54910dba3fc",
@@ -48,7 +52,8 @@
         "created": "3,391.06",
         "accepted": "3,321.89",
         "putOnHold": "3,791.82",
-        "rejected": "3,561.15"
+        "rejected": "3,561.15",
+        "uploaded":"50"
       },
       {
         "_id": "59968d10e661af06",
@@ -58,7 +63,8 @@
         "created": "1,731.38",
         "accepted": "1,643.81",
         "putOnHold": "1,969.60",
-        "rejected": "3,614.81"
+        "rejected": "3,614.81",
+        "uploaded":"60"
       },
       {
         "_id": "9339a737",
@@ -68,7 +74,8 @@
         "created": "2,726.57",
         "accepted": "1,246.47",
         "putOnHold": "1,685.39",
-        "rejected": "2,840.78"
+        "rejected": "2,840.78",
+        "uploaded":"70"
       },
       {
         "_id": "74de31361",
@@ -78,7 +85,8 @@
         "created": "1,742.12",
         "accepted": "1,197.78",
         "putOnHold": "1,808.29",
-        "rejected": "3,936.25"
+        "rejected": "3,936.25",
+        "uploaded":"80"
       },
       {
         "_id": "70865a6dd26",
@@ -88,7 +96,8 @@
         "created": "3,544.87",
         "accepted": "2,324.28",
         "putOnHold": "1,280.38",
-        "rejected": "2,959.92"
+        "rejected": "2,959.92",
+        "uploaded":"90"
       },
       {
         "_id": "9558483",
@@ -98,7 +107,8 @@
         "created": "3,536.37",
         "accepted": "1,272.96",
         "putOnHold": "3,705.52",
-        "rejected": "1,533.63"
+        "rejected": "1,533.63",
+        "uploaded":"100"
       },
       {
         "_id": "553682a",
@@ -108,7 +118,8 @@
         "created": "1,681.02",
         "accepted": "1,262.67",
         "putOnHold": "3,127.50",
-        "rejected": "1,730.81"
+        "rejected": "1,730.81",
+        "uploaded":"10"
       },
       {
         "_id": "65656565dc8304da4da9396d2e1a435",
@@ -118,7 +129,8 @@
         "created": "1,785.09",
         "accepted": "3,823.28",
         "putOnHold": "1,796.66",
-        "rejected": "1,277.41"
+        "rejected": "1,277.41",
+        "uploaded":"20"
       },
       {
         "_id": "54654dc8304dd35474f372506a3f",
@@ -128,7 +140,8 @@
         "created": "2,821.62",
         "accepted": "2,925.53",
         "putOnHold": "3,569.20",
-        "rejected": "3,173.55"
+        "rejected": "3,173.55",
+        "uploaded":"30"
       },
       {
         "_id": "10123dc8304d118e536c29befb0f",
@@ -138,7 +151,8 @@
         "created": "1,703.42",
         "accepted": "2,978.72",
         "putOnHold": "1,173.64",
-        "rejected": "1,559.22"
+        "rejected": "1,559.22",
+        "uploaded":"40"
       },
       {
         "_id": "5dc8304dccd5c2eb437d77bc",
@@ -148,7 +162,8 @@
         "created": "1,447.83",
         "accepted": "3,154.81",
         "putOnHold": "3,374.44",
-        "rejected": "3,870.50"
+        "rejected": "3,870.50",
+        "uploaded":"50"
       },
       {
         "_id": "5w44dc8304db9c37a444d930116",
@@ -158,7 +173,8 @@
         "created": "2,546.49",
         "accepted": "2,863.46",
         "putOnHold": "3,748.53",
-        "rejected": "3,247.20"
+        "rejected": "3,247.20",
+        "uploaded":"60"
       },
       {
         "_id": "56656dc8304d0983573c3f12e087",
@@ -168,7 +184,8 @@
         "created": "1,023.73",
         "accepted": "3,293.24",
         "putOnHold": "3,855.57",
-        "rejected": "2,020.70"
+        "rejected": "2,020.70",
+        "uploaded":"70"
       },
       {
         "_id": "10987dc8304db700897e5d96f755",
@@ -178,7 +195,8 @@
         "created": "3,878.81",
         "accepted": "2,326.14",
         "putOnHold": "1,268.65",
-        "rejected": "1,568.40"
+        "rejected": "1,568.40",
+        "uploaded":"80"
       },
       {
         "_id": "12348dc8304d3317816459a11ccc",
@@ -188,7 +206,8 @@
         "created": "3,894.94",
         "accepted": "3,451.02",
         "putOnHold": "1,231.78",
-        "rejected": "2,858.99"
+        "rejected": "2,858.99",
+        "uploaded":"90"
       }
     ]
 }

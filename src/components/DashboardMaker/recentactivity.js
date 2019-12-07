@@ -112,7 +112,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                          {item.name} 
                       </td>
                       <td style={{"width":"157px"}}>
-                        {(index % 2 == 0)?  <ProgressBar width={`${(index)}0`} /> :  <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)}  /> }
+                        {(index % 2 == 0)?  <ProgressBar width={item.uploaded} /> :  <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)}  /> }
                       </td>
                       <td style={{"width":"157px"}}> 
                          { index < 3 ? ( <EmptyTd /> ) : 

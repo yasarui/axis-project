@@ -447,8 +447,10 @@
 
 .enquiry-table{
   min-height:568px;
+  border-top-right-radius:0 !important;
+  border-top-left-radius:0 !important;
 }
-.enquire-table-wrap .react-tabs__tab--selected > div{
+.enquire-table-wrap li.react-tabs__tab--selected:not(:first-child) > div{
    border-bottom:none !important;
    border-top:5px solid #98144E;
 }

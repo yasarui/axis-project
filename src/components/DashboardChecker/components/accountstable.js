@@ -14,6 +14,26 @@ class AccountsTable extends React.Component{
             data:accounts_data.data
         })
     }
+    sortAssending = (e,key) => {
+        let temp = [...this.state.data];
+        temp.sort((a,b)=>{
+            if(a[key] < b[key]) return -1;
+            if(a[key] > b[key]) return 1;
+            return 0;
+        })
+        this.setState({data:temp})
+   }
+
+   sortDessending = (e,key) => {
+        let temp = [...this.state.data];
+        temp.sort((a,b)=>{
+            if(a[key] < b[key]) return 1;
+            if(a[key] > b[key]) return -1;
+            return 0;
+        })
+        this.setState({data:temp})
+   }
+
     render(){
        return(
           <Fragment>
@@ -24,29 +44,29 @@ class AccountsTable extends React.Component{
                         <th style={{"width":"260px"}} > 
                             Debit Account 
                             <div className="sortIconsWrapper">
-                                <span className="headerSortUp"></span>
-                                <span className="headerSortDown"></span>
+                                <span onClick={(e)=>this.sortAssending(e,'account_number')} className="headerSortUp"></span>
+                                <span onClick={(e)=>this.sortDessending(e,'account_number')} className="headerSortDown"></span>
                             </div>
                         </th>
                         <th style={{"width":"224px"}} > 
                             Debit Account Name 
                             <div className="sortIconsWrapper">
-                                <span className="headerSortUp"></span>
-                                <span className="headerSortDown"></span>
+                                <span onClick={(e)=>this.sortAssending(e,'name')} className="headerSortUp"></span>
+                                <span onClick={(e)=>this.sortDessending(e,'name')} className="headerSortDown"></span>
                             </div>
                         </th>
                         <th style={{"width":"196px"}} > 
                             Current Balance 
                             <div className="sortIconsWrapper">
-                                <span className="headerSortUp"></span>
-                                <span className="headerSortDown"></span>
+                                <span onClick={(e)=>this.sortAssending(e,'balance')} className="headerSortUp"></span>
+                                <span onClick={(e)=>this.sortDessending(e,'balance')}className="headerSortDown"></span>
                             </div>
                         </th>
                         <th style={{"width":"245px"}} > 
                             Amount Under Approval 
                             <div className="sortIconsWrapper">
-                                <span className="headerSortUp"></span>
-                                <span className="headerSortDown"></span>
+                                <span onClick={(e)=>this.sortAssending(e,'amount')} className="headerSortUp"></span>
+                                <span onClick={(e)=>this.sortDessending(e,'amount')}className="headerSortDown"></span>
                             </div>
                         </th>
                         <th style={{"width":"245px"}} > Action </th>
