@@ -17,7 +17,7 @@ class AccountsTable extends React.Component{
     render(){
        return(
           <Fragment>
-            <div className="table-wrap">
+            <div className="table-wrap checker-accounts-table">
                 <table className="has-bottom fixed-table-header">
                     <thead style={{"borderBottom":"1px solid #e7e7e7"}} >
                         <tr>
@@ -59,7 +59,7 @@ class AccountsTable extends React.Component{
                                 <td style={{"width":"274px"}} > 
                                     <i class="fas fa-eye icon"></i> {item.account_number}</td>
                                 <td style={{"width":"215px"}}> {item.name} </td>
-                                <td style={{"width":"181px"}}> 
+                                <td style={{"width":"181px","textAlign":"right"}}> 
                                   ₹​{item.amount} &nbsp;&nbsp;
                                   {(item.button == "danger") ?                                   <span className="red-clr"> 
                                     <i class="fas fa-exclamation-triangle"></i>
@@ -67,9 +67,9 @@ class AccountsTable extends React.Component{
                                   <span className="green-clr"> 
                                     <i class="far fa-check-circle"></i> 
                                   </span> }
-
+                                  <a className="refresh-link" href="#"> Refresh </a>
                                 </td>
-                                <td style={{"width":"245px"}}> 
+                                <td style={{"width":"245px","textAlign":"right"}}> 
                                     ₹​{item.amount} 
                                     <span className={item.iconClr}> <i class="fas fa-circle small-icon"></i> </span> 
                                 </td>
@@ -87,8 +87,8 @@ class AccountsTable extends React.Component{
                          <td style={{"width":"233px"}} ></td>
                          <td style={{"width":"174px"}}></td>
                          <td style={{"width":"140px"}} >
-                            <span> Sufficient 4 <i class="far fa-check-circle green-clr"></i> </span>
-                            <span> Insufficient 2  <i class="fas fa-exclamation-triangle red-clr"></i> </span> 
+                            <span> <i class="far fa-check-circle green-clr"></i> &nbsp;&nbsp;&nbsp;&nbsp; Sufficient &nbsp;&nbsp; 4  </span>
+                            <span> <i class="fas fa-exclamation-triangle red-clr"></i> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> 
                          </td>
                          <td style={{"width":"204px"}} >
                             <span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
