@@ -474,11 +474,11 @@
 .visible-column-list{
   /* the slides */
   .slick-slide {
-        margin: 0 10px;
+        margin: 0 20px;
   }
   /* the parent */
   .slick-list {
-        margin: 0 -10px;
+        margin: 0 -20px;
   }
   .column-tags{
     background: #fff;
@@ -493,3 +493,19 @@
 
 }
 
+.visible-column-list{
+   padding-left:50px;
+   padding-right:50px;
+   .nav-icons{
+     color:#98144E;
+     position: absolute;
+     top:6px;
+     z-index: 999;
+    }
+   .nav-icons.left{
+     left:0
+   }
+  .nav-icons.right{
+    right: 0;
+   }
+}

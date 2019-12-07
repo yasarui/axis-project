@@ -5,18 +5,18 @@ import Slider from "react-slick";
 const LeftArrow = (props) => {
     const { className, style, onClick } = props;
     return (
-        <button onClick={onClick}> 
+        <span onClick={onClick} className="nav-icons left"> 
              <i class="fas fa-chevron-left"></i> 
-        </button>
+        </span>
     )
 }
 
 const RightArrow = (props) => {
     const { className, style, onClick } = props;
     return (
-        <button onClick={onClick} > 
+        <span onClick={onClick} className="nav-icons right"> 
             <i class="fas fa-chevron-right"></i> 
-        </button>
+        </span>
     )
 }
 
