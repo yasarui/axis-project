@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import accounts_data from '../../fixture/accounts_data.json';
 import Button from '../../Buttons';
+import ButtonDropdown from '../../ButtonDropdowns';
 
 class TransactionsTable extends React.Component{
     constructor(props){
@@ -96,7 +97,9 @@ class TransactionsTable extends React.Component{
                   {this.state.data.map((item,index)=>{
                       return(
                         <tr>
-                          <td style={{"width":"150px"}} > <button className="axis-success-button"> accept </button> </td>
+                          <td style={{"width":"150px"}} > 
+                             <ButtonDropdown varient="success" />
+                          </td>
                           <td style={{"width":"170px"}}> XXXXX </td>
                           <td style={{"width":"170px"}}></td>
                           <td style={{"width":"170px"}}></td>

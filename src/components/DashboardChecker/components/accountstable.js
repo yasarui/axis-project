@@ -1,6 +1,7 @@
 import React,{ Fragment } from 'react';
 import accounts_data from '../../fixture/accounts_data.json';
 import Button from '../../Buttons';
+import ButtonDropdown from '../../ButtonDropdowns';
 
 class AccountsTable extends React.Component{
     constructor(props){
@@ -93,7 +94,9 @@ class AccountsTable extends React.Component{
                                     ₹​{item.amount} 
                                     <span className={item.iconClr}> <i class="fas fa-circle small-icon"></i> </span> 
                                 </td>
-                                <td style={{"width":"245px"}} > <Button variant={item.button} > {item.button} </Button> </td>
+                                <td style={{"width":"245px"}} > 
+                                    <ButtonDropdown varient={item.button} />
+                                </td>
                             </tr>
                             )
                         })}

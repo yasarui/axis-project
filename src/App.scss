@@ -713,10 +713,16 @@ body{
 }
 
 .checker-batches-table{
+   border-radius:0 !important;
    th{
      height: 54px !important;
    }
-
+   td{
+     vertical-align:top;
+   }
+   .view-details{
+     margin-top:10px !important;
+   }
 }
 
 .checker-accounts-table{

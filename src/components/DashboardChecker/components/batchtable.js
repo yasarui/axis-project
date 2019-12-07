@@ -2,6 +2,7 @@ import React,{Fragment}from 'react';
 import batches_data from '../../fixture/batches_data.json';
 import Button from '../../Buttons';
 import moment from 'moment';
+import ButtonDropdown from '../../ButtonDropdowns';
 
 class BatchTable extends React.Component{
     constructor(props){
@@ -19,7 +20,7 @@ class BatchTable extends React.Component{
       return(
          <Fragment>
           <div className="table-wrap">
-            <table className="fixed-table-header has-bottom checker-batches-table">
+            <table className="has-bottom checker-batches-table fixed-table-header">
               <thead>
                   <tr>
                     <th style={{"width":"115px"}}> Batch ID </th>
@@ -78,7 +79,7 @@ class BatchTable extends React.Component{
                             </td>
                             <td style={{"width":"177px"}} > 
                                 {item.name}
-                                <a class="view-details" href="#"> View Transactions </a>
+                                <a class="view-details" href="#"> View history </a>
                             </td>
                             <td style={{"width":"180px"}} > 
                             <span className="date" > 
@@ -88,13 +89,15 @@ class BatchTable extends React.Component{
                                     {moment(item.lastDate).format('h:mm:ss a')} 
                               </span>  
                             </td>
-                            <td style={{"width":"164px"}} className="textalign-right"> 
+                            <td style={{"width":"164px","textAlign":"right"}} className="textalign-right"> 
                               {item.pending} 
                             </td>
-                            <td style={{"width":"191px"}}> ₹​{item.amount} 
+                            <td style={{"width":"191px","textAlign":"right"}}> ₹​{item.amount} 
                                 <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
                             </td>
-                            <td style={{"width":"181px"}}> <Button variant={item.button} > Accept </Button> </td>
+                            <td style={{"width":"181px"}}> 
+                                <ButtonDropdown varient={item.button} />
+                            </td>
                         </tr>
                       )
                   })}
