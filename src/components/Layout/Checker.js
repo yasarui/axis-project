@@ -9,7 +9,8 @@ class Checker extends Component {
     super(props);
     this.state = {
       hideMenu: false,
-      tabIndex:0
+      tabIndex:0,
+      approveTabIndex:0
     }
     //sconst [tabIndex,setTabIndex] = useState(0);
   }
@@ -18,8 +19,8 @@ class Checker extends Component {
     this.props.callbackFromChecker(false);
   }
 
-  handleTabSelect = (index) => {
-    this.setState({tabIndex:index})
+  handleTabSelect = (index,approveTabIndex) => {
+    this.setState({tabIndex:index,approveTabIndex})
   }
 
   render() {
@@ -29,7 +30,7 @@ class Checker extends Component {
         <div class="sidebar-menu">
           <span onClick={this.hideMenu} className="mobile-menu-close"><i class="fas fa-times"></i></span>
           <TabList>
-              <Tab onClick={this.hideMenu}> <i className="fas fa-home"></i> Dashboard  </Tab>
+              <Tab onClick={this.hideMenu}> <i className="fas fa-home"></i> Home  </Tab>
               <Tab onClick={this.hideMenu}> <i className="fas fa-check"></i> Approve </Tab>
               <Tab onClick={this.hideMenu}> <i className="fas fa-table"></i> Enquire </Tab>
           </TabList>
@@ -40,7 +41,7 @@ class Checker extends Component {
             <Dashboard setTabIndex={this.handleTabSelect} />
         </TabPanel>
         <TabPanel>
-            <Dashboard tab={true} />
+            <Dashboard tab={true} approveTabIndex={this.state.approveTabIndex} />
         </TabPanel>
         <TabPanel>
             <Enquire />

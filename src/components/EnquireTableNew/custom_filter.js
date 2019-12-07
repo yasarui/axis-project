@@ -120,23 +120,25 @@ const CustomFilter = (props) => {
                         <div className="visible-column">
                             <p>Drag and arrange the columns you want to see. Drag and drop columns you do not want to see to the bottom.</p>
                             <div className="visible-column-list clearfix">
-                               <Slider {...settings}>
-                                   <span className="column-tags"> Column 1 </span>
-                                   <span className="column-tags"> Column 2 </span>
-                                   <span className="column-tags"> Column 3 </span>
-                                   <span className="column-tags"> Column 4 </span>
-                                   <span className="column-tags"> Column 5 </span>
-                                   <span className="column-tags"> Column 6 </span>
-                                   <span className="column-tags"> Column 7 </span>
-                                   <span className="column-tags"> Column 8 </span>
-                                   <span className="column-tags"> Column 9 </span>
-                                   <span className="column-tags"> Column 10 </span>
-                                   <span className="column-tags"> Column 11 </span>
-                                   <span className="column-tags"> Column 12 </span>
-                                   <span className="column-tags"> Column 13 </span>
-                                   <span className="column-tags"> Column 14 </span>
-                                   <span className="column-tags"> Column 15 </span>
-                               </Slider>
+                               <div className="slider-wrapper">
+                                    <Slider {...settings}>
+                                        <span className="column-tags"> Column 1 </span>
+                                        <span className="column-tags"> Column 2 </span>
+                                        <span className="column-tags"> Column 3 </span>
+                                        <span className="column-tags"> Column 4 </span>
+                                        <span className="column-tags"> Column 5 </span>
+                                        <span className="column-tags"> Column 6 </span>
+                                        <span className="column-tags"> Column 7 </span>
+                                        <span className="column-tags"> Column 8 </span>
+                                        <span className="column-tags"> Column 9 </span>
+                                        <span className="column-tags"> Column 10 </span>
+                                        <span className="column-tags"> Column 11 </span>
+                                        <span className="column-tags"> Column 12 </span>
+                                        <span className="column-tags"> Column 13 </span>
+                                        <span className="column-tags"> Column 14 </span>
+                                        <span className="column-tags"> Column 15 </span>
+                                    </Slider>
+                               </div>
                             </div>
                         </div>
                         <div className="current-filter-head clearfix">

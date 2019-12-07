@@ -4,13 +4,13 @@ import BatchesTable from './components/batchtable';
 import AccountsTable from './components/accountstable';
 import TransactionsTable from './components/transactionstable';
 
-const Progress = () => {
+const Progress = (props) => {
    const [ showTab , setShowTab ] = useState(false);
    const handleClick = () => {
        console.log("Product tile has been clicked");
    }
    return(
-    <Tabs>
+    <Tabs defaultIndex={props.approveTabIndex} >
         <TabList>
             <div className="progress-tiles-wrapper clearfix">
                 <Tab>

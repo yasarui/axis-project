@@ -496,6 +496,10 @@
 .visible-column-list{
    padding-left:50px;
    padding-right:50px;
+   .slider-wrapper{
+     width: 90%;
+     margin:0 auto;
+   }
    .nav-icons{
      color:#98144E;
      position: absolute;
@@ -503,9 +507,9 @@
      z-index: 999;
     }
    .nav-icons.left{
-     left:0
+     left:-50px;
    }
   .nav-icons.right{
-    right: 0;
+    right: -50px;
    }
 }
