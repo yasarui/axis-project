@@ -21,28 +21,28 @@ class AccountsTable extends React.Component{
                 <table className="has-bottom fixed-table-header">
                     <thead style={{"borderBottom":"1px solid #e7e7e7"}} >
                         <tr>
-                        <th style={{"width":"252px"}} > 
+                        <th style={{"width":"260px"}} > 
                             Debit Account 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"219px"}} > 
+                        <th style={{"width":"224px"}} > 
                             Debit Account Name 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"192px"}} > 
+                        <th style={{"width":"196px"}} > 
                             Current Balance 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"239px"}} > 
+                        <th style={{"width":"245px"}} > 
                             Amount Under Approval 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>

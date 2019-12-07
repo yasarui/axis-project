@@ -34,7 +34,7 @@ class Maker extends Component {
         <div class="sidebar-menu">
           <span onClick={this.hideMenu} className="mobile-menu-close"><i class="fas fa-times"></i></span>
         <TabList>
-            <Tab onClick={()=>this.hideMenu(0)}> <i className="fas fa-home"></i> Dashboard  </Tab>
+            <Tab onClick={()=>this.hideMenu(0)}> <i className="fas fa-home"></i> Home  </Tab>
             <Tab onClick={()=>this.hideMenu(1)}> <i className="fas fa-upload"></i> Initiate </Tab>
             <Tab onClick={()=>this.hideMenu(2)}> <i className="fas fa-table"></i> Enquire </Tab>
         </TabList>

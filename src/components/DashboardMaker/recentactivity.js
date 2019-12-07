@@ -14,8 +14,7 @@ const EmptyTd = () => {
 }
 
 
-const RecentActivity = ({data}) => {
-   
+const RecentActivity = ({data,setSelectedIndex}) => {
    const [recentData,setRecentData] = useState(data);
    const [modalIsOpen,setModalIsOpen] = useState(false);
    
@@ -44,51 +43,55 @@ const RecentActivity = ({data}) => {
       setModalIsOpen(true);
       console.log("Modal state is ",modalIsOpen);
    }
-
    return (
      <Fragment>
         <div className="table-wrap">
-          <table className="fixed-table-header">
+          <table className="fixed-table-header recent-activity-table">
           <thead>
              <tr>
-               <th style={{"width":"119px"}} > Batch ID </th>
-               <th style={{"width":"183px"}}> 
+               <th style={{"width":"122px"}} > Batch ID</th>
+               <th style={{"width":"189px"}}> 
                    Staff
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'name')} className="headerSortUp"></span>
                      <span onClick={(e)=>sortDessending(e,'name')} className="headerSortDown"></span>
                    </div>
+                   <small></small>
               </th>
-               <th style={{"width":"156px"}}> 
+               <th style={{"width":"159px"}}> 
                    Created
                    <div className="sortIconsWrapper">
                      <span  onClick={(e)=>sortAssending(e,'created')} className="headerSortUp"></span>
                      <span  onClick={(e)=>sortDessending(e,'created')} className="headerSortDown"></span>
-                   </div> 
+                   </div>
+                   <small> Transactions (amount) </small>
               </th>
-               <th style={{"width":"159px"}}> 
+               <th style={{"width":"164px"}}> 
                    Accepted
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'accepted')} className="headerSortUp"></span>
                      <span onClick={(e)=>sortDessending(e,'accepted')} className="headerSortDown"></span>
                    </div>
+                   <small> Transactions (amount) </small>
                </th>
-               <th style={{"width":"159px"}}> 
+               <th style={{"width":"163px"}}> 
                    Put on hold 
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'putOnHold')} className="headerSortUp"></span>
                      <span onClick={(e)=>sortDessending(e,'putOnHold')} className="headerSortDown"></span>
                    </div>
+                   <small> Transactions (amount) </small>
                </th>
-               <th style={{"width":"162px"}}> 
+               <th style={{"width":"163px"}}> 
                    Rejected
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'rejected')} className="headerSortUp"></span>
                      <span onClick={(e)=>sortDessending(e,'rejected')} className="headerSortDown"></span>
                    </div>
+                   <small> Transactions (amount) </small>
                </th>
                <th style={{"width":"200px"}}> 
-                   Last Activity date 
+                   Last activity date 
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'date')} className="headerSortUp"></span>
                      <span onClick={(e)=>sortDessending(e,'date')} className="headerSortDown"></span>
@@ -101,7 +104,7 @@ const RecentActivity = ({data}) => {
                   return (
                     <tr>
                       <td style={{"width":"104px"}} > 
-                        <i class="icon fa fa-eye" aria-hidden="true"></i>
+                        <i onClick={()=>setSelectedIndex(2)} class="icon fa fa-eye" aria-hidden="true"></i>
                         &nbsp;&nbsp;
                         {item._id.substr(1,5)}
                       </td>
@@ -116,7 +119,7 @@ const RecentActivity = ({data}) => {
                             ( (index % 2 == 0 ) ? <td></td> : <Fragment> 
                                <bold> XX </bold> 
                                <span className="amount">(₹{item.accepted})</span> 
-                               <a className="view-details" href="#"> View Transactions </a>  
+                               <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>  
                             </Fragment>)
                          }
                       </td>
@@ -126,7 +129,7 @@ const RecentActivity = ({data}) => {
                              ( (index % 3 == 0) ? <td></td> : <Fragment>
                                 <bold> XX </bold> 
                                 <span className="amount">(₹{item.putOnHold})</span> 
-                                <a className="view-details" href="#"> View Transactions </a>         
+                                <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>         
                              </Fragment>)
                          }
                       </td>
@@ -136,13 +139,14 @@ const RecentActivity = ({data}) => {
                              ((index % 4 == 0 ) ? <td></td> : <Fragment>
                                 <bold> XX </bold> 
                                 <span className="amount">(₹{item.rejected})</span> 
-                                <a className="view-details" href="#"> View Transactions </a>          
+                                <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>          
                              </Fragment>)
                         }
                       </td>
                       <td style={{"width":"222px"}} > 
-                         <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
-                         <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>    
+
+                            <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
+                            <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>  
                       </td>
                     </tr>
                   )

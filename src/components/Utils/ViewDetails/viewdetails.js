@@ -20,7 +20,7 @@ export default function ViewDetails(){
                 <tr>
                     <td> XXXXXX </td>
                     <td> 440/460 </td>
-                    <td> 20/460 </td>
+                    <td> 20/460 <i class="fas fa-download download-icon"></i> </td>
                 </tr>
             </tbody>
         </table>
@@ -29,7 +29,7 @@ export default function ViewDetails(){
         </p>
         <Button variant="axis-multi-line-text">
             CREATE BATCH
-            <small> with 440/460 transactions </small>
+            <small> with 440/460 transactions  </small>
         </Button>
         <Button variant="outline-full"> REJECT BATCH </Button>
     </div>

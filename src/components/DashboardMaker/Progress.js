@@ -13,7 +13,9 @@ const Progress = (props) => {
 
    const [ batchesTable,showBatchesTable ] = useState(false);
 
-   const [ isHistoryPopup,setHistoryPopup ] = useState(false)
+   const [ isHistoryPopup,setHistoryPopup ] = useState(false);
+
+   const [selectAll,setSelectAll] = useState(false)
 
    const sortAssending = (e,key) => {
         let temp = [...batchesData];
@@ -61,14 +63,15 @@ const Progress = (props) => {
                 <table className="fixed-table-header batches-table">
                     <thead>
                         <tr>
-                            <th style={{"width":"121px"}}> 
+                            <th style={{"width":"120px"}}> 
                                 Batch ID
                                 <div className="sortIconsWrapper">
                                     <span className="headerSortUp"></span>
                                     <span className="headerSortDown"></span>
                                 </div>
+                                <a onClick={()=>setSelectAll(!selectAll)} className="select-all" href="#"> Select All </a>
                             </th>
-                            <th style={{"width":"196px"}}> 
+                            <th style={{"width":"200px"}}> 
                                 Created
                                 <div className="sortIconsWrapper">
                                     <span onClick={(e)=>sortAssending(e,'created')} className="headerSortUp"></span>
@@ -89,15 +92,15 @@ const Progress = (props) => {
                                     <span onClick={(e)=>sortDessending(e,'lastDate')} className="headerSortDown"></span>
                                 </div>
                             </th>
-                            <th style={{"width":"161px"}}> 
+                            <th style={{"width":"177px"}}> 
                                 Transactions Pending 
                                 <div className="sortIconsWrapper">
                                     <span className="headerSortUp"></span>
                                     <span className="headerSortDown"></span>
                                 </div>
                             </th>
-                            <th style={{"width":"191px"}}> 
-                                Amount pending approval 
+                            <th style={{"width":"189px"}}> 
+                                Amount <br/> Pending approval 
                                 <div className="sortIconsWrapper">
                                     <span onClick={(e)=>sortDessending(e,'amount')} className="headerSortUp"></span>
                                     <span onClick={(e)=>sortDessending(e,'amount')} className="headerSortDown"></span>
@@ -114,7 +117,7 @@ const Progress = (props) => {
                                 <tr>
                                     <td style={{"width":"113px"}} >  
                                         <label className="checkbox-wrapper" >
-                                            <input type="checkbox" className="checkbox" />
+                                            <input type="checkbox" className="checkbox" checked={ selectAll ? true: false }/>
                                             <span className="label-text"> 
                                                 {item._id.substring(1,5)} 
                                             </span>
@@ -142,17 +145,24 @@ const Progress = (props) => {
                                             {moment(item.lastDate).format('h:mm:ss a')} 
                                         </span>                                 
                                     </td>
-                                    <td style={{"width":"182px"}} >
+                                    <td style={{"width":"183px"}} >
                                         {(index % 2 == 0)?  <ProgressBar width={`${(index)}0`} /> :  <SuccessFailureTransactions /> }
                                     </td>
-                                    <td style={{"width":"212px"}} >
+                                    <td style={{"width":"213px"}} >
                                         {item.amount}
                                     </td>
                                     <td style={{"width":"86px"}} >
-                                    <span> <i class="fas fa-mouse-pointer icon"></i> </span>
-                                    &nbsp;&nbsp;
-                                    <span> <i class="fas fa-trash-alt icon"></i> </span>
-                                    </td>
+                                        {
+                                          (index === 0) ? <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-times icon"></i> </span> : (
+                                          (index === 1) ? (<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-trash-alt icon"></i> </span>) :
+                                          <Fragment>
+                                                <span> <i class="fas fa-mouse-pointer icon"></i> </span>
+                                                &nbsp;&nbsp;
+                                                <span> <i class="fas fa-trash-alt icon"></i> </span>  
+                                           </Fragment>                                            
+                                          )
+                                        }
+                                    </td> 
                                 </tr>
                             )
                         })}

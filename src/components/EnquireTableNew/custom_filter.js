@@ -1,5 +1,34 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Slider from "react-slick";
+
+const LeftArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+        <button onClick={onClick}> 
+             <i class="fas fa-chevron-left"></i> 
+        </button>
+    )
+}
+
+const RightArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+        <button onClick={onClick} > 
+            <i class="fas fa-chevron-right"></i> 
+        </button>
+    )
+}
+
+const settings = {
+    infinite: true,
+    speed: 500,
+    centerPadding: '60px',
+    slidesToShow: 5,
+    variableWidth:true,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />
+};
 
 const CustomFilter = (props) => {
    return(
@@ -91,17 +120,23 @@ const CustomFilter = (props) => {
                         <div className="visible-column">
                             <p>Drag and arrange the columns you want to see. Drag and drop columns you do not want to see to the bottom.</p>
                             <div className="visible-column-list clearfix">
-                                <span className="left-arrow"><i class="fas fa-angle-left"></i></span>
-                                <ul>
-                                    <li>Column</li>
-                                    <li>Column</li>
-                                    <li>Column</li>
-                                    <li>Column</li>
-                                    <li>Column</li>
-                                    <li>Column</li>
-                                    <li>Column</li>
-                                </ul>
-                                <span className="right-arrow"><i class="fas fa-angle-right"></i></span>
+                               <Slider {...settings}>
+                                   <span className="column-tags"> Column 1 </span>
+                                   <span className="column-tags"> Column 2 </span>
+                                   <span className="column-tags"> Column 3 </span>
+                                   <span className="column-tags"> Column 4 </span>
+                                   <span className="column-tags"> Column 5 </span>
+                                   <span className="column-tags"> Column 6 </span>
+                                   <span className="column-tags"> Column 7 </span>
+                                   <span className="column-tags"> Column 8 </span>
+                                   <span className="column-tags"> Column 9 </span>
+                                   <span className="column-tags"> Column 10 </span>
+                                   <span className="column-tags"> Column 11 </span>
+                                   <span className="column-tags"> Column 12 </span>
+                                   <span className="column-tags"> Column 13 </span>
+                                   <span className="column-tags"> Column 14 </span>
+                                   <span className="column-tags"> Column 15 </span>
+                               </Slider>
                             </div>
                         </div>
                         <div className="current-filter-head clearfix">

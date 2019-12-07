@@ -19,7 +19,7 @@
 }
 .Axis-modal.Medium{
     width: 360px;
-    height: 250px;
+    height: 270px;
 }
 .Axis-modal.Small{
     width: 370px;
@@ -28,8 +28,8 @@
 }
 .Axis-modal .close{
     position: absolute;
-    top:10px;
-    right: 10px;
+    top:15px;
+    right: 15px;
     border:1px solid #91214e;
     padding:2px 5px;
     font-size:14px;
@@ -52,7 +52,8 @@
             background: #787878;
             color: #fff;
             font-size: 11px;
-            padding: 1px 7px;
+            padding: 1px;
+            padding-right:4px;
             border-radius: 3px;
             margin-left: 5px;
        }
@@ -81,6 +82,9 @@
     }
     button{
         margin-bottom:15px;
+    }
+    .download-icon{
+        color:#91214e
     }
 }
 .axis-black-overlay{

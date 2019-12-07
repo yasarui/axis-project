@@ -44,7 +44,7 @@ class TransactionsTable extends React.Component{
               </section>              
           </div>
           <div className="table-wrap">
-            <table className="fixed-table-header">
+            <table className="fixed-table-header checker-transactions-table">
               <thead>
                   <tr>
                     <th style={{"width":"189px"}} > 
@@ -54,35 +54,35 @@ class TransactionsTable extends React.Component{
                             <span className="headerSortDown"></span>
                         </div> 
                     </th>
-                    <th style={{"width":"170px"}}> 
+                    <th style={{"width":"176px"}}> 
                         Column 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"160px"}} > 
+                    <th style={{"width":"164px"}} > 
                         Column 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>                
                     </th>
-                    <th style={{"width":"160px"}}> 
+                    <th style={{"width":"165px"}}> 
                         Column
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div> 
                     </th>
-                    <th style={{"width":"158px"}} > 
+                    <th style={{"width":"165px"}} > 
                         Column 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"161px"}} > 
+                    <th style={{"width":"165px"}} > 
                         Column 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>

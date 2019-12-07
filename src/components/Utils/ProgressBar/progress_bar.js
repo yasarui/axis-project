@@ -7,7 +7,7 @@ const ProgressBar = ({width}) => {
         <div className="progress-wrapper">
             <div style={{width:`${percentage}%`}} className="progress-bar">
                 <p className="uploaded-percentage" > {(percentage > 0 ? (`${percentage}%`) : "0%" )} </p>
-                <p className="uploaded-text" > {(width >= 100) ? "Uploaded":"Uploading"} </p>
+                <p className="uploaded-text" > {(width >= 100) ? "Uploaded":"Uploading..."} </p>
             </div>
         </div>        
     )

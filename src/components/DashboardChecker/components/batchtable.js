@@ -19,10 +19,10 @@ class BatchTable extends React.Component{
       return(
          <Fragment>
           <div className="table-wrap">
-            <table className="fixed-table-header has-bottom">
+            <table className="fixed-table-header has-bottom checker-batches-table">
               <thead>
                   <tr>
-                    <th style={{"width":"113px"}}> Batch ID </th>
+                    <th style={{"width":"115px"}}> Batch ID </th>
                     <th style={{"width":"184px"}}> 
                       Created
                       <div className="sortIconsWrapper">
@@ -30,21 +30,21 @@ class BatchTable extends React.Component{
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"164px"}}> 
+                    <th style={{"width":"172px"}}> 
                       Last action 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"201px"}}> 
+                    <th style={{"width":"203px"}}> 
                         Last action date 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"133px"}}> 
+                    <th style={{"width":"138px"}}> 
                         Transactions Pending 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
@@ -58,7 +58,7 @@ class BatchTable extends React.Component{
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"181px"}}> Actions </th>
+                    <th style={{"width":"173px"}}> Actions </th>
                   </tr>
               </thead>
               <tbody style={{"height":"300px"}} className="tbody-shadow" >
