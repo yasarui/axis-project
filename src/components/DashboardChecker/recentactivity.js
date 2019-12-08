@@ -30,7 +30,7 @@ const RecentActivity = ({data}) => {
 
    return (
       <div className="table-wrap recent-activity-table-wrapper">
-       <table className="fixed-table-header">
+       <table>
           <thead>
              <tr>
                <th style={{"width":"119px"}} > Batch ID </th>
@@ -42,7 +42,7 @@ const RecentActivity = ({data}) => {
                <th style={{"width":"200px"}}> Last Activity date </th>
              </tr>
           </thead>
-          <tbody style={{"height":"400px"}} >
+          <tbody>
               {data.map((item,index)=>{
                   return (
                     <tr>

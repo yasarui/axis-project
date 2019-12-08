@@ -19,57 +19,57 @@ class BatchTable extends React.Component{
     render(){
       return(
          <Fragment>
-          <div className="table-wrap">
-            <table className="has-bottom checker-batches-table fixed-table-header">
+          <div className="table-wrap checker-batches-table-wrapper">
+            <table className="checker-batches-table">
               <thead>
                   <tr>
-                    <th style={{"width":"115px"}}> Batch ID </th>
-                    <th style={{"width":"184px"}}> 
+                    <th> Batch ID </th>
+                    <th> 
                       Created
                       <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"172px"}}> 
+                    <th> 
                       Last action 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"203px"}}> 
+                    <th> 
                         Last action date 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"138px"}}> 
+                    <th> 
                         Transactions Pending 
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"165px"}}> 
+                    <th> 
                         Amount Pending approval
                         <div className="sortIconsWrapper">
                             <span className="headerSortUp"></span>
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th style={{"width":"173px"}}> Actions </th>
+                    <th> Actions </th>
                   </tr>
               </thead>
               <tbody style={{"height":"300px"}} className="tbody-shadow" >
                   {this.state.data.map((item,index)=>{
                       return(
                         <tr>
-                            <td style={{"width":"101px"}} >  
+                            <td>  
                                 <i class="fas fa-eye icon"></i> {item._id.substr(1,5)} 
                             </td>
-                            <td style={{"width":"162px"}} >  
+                            <td>  
                               <span className="date" > 
                                     {moment(item.date).format('dddd DD-MM-YY')} 
                               </span>
@@ -77,11 +77,11 @@ class BatchTable extends React.Component{
                                     {moment(item.date).format('h:mm:ss a')} 
                               </span>   
                             </td>
-                            <td style={{"width":"177px"}} > 
+                            <td> 
                                 {item.name}
                                 <a class="view-details" href="#"> View history </a>
                             </td>
-                            <td style={{"width":"180px"}} > 
+                            <td> 
                             <span className="date" > 
                                     {moment(item.lastDate).format('dddd DD-MM-YY')} 
                               </span>
@@ -89,10 +89,10 @@ class BatchTable extends React.Component{
                                     {moment(item.lastDate).format('h:mm:ss a')} 
                               </span>  
                             </td>
-                            <td style={{"width":"164px","textAlign":"right"}} className="textalign-right"> 
+                            <td style={{"textAlign":"right"}} className="textalign-right"> 
                               {item.pending} 
                             </td>
-                            <td style={{"width":"191px","textAlign":"right"}}> ₹​{item.amount} 
+                            <td style={{"textAlign":"right"}}> ₹​{item.amount} 
                                 <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
                             </td>
                             <td style={{"width":"181px"}}> 
@@ -102,10 +102,8 @@ class BatchTable extends React.Component{
                       )
                   })}
               </tbody>
-            </table>
-            <table className="bottom-table">
-                <tbody>
-                    <tr>
+              <tfoot className="table-footer">
+                <tr>
                         <td style={{"width":"73px"}} ></td>
                         <td style={{"width":"135px"}}></td>
                         <td style={{"width":"125px"}}></td>
@@ -125,8 +123,8 @@ class BatchTable extends React.Component{
                         <td> 
                             <Button> AUTHORISE </Button>
                         </td>
-                    </tr>
-                </tbody>
+                 </tr>
+              </tfoot>
             </table>
           </div>
          </Fragment>

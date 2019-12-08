@@ -45,7 +45,7 @@ class TransactionsTable extends React.Component{
               </section>              
           </div>
           <div className="table-wrap">
-            <table className="fixed-table-header checker-transactions-table">
+            <table className="checker-transactions-table has-table-bottom">
               <thead>
                   <tr>
                     <th style={{"width":"189px"}} > 
@@ -109,13 +109,32 @@ class TransactionsTable extends React.Component{
                         </tr>
                       )
                   })}
+                    <tr>
+                        <td style={{"width":"150px"}} > 
+                            <ButtonDropdown varient="success" />
+                        </td>
+                        <td style={{"width":"170px"}}> XXXXX </td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                    </tr>
+                    <tr>
+                        <td style={{"width":"150px"}} > 
+                            <ButtonDropdown varient="success" />
+                        </td>
+                        <td style={{"width":"170px"}}> XXXXX </td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                        <td style={{"width":"170px"}}></td>
+                    </tr>
               </tbody>
-            </table> 
-          
-            <table className="bottom-table" >
-                <tbody>
-                  <tr>
-                    <td>
+              <tfoot className="table-footer">
+              <tr>
+                    <td colSpan="6">
                       <div className="apply-flex">
                           <div>
                             <span> Transactions (amount)  </span>
@@ -142,8 +161,8 @@ class TransactionsTable extends React.Component{
                     </td>
                     <td> <Button> AUTHORISE </Button> </td>
                   </tr>
-                </tbody>
-            </table>
+              </tfoot>
+            </table> 
           </div>
         </Fragment>
        ) 

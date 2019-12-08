@@ -38,49 +38,49 @@ class AccountsTable extends React.Component{
     render(){
        return(
           <Fragment>
-            <div className="table-wrap checker-accounts-table">
-                <table className="has-bottom fixed-table-header">
+            <div className="table-wrap checker-accounts-table has-bottom-table">
+                <table className="has-bottom">
                     <thead style={{"borderBottom":"1px solid #e7e7e7"}} >
                         <tr>
-                        <th style={{"width":"260px"}} > 
+                        <th> 
                             Debit Account 
                             <div className="sortIconsWrapper">
                                 <span onClick={(e)=>this.sortAssending(e,'account_number')} className="headerSortUp"></span>
                                 <span onClick={(e)=>this.sortDessending(e,'account_number')} className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"224px"}} > 
+                        <th> 
                             Debit Account Name 
                             <div className="sortIconsWrapper">
                                 <span onClick={(e)=>this.sortAssending(e,'name')} className="headerSortUp"></span>
                                 <span onClick={(e)=>this.sortDessending(e,'name')} className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"196px"}} > 
+                        <th> 
                             Current Balance 
                             <div className="sortIconsWrapper">
                                 <span onClick={(e)=>this.sortAssending(e,'balance')} className="headerSortUp"></span>
                                 <span onClick={(e)=>this.sortDessending(e,'balance')}className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"245px"}} > 
+                        <th> 
                             Amount Under Approval 
                             <div className="sortIconsWrapper">
                                 <span onClick={(e)=>this.sortAssending(e,'amount')} className="headerSortUp"></span>
                                 <span onClick={(e)=>this.sortDessending(e,'amount')}className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"245px"}} > Action </th>
+                        <th> Action </th>
                         </tr>
                     </thead>
-                    <tbody style={{"height":"300px"}} className="tbody-shadow" >
+                    <tbody className="tbody-shadow" >
                         {this.state.data.map((item,index)=>{
                             return(
                             <tr>
-                                <td style={{"width":"274px"}} > 
+                                <td> 
                                     <i class="fas fa-eye icon"></i> {item.account_number}</td>
-                                <td style={{"width":"215px"}}> {item.name} </td>
-                                <td style={{"width":"181px","textAlign":"right"}}> 
+                                <td> {item.name} </td>
+                                <td style={{"textAlign":"right"}}> 
                                   ₹​{item.amount} &nbsp;&nbsp;
                                   {(item.button == "danger") ?                                   <span className="red-clr"> 
                                     <i class="fas fa-exclamation-triangle"></i>
@@ -90,39 +90,36 @@ class AccountsTable extends React.Component{
                                   </span> }
                                   <a className="refresh-link" href="#"> Refresh </a>
                                 </td>
-                                <td style={{"width":"245px","textAlign":"right"}}> 
+                                <td style={{"textAlign":"right"}}> 
                                     ₹​{item.amount} 
                                     <span className={item.iconClr}> <i class="fas fa-circle small-icon"></i> </span> 
                                 </td>
-                                <td style={{"width":"245px"}} > 
+                                <td> 
                                     <ButtonDropdown varient={item.button} />
                                 </td>
                             </tr>
                             )
                         })}
+
                     </tbody>
-                </table>
-            </div>
-            <div className="table-wrap">
-                <table className="bottom-table">
-                    <tbody>
-                       <tr>
-                         <td style={{"width":"233px"}} ></td>
-                         <td style={{"width":"174px"}}></td>
-                         <td style={{"width":"140px"}} >
-                            <span> <i class="far fa-check-circle green-clr"></i> &nbsp;&nbsp;&nbsp;&nbsp; Sufficient &nbsp;&nbsp; 4  </span>
-                            <span> <i class="fas fa-exclamation-triangle red-clr"></i> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> 
-                         </td>
-                         <td style={{"width":"204px"}} >
-                            <span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
-                            <span className="orange-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
-                            <span className="red-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span> 
-                         </td>
-                         <td>
-                            <Button> AUTHORISE </Button>                             
-                         </td>
-                       </tr>
-                    </tbody>
+                    <tfoot className="table-footer" >
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <span> <i class="far fa-check-circle green-clr"></i> &nbsp;&nbsp;&nbsp;&nbsp; Sufficient &nbsp;&nbsp; 4  </span>
+                                <span> <i class="fas fa-exclamation-triangle red-clr"></i> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> 
+                            </td>
+                            <td>
+                                <span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+                                <span className="orange-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+                                <span className="red-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span> 
+                            </td>
+                            <td>
+                                <Button> AUTHORISE </Button>                             
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
           </Fragment>
