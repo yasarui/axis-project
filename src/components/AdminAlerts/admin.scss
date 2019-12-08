@@ -1,17 +1,52 @@
 .admin-alerts-table{
-   tbody{
-     height: 200px;
-   }
-   .head-message {
-      width: 84.4%;
-    }
-    .head-date {
-      width: 10%;
-    }
-    .body-message {
-      width: 90%;
-    }
-    .body-date {
-      width: 10%;
-    }
+  //  tbody{
+  //    height: 200px;
+  //  }
+  //  .head-message {
+  //     width: 84.4%;
+  //   }
+  //   .head-date {
+  //     width: 10%;
+  //   }
+  //   .body-message {
+  //     width: 90%;
+  //   }
+  //   .body-date {
+  //     width: 10%;
+  //   }
+}
+
+.admin-alerts-table-wrapper{
+   height: 200px;
+   overflow-y: scroll;
+   thead th {
+    position: sticky !important;
+    top: 0;
+    background-color:#fff;
+  }
+  .body-date{
+    width:8%;
+  }
+
+  .head-date{
+    width:8%;
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background:#E1E1E1; 
+  }
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999; 
+  }
+
 }

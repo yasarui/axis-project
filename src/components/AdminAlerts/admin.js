@@ -27,8 +27,8 @@ const AdminAlerts = ({messages}) => {
    }
    
    return(
-      <div>
-        <table className="admin-alerts-table fixed-table-header">
+      <div className="admin-alerts-table-wrapper">
+        <table className="admin-alerts-table">
            <thead>
               <tr>
                 <th className="head-message">

@@ -742,6 +742,14 @@ body{
   overflow-y: scroll;
   height: 553px;
 
+  .body-date{
+    width:10%;
+  }
+
+  .head-date{
+    width:10%;
+  }
+
   /* width */
   &::-webkit-scrollbar {
     width: 5px;

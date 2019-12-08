@@ -29,7 +29,7 @@ const RecentActivity = ({data}) => {
   const [modalIsOpen,setModalIsOpen] = useState(false);
 
    return (
-      <div className="table-wrap">
+      <div className="table-wrap recent-activity-table-wrapper">
        <table className="fixed-table-header">
           <thead>
              <tr>
