@@ -89,6 +89,7 @@
             left: 13px;
             font-size: 14px;
             color: #999;
+            cursor:pointer;
             &.selected i {
               color: #fac917;
             }
@@ -104,6 +105,9 @@
   .common-btn {
     margin-left: 10px;
     float: right;
+  }
+  select{
+    margin-left: 5px;
   }
 }
 select {

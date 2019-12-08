@@ -33,6 +33,7 @@
     }
   }
   .enquire-table-wrap .custom-filter-wrap {
+    .custom-filter-col1,.custom-filter-col2,.custom-filter-col3{min-height: 130px !important;}
     .custom-filter-col1 {
       width: 30%;
     }
@@ -106,6 +107,9 @@
   }
 }
 @media screen and (min-width:100px) and (max-width:766px) {
+  .enquire-table-wrap .custom-filter-table-wrap{
+    padding: 20px 10px;
+  }
   header {
     padding-top: 10px;
     height: 70px;
@@ -455,10 +459,24 @@
     margin-right: 5px;
     width: 85px;
   }
+  .enquire-table-wrap{
+    .custom-filter-button{
+      padding:20px 35px;  
+    }
+  }
 }
 @media screen and (min-width:100px) and (max-width:400px) {
   .main-layout .content-section .last-updated-time {
     right: 10px;
     max-width: 150px;
+  }
+}
+@media screen and (min-width:500px) and (max-width:766px) {
+  .checker-dashboard-progress-wrapper .react-tabs__tab-list{
+    width: 100%;
+    li{
+      width: 33.3%;
+      .progress-tile{width: 90% !important}
+    }
   }
 }
