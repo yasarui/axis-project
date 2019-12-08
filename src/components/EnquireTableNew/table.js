@@ -23,6 +23,17 @@ const DefaultFilter = () => {
 }
 
 class EnquireTable extends React.Component{
+     constructor(props){
+        super(props);
+        this.state = {
+           overlay:false
+        }
+     }
+     toggleOverlay(state){
+         this.setState({
+             overlay:state
+         })
+     }
      render(){
          return(
             <div className="enquire-table-wrap">
@@ -41,8 +52,10 @@ class EnquireTable extends React.Component{
                         <Table />
                     </TabPanel>
                     <TabPanel>
-                        <CustomFilter />
-                        <Table />
+                        <CustomFilter toggleOverlay={(val)=>this.toggleOverlay(val)} />
+                        <div className={this.state.overlay ? "table-overlay":""}>
+                           <Table />
+                        </div>
                     </TabPanel>
                 </Tabs>
             </div>

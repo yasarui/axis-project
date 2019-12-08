@@ -37,7 +37,7 @@ const CustomFilter = (props) => {
                 <div className="custom-filter-wrap custom-filter clearfix">
                     <div className="custom-filter-lists clearfix">
                         <Tab>
-                            <div className="custom-filter-col1 clearfix">
+                            <div className="custom-filter-col1 clearfix" onClick={()=>props.toggleOverlay(false)} >
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type">
                                         <label>View</label>
@@ -63,7 +63,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of First Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col2 ">
+                            <div className="custom-filter-col2" onClick={()=>props.toggleOverlay(true)} >
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Column</label>
@@ -84,7 +84,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of Second Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col3">
+                            <div className="custom-filter-col3" onClick={()=>props.toggleOverlay(true)}>
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Active Filters</label>
@@ -247,7 +247,7 @@ const CustomFilter = (props) => {
                                             <td className="column-name">Column</td>
                                             <td className="column-data">
                                                 <div className="form-group tag-input">
-                                                    <select>
+                                                    <select style={{"width":"167px"}} >
                                                         <option>Select</option>
                                                     </select>
                                                 </div>

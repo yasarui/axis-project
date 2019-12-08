@@ -75,6 +75,7 @@ class EnquireTable extends React.Component{
       }
       return(
         <div className="table-wrap">
+          <div className="table-wrap-overlay" ></div>
           <table className="enquiry-table" >
             <thead>
                 <tr>
