@@ -40,7 +40,7 @@ class Maker extends Component {
         </TabList>
       </div>
     </div>
-        <div className="content-section">
+        <div className="content-section" id="maker-content-section">
         <TabPanel>
             <Dashboard setSelectedIndex={this.setSelectedIndex} />
         </TabPanel>

@@ -9,7 +9,8 @@ class EnquireTable extends React.Component{
         this.state = {
             selectedHeader:null,
             hideColumn:{},
-            data:[]
+            data:[],
+            showFilterTooltip:false
         }
     }
     componentDidMount(){
@@ -64,6 +65,11 @@ class EnquireTable extends React.Component{
         }
         this.setState({
             data:temp
+        })
+    }
+    handleTdClick(e){
+        this.setState({
+            showFilterTooltip:!this.state.showFilterTooltip
         })
     }
     render(){
@@ -135,17 +141,21 @@ class EnquireTable extends React.Component{
                     return (
                         <tr>
                             <td> <Button variant="success"> Accept </Button> </td>
-                            { !this.state.hideColumn._id && <td> {item._id} </td> }
-                            { !this.state.hideColumn.name && <td> {item.name} </td> }
-                            { !this.state.hideColumn.created && <td> {item.created} </td> }
-                            { !this.state.hideColumn.accepted && <td> {item.accepted} </td> }
-                            { !this.state.hideColumn.rejected && <td> {item.rejected} </td> }
-                            { !this.state.hideColumn.putOnHold && <td> {item.putOnHold} </td> }
+                            { !this.state.hideColumn._id && <td onClick={(e)=>this.handleTdClick(e)} > {item._id} </td> }
+                            { !this.state.hideColumn.name && <td onClick={(e)=>this.handleTdClick(e)} > {item.name} </td> }
+                            { !this.state.hideColumn.created && <td onClick={(e)=>this.handleTdClick(e)} > {item.created} </td> }
+                            { !this.state.hideColumn.accepted && <td onClick={(e)=>this.handleTdClick(e)} > {item.accepted} </td> }
+                            { !this.state.hideColumn.rejected && <td onClick={(e)=>this.handleTdClick(e)} > {item.rejected} </td> }
+                            { !this.state.hideColumn.putOnHold && <td onClick={(e)=>this.handleTdClick(e)}> {item.putOnHold} </td> }
                         </tr>
                     )
                 })}
             </tbody>
-        </table>        
+        </table>
+        { this.state.showFilterTooltip && <div className="td-filter-tooltip">
+           <div> Filter on this Value </div>
+           <div> Add to Custom filter </div>
+         </div>}        
         </div>
       )
     } 

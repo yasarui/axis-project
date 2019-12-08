@@ -533,3 +533,21 @@
     z-index:9999;
   }
 }
+
+.td-filter-tooltip{
+  z-index: 9999;
+  position: absolute;
+  top: 479px;
+  left: 804px;
+  width: 154px;
+  height: 95px;
+  background-color: #fff;
+  line-height: 48px;
+  font-size: 13px;
+  text-align: center;
+  color: #98144E;
+  box-shadow:0px 0px 3px 0px #999999;
+  div:first-child{
+    border-bottom:1px solid #E7E7E7;
+  }
+}
