@@ -391,35 +391,35 @@ body{
       }
       
       //Code for Fixed Table Header
-      .fixed-table-header{
-        thead tr{
-          display: block;
-        }
-        thead tr th{
-          display: inline-block;
-        }
-        tbody{
-          display:block;
-          overflow-y:scroll;
-          width:100%;
-        }
-        /* width */
-        ::-webkit-scrollbar {
-          width: 5px;
-        }
-        /* Track */
-        ::-webkit-scrollbar-track {
-          background: #f1f1f1; 
-        }
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-          background:#E1E1E1; 
-        }
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: #999; 
-        }
-       }
+      // .fixed-table-header{
+      //   thead tr{
+      //     display: block;
+      //   }
+      //   thead tr th{
+      //     display: inline-block;
+      //   }
+      //   tbody{
+      //     display:block;
+      //     overflow-y:scroll;
+      //     width:100%;
+      //   }
+      //   /* width */
+      //   ::-webkit-scrollbar {
+      //     width: 5px;
+      //   }
+      //   /* Track */
+      //   ::-webkit-scrollbar-track {
+      //     background: #f1f1f1; 
+      //   }
+      //   /* Handle */
+      //   ::-webkit-scrollbar-thumb {
+      //     background:#E1E1E1; 
+      //   }
+      //   /* Handle on hover */
+      //   ::-webkit-scrollbar-thumb:hover {
+      //     background: #999; 
+      //   }
+      //  }
       
       .batches-table{
         border-top-left-radius:0;
@@ -734,3 +734,37 @@ body{
     margin-top:5px;
  }
 }
+
+/*****
+  Code for table header fixed
+********/
+.recent-activity-table-wrapper{
+  overflow-y: scroll;
+  height: 553px;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background:#E1E1E1; 
+  }
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999; 
+  }
+
+  thead th {
+    position: sticky !important;
+    top: 0;
+    background:#fff;
+    border-bottom:1px solid #e7e7e7;
+  }
+
+}
+

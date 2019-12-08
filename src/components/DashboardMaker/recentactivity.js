@@ -45,12 +45,12 @@ const RecentActivity = ({data,setSelectedIndex}) => {
    }
    return (
      <Fragment>
-        <div className="table-wrap">
-          <table className="fixed-table-header recent-activity-table">
+        <div className="table-wrap recent-activity-table-wrapper">
+          <table className="recent-activity-table">
           <thead>
              <tr>
-               <th style={{"width":"122px"}} > Batch ID</th>
-               <th style={{"width":"189px"}}> 
+               <th> Batch ID</th>
+               <th> 
                    Staff
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'name')} className="headerSortUp"></span>
@@ -58,7 +58,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                    </div>
                    <small></small>
               </th>
-               <th style={{"width":"159px"}}> 
+               <th> 
                    Created
                    <div className="sortIconsWrapper">
                      <span  onClick={(e)=>sortAssending(e,'created')} className="headerSortUp"></span>
@@ -66,7 +66,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                    </div>
                    <small> Transactions (amount) </small>
               </th>
-               <th style={{"width":"164px"}}> 
+               <th> 
                    Accepted
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'accepted')} className="headerSortUp"></span>
@@ -74,7 +74,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                    </div>
                    <small> Transactions (amount) </small>
                </th>
-               <th style={{"width":"163px"}}> 
+               <th> 
                    Put on hold 
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'putOnHold')} className="headerSortUp"></span>
@@ -82,7 +82,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                    </div>
                    <small> Transactions (amount) </small>
                </th>
-               <th style={{"width":"163px"}}> 
+               <th> 
                    Rejected
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'rejected')} className="headerSortUp"></span>
@@ -90,7 +90,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                    </div>
                    <small> Transactions (amount) </small>
                </th>
-               <th style={{"width":"200px"}}> 
+               <th> 
                    Last activity date 
                    <div className="sortIconsWrapper">
                      <span onClick={(e)=>sortAssending(e,'date')} className="headerSortUp"></span>
@@ -99,22 +99,22 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                </th>
              </tr>
           </thead>
-          <tbody style={{"height":"400px"}} >
+          <tbody>
               {recentData.map((item,index)=>{
                   return (
                     <tr>
-                      <td style={{"width":"104px"}} > 
+                      <td> 
                         <i onClick={()=>setSelectedIndex(2)} class="icon fa fa-eye" aria-hidden="true"></i>
                         &nbsp;&nbsp;
                         {item._id.substr(1,5)}
                       </td>
-                      <td style={{"width":"202px"}} > 
+                      <td> 
                          {item.name} 
                       </td>
-                      <td style={{"width":"157px"}}>
+                      <td>
                         {(index % 2 == 0)?  <ProgressBar width={item.uploaded} /> :  <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)}  /> }
                       </td>
-                      <td style={{"width":"157px"}}> 
+                      <td> 
                          { index < 3 ? ( <EmptyTd /> ) : 
                             ( (index % 2 == 0 ) ? <td></td> : <Fragment> 
                                <bold> XX </bold> 
@@ -123,7 +123,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                             </Fragment>)
                          }
                       </td>
-                      <td style={{"width":"157px"}}> 
+                      <td> 
                          {
                            index < 3 ? (<EmptyTd />) : 
                              ( (index % 3 == 0) ? <td></td> : <Fragment>
@@ -133,7 +133,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                              </Fragment>)
                          }
                       </td>
-                      <td style={{"width":"157px"}} > 
+                      <td> 
                         {
                           index < 3 ? (<EmptyTd />) :
                              ((index % 4 == 0 ) ? <td></td> : <Fragment>
@@ -143,8 +143,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                              </Fragment>)
                         }
                       </td>
-                      <td style={{"width":"222px"}} > 
-
+                      <td> 
                             <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
                             <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>  
                       </td>
