@@ -33,17 +33,16 @@ const settings = {
 };
 
 const CustomFilter = (props) => {
-   const [firstList,setFirstList] = useState([1,2,3,4,5,6,7,8,9,10])
-   const [secondList,setSecondList] = useState([11,12,13,14,15,16,17,18,19,20]);
+   const list1 = [1,2,3,4,5,6,7,8,9,10];
+   const list2 = [11,12,13,14,15,16,17,18,19,20];
+   const [firstList,setFirstList] = useState(list1)
+   const [secondList,setSecondList] = useState(list2);
    function renderDraggableListOne(){
        return firstList.map((item)=>{
             return (<DraggableItem key={item} data={item} >  
                   <span> Column {item} </span>
              </DraggableItem>)
        });
-   }
-   function modifyListOne(item){
-
    }
    function renderDraggableListTwo(){
        return secondList.map((item)=>{
@@ -53,11 +52,25 @@ const CustomFilter = (props) => {
        });
    }
 
+   function removeAll(){
+       let newArr = [...list1,...list2];
+       setFirstList([]);
+       setSecondList(newArr);       
+   }
+   
+   function resetAll(){
+      setFirstList(list1);
+      setSecondList(list2);
+   }
+
    function modifyListOne(item){
      
      console.log("Modify List one is Running");
-
-      let data1 = [...firstList];
+      
+      let data1 = []
+      if(firstList.length > 0){
+        data1 = [...firstList];          
+      }
       data1.push(item);
       setFirstList(data1);
 
@@ -109,7 +122,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of First Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col2" onClick={()=>props.toggleOverlay(true)} >
+                            <div className="custom-filter-col2" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true)} >
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Column</label>
@@ -130,7 +143,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of Second Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col3" onClick={()=>props.toggleOverlay(true)}>
+                            <div className="custom-filter-col3" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true)}>
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Active Filters</label>
@@ -160,13 +173,13 @@ const CustomFilter = (props) => {
                     <div className="current-filter-action">
                         <div className="current-filter-head clearfix">
                             <h3>Visible Column <span>15</span></h3>
-                            <span className="reset-filter-txt">Remove all</span>
-                            <span className="reset-filter-txt">Reset</span>
+                            <span onClick={()=>removeAll()} className="reset-filter-txt">Remove all</span>
+                            <span onClick={()=>resetAll()} className="reset-filter-txt">Reset</span>
                         </div>
                         <div className="visible-column">
                             <p>Drag and arrange the columns you want to see. Drag and drop columns you do not want to see to the bottom.</p>
                             <div className="visible-column-list clearfix">
-                               <div className="slider-wrapper">
+                               <div style={{"minHeight":"100px"}} className="slider-wrapper">
                                     {/* {<Slider {...settings}> */}
                                         <Droppable addScroll={true} handleDrop={modifyListOne}>
                                                 {renderDraggableListOne()}
@@ -186,8 +199,8 @@ const CustomFilter = (props) => {
                         </div>
                     </div>
                     <div style={{"backgroundColor":"white"}}  className="custom-filter-button clearfix">
-                        <span className="common-btn">Apply</span>
-                        <span className="common-btn2">Clear</span>
+                        <span onClick={()=>props.toggleOverlay(false)} className="common-btn">Apply</span>
+                        <span onClick={()=>props.toggleOverlay(false)} className="common-btn2">Clear</span>
                     </div>
                 </div>
             </TabPanel>

@@ -2,14 +2,24 @@ import React, { Fragment } from 'react';
 import accounts_data from '../../fixture/accounts_data.json';
 import Button from '../../Buttons';
 import ButtonDropdown from '../../ButtonDropdowns';
+import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+
+const CalenderIcon = () => {
+    return(
+     <i class="fas fa-calendar-alt"></i> 
+    )
+ }
+ 
 
 class TransactionsTable extends React.Component{
     constructor(props){
        super(props);
        this.state = {
-           data:[]
+           data:[],
+            date: [new Date(), new Date()],
        }
     }
+    onChange = date => this.setState({ date })
     componentDidMount(){
         this.setState({
             data:accounts_data.data
@@ -26,10 +36,12 @@ class TransactionsTable extends React.Component{
                    </select>
               </section>
               <section>
-                 <p> <label> Date range </label>
-                 <bold> dd-mm-yyyy </bold>
-                 <label> to </label>
-                 <bold> dd-mm-yyyy </bold> </p>
+                    <DateRangePicker
+                        format="dd-MM-yyyy"
+                        onChange={this.onChange}
+                        value={this.state.date}
+                        calendarIcon={<CalenderIcon />}
+                    />
               </section>
               <section>
                   <label> Account Number </label>

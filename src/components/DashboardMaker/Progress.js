@@ -117,7 +117,7 @@ const Progress = (props) => {
                                 <tr>
                                     <td style={{"width":"113px"}} >  
                                         <label className="checkbox-wrapper" >
-                                            <input type="checkbox" className="checkbox" checked={ selectAll ? true: false }/>
+                            {selectAll ? <input type="checkbox" className="checkbox" checked={true}/> : <input type="checkbox" className="checkbox" /> }
                                             <span className="label-text"> 
                                                 {item._id.substring(1,5)} 
                                             </span>
