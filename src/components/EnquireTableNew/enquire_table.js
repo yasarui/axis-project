@@ -2,6 +2,7 @@ import React from 'react';
 import enquireTableData from '../fixture/enquire_table_data.json';
 import Button from '../Buttons';
 import Actions from '../Utils/actions';
+import ButtonDropdown from '../ButtonDropdowns';
 
 class EnquireTable extends React.Component{
     constructor(props){
@@ -140,7 +141,7 @@ class EnquireTable extends React.Component{
                 {this.state.data.map((item,index)=>{
                     return (
                         <tr>
-                            <td> <Button variant="success"> Accept </Button> </td>
+                            <td> <ButtonDropdown varient="success" /> </td>
                             { !this.state.hideColumn._id && <td onClick={(e)=>this.handleTdClick(e)} > {item._id} </td> }
                             { !this.state.hideColumn.name && <td onClick={(e)=>this.handleTdClick(e)} > {item.name} </td> }
                             { !this.state.hideColumn.created && <td onClick={(e)=>this.handleTdClick(e)} > {item.created} </td> }
