@@ -64,19 +64,17 @@ const CustomFilter = (props) => {
    }
 
    function modifyListOne(item){
-     
-     console.log("Modify List one is Running");
-      
-      let data1 = []
-      if(firstList.length > 0){
-        data1 = [...firstList];          
-      }
-      data1.push(item);
-      setFirstList(data1);
+       let data1 = []
+       if(firstList.length > 0){
+         data1 = [...firstList];          
+       }
+       data1.push(item);
+       data1.sort();
+       setFirstList(data1);
 
-      var temp = [...secondList];
-      temp = temp.filter(e => e != item);
-      setSecondList(temp)
+       var temp = [...secondList];
+       temp = temp.filter(e => e != item);
+       setSecondList(temp)
 
    }
 
@@ -87,6 +85,7 @@ const CustomFilter = (props) => {
       
       var temp = [...firstList];
       temp = temp.filter(e => e != item);
+      temp.sort();
       setFirstList(temp);
 
    }
@@ -176,17 +175,11 @@ const CustomFilter = (props) => {
                             <span onClick={()=>removeAll()} className="reset-filter-txt">Remove all</span>
                             <span onClick={()=>resetAll()} className="reset-filter-txt">Reset</span>
                         </div>
-                        <div className="visible-column">
+                        <div className="visible-column dropsection-wrapper">
                             <p>Drag and arrange the columns you want to see. Drag and drop columns you do not want to see to the bottom.</p>
-                            <div className="visible-column-list clearfix">
-                               <div style={{"minHeight":"100px"}} className="slider-wrapper">
-                                    {/* {<Slider {...settings}> */}
-                                        <Droppable addScroll={true} handleDrop={modifyListOne}>
-                                                {renderDraggableListOne()}
-                                        </Droppable>
-                                    {/* </Slider> } */}
-                               </div>
-                            </div>
+                              <Droppable addScroll={true} handleDrop={modifyListOne}>
+                                    {renderDraggableListOne()}
+                              </Droppable>
                         </div>
                         <div className="current-filter-head clearfix">
                             <h3>Avliable Column <span>25</span></h3>

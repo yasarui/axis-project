@@ -14,7 +14,7 @@ export default class Droppable extends React.Component{
     }
     render(){
        return(
-          <div onDrop={this.drop} onDragOver={this.allowDrop} className={"clearfix " + (this.props.addScroll ? 'customVerticalScroll': '')}>
+          <div onDrop={this.drop} onDragOver={this.allowDrop} className={"clearfix " + (this.props.addScroll ? 'dropsection': '')}>
             {this.props.children}
           </div>
        ) 

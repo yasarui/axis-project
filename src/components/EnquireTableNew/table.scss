@@ -453,6 +453,9 @@
   min-height:568px;
   border-top-right-radius:0 !important;
   border-top-left-radius:0 !important;
+  td{
+    /*cursor: pointer;*/
+  }
 }
 .enquire-table-wrap li.react-tabs__tab--selected:not(:first-child) > div{
    border-bottom:none !important;
@@ -549,5 +552,26 @@
   box-shadow:0px 0px 3px 0px #999999;
   div:first-child{
     border-bottom:1px solid #E7E7E7;
+  }
+}
+
+
+/*** 
+  Style for the Drag and Drop
+*******/
+.dropsection-wrapper{
+  position: relative;
+  min-height:100px;
+  .dropsection{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    box-sizing: border-box; 
   }
 }
