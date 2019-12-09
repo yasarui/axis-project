@@ -69,6 +69,18 @@
 
 .react-daterange-picker__calendar{
   z-index: 999 !important;}
+.react-daterange-picker__range-divider{
+  display:inline-flex;
+  align-items: center;
+  font-size:0;
+  padding-right:5px;
+   padding-left:4px;
+  &::after{
+    content: "to";
+    font-size: 13px;
+    color: #777;
+  }
+}
 .react-daterange-picker__clear-button{
   display:none !important;
   width:0;
@@ -81,8 +93,3 @@
   font-size: 13px;
   color: #000;
 }
- .react-daterange-picker__range-divider{
-   padding-right:5px;
-   padding-left:4px;
-   padding-top:5px;
- }
