@@ -1,6 +1,8 @@
-import React,{Fragment} from 'react';
+import React,{Fragment,useState} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Slider from "react-slick";
+import DraggableItem from './draggable_item';
+import Droppable from '../Utils/Droppable';
 
 const LeftArrow = (props) => {
     const { className, style, onClick } = props;
@@ -31,6 +33,50 @@ const settings = {
 };
 
 const CustomFilter = (props) => {
+   const [firstList,setFirstList] = useState([1,2,3,4,5,6,7,8,9,10])
+   const [secondList,setSecondList] = useState([11,12,13,14,15,16,17,18,19,20]);
+   function renderDraggableListOne(){
+       return firstList.map((item)=>{
+            return (<DraggableItem key={item} data={item} >  
+                  <span> Column {item} </span>
+             </DraggableItem>)
+       });
+   }
+   function modifyListOne(item){
+
+   }
+   function renderDraggableListTwo(){
+       return secondList.map((item)=>{
+            return (<DraggableItem key={item} data={item} >  
+                <span> Column {item} </span>
+            </DraggableItem>)
+       });
+   }
+
+   function modifyListOne(item){
+     
+     console.log("Modify List one is Running");
+
+      let data1 = [...firstList];
+      data1.push(item);
+      setFirstList(data1);
+
+      var temp = [...secondList];
+      temp = temp.filter(e => e != item);
+      setSecondList(temp)
+
+   }
+
+   function modifyListTwo(item){
+      let data2 = [...secondList];
+      data2.push(item);
+      setSecondList(data2);
+      
+      var temp = [...firstList];
+      temp = temp.filter(e => e != item);
+      setFirstList(temp);
+
+   }
    return(
         <Tabs>
             <TabList>
@@ -121,23 +167,11 @@ const CustomFilter = (props) => {
                             <p>Drag and arrange the columns you want to see. Drag and drop columns you do not want to see to the bottom.</p>
                             <div className="visible-column-list clearfix">
                                <div className="slider-wrapper">
-                                    <Slider {...settings}>
-                                        <span className="column-tags"> Column 1 </span>
-                                        <span className="column-tags"> Column 2 </span>
-                                        <span className="column-tags"> Column 3 </span>
-                                        <span className="column-tags"> Column 4 </span>
-                                        <span className="column-tags"> Column 5 </span>
-                                        <span className="column-tags"> Column 6 </span>
-                                        <span className="column-tags"> Column 7 </span>
-                                        <span className="column-tags"> Column 8 </span>
-                                        <span className="column-tags"> Column 9 </span>
-                                        <span className="column-tags"> Column 10 </span>
-                                        <span className="column-tags"> Column 11 </span>
-                                        <span className="column-tags"> Column 12 </span>
-                                        <span className="column-tags"> Column 13 </span>
-                                        <span className="column-tags"> Column 14 </span>
-                                        <span className="column-tags"> Column 15 </span>
-                                    </Slider>
+                                    {/* {<Slider {...settings}> */}
+                                        <Droppable addScroll={true} handleDrop={modifyListOne}>
+                                                {renderDraggableListOne()}
+                                        </Droppable>
+                                    {/* </Slider> } */}
                                </div>
                             </div>
                         </div>
@@ -146,36 +180,9 @@ const CustomFilter = (props) => {
                             <p>Drag abd drop column you want to view to the top.</p>
                         </div>
                         <div className="avliable-column-list clearfix">
-                            <ul>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li className="even-row">Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li className="even-row">Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                                <li>Column</li>
-                            </ul>
+                           <Droppable handleDrop={modifyListTwo} >
+                              {renderDraggableListTwo()}
+                           </Droppable>
                         </div>
                     </div>
                     <div style={{"backgroundColor":"white"}}  className="custom-filter-button clearfix">
