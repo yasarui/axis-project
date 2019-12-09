@@ -33,7 +33,7 @@ class EnquireFilter extends Component {
     return (
       <div className="enquire-wrap clearfix">
         <div class="enquire-filter clearfix">
-          <label>Date Range</label>
+          <label className='date-range-label'>Date Range</label>
           {/* <div className="enquire-filters">
             <input type="text" placeholder="dd-mm-yyyy" />
             <span>to</span>
