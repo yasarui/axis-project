@@ -19,6 +19,16 @@ class EnquireFilter extends Component {
 
   onChange = date => this.setState({ date })
 
+  componentDidMount(){
+     //document.getElementsByClassName('react-daterange-picker__range-divider').innerHTML = 'to';
+     console.log("Component has been Mounted ",document.getElementsByClassName('react-daterange-picker__range-divider').innerHTML);
+  }
+
+  componentDidUpdate(){
+    //document.getElementsByClassName('react-daterange-picker__range-divider').innerHTML = 'to';
+    console.log("Component has been Mounted ",document.getElementsByClassName('react-daterange-picker__range-divider').innerHTML);
+  }
+
   render() {
     return (
       <div className="enquire-wrap clearfix">
@@ -29,10 +39,11 @@ class EnquireFilter extends Component {
             <span>to</span>
             <input type="text" placeholder="dd-mm-yyyy" />
           </div> */}
-          <div>
+          <div className="date-range-wrapper">
              {/* <i class="fas fa-calendar-alt"></i> */}
              <DateRangePicker
-              name="Yasar Arafat"
+              onChange={(value) => alert('New date is: ', value)}
+              format="dd-MM-yyyy"
               onChange={this.onChange}
               value={this.state.date}
               calendarIcon={<CalenderIcon />}
