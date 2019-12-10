@@ -119,7 +119,8 @@ class Upload extends Component {
     }
 
     if (this.props.pageType == 'uploadPage' && this.state.uploadFile.length > 0) {
-      uploadButton = <span className="common-btn" onClick={this.uploadFiles}>Upload</span>
+      uploadButton = <div><span className="common-btn" onClick={this.uploadFiles}>Upload</span>
+      <p className="success-upload-msg"><span><i class="fas fa-check"></i></span>NEFT/RTGS/IMPS Accounts</p></div>
     }
     if (this.props.pageType == 'customTemplate' && this.state.uploadFile.length > 0) {
       uploadButton = <div><span className="common-btn" onClick={this.nextStep}>Upload</span>

@@ -13,13 +13,16 @@
    width:100%;
    display:flex;
    background:#fff;
-   padding-top:10px;
+   padding:10px 0;
    section{
      width:25%;
      font-size:14px;
      box-sizing:border-box;
-     padding-left:10px;
-     
+     border-left: 1px solid #ddd;
+     padding: 10px 0 10px 10px;
+     &:first-child {
+       border-left: 0;
+     }
      label{
        color:#B3B3B3;
        font-size:12px;
