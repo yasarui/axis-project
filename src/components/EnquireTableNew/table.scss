@@ -454,7 +454,7 @@
   border-top-right-radius:0 !important;
   border-top-left-radius:0 !important;
   td{
-    /*cursor: pointer;*/
+    cursor: pointer;
   }
 }
 .enquire-table-wrap li.react-tabs__tab--selected:not(:first-child) > div{
@@ -540,7 +540,7 @@
 .td-filter-tooltip{
   z-index: 9999;
   position: absolute;
-  top: 479px;
+  top: 179px;
   left: 804px;
   width: 154px;
   height: 95px;

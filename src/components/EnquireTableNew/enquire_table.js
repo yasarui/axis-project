@@ -151,12 +151,17 @@ class EnquireTable extends React.Component{
                         </tr>
                     )
                 })}
+                <tr>
+                  <td colspan="7">
+                  { this.state.showFilterTooltip && <div className="td-filter-tooltip">
+                        <div> Filter on this Value </div>
+                        <div> Add to Custom filter </div>
+                    </div>}  
+                  </td>
+                </tr>
             </tbody>
         </table>
-        { this.state.showFilterTooltip && <div className="td-filter-tooltip">
-           <div> Filter on this Value </div>
-           <div> Add to Custom filter </div>
-         </div>}        
+      
         </div>
       )
     } 
