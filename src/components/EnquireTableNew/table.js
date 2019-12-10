@@ -26,12 +26,14 @@ class EnquireTable extends React.Component{
      constructor(props){
         super(props);
         this.state = {
-           overlay:false
+           overlay:false,
+           selectedIndex:0
         }
      }
-     toggleOverlay(state){
+     toggleOverlay(state,index){
          this.setState({
-             overlay:state
+             overlay:state,
+             selectedIndex:index
          })
      }
      render(){
@@ -52,7 +54,7 @@ class EnquireTable extends React.Component{
                         <Table />
                     </TabPanel>
                     <TabPanel>
-                        <CustomFilter toggleOverlay={(val)=>this.toggleOverlay(val)} />
+                        <CustomFilter selectedIndex={this.state.selectedIndex} toggleOverlay={(val,index)=>this.toggleOverlay(val,index)} />
                         <div className={this.state.overlay ? "table-overlay":""}>
                            <Table />
                         </div>

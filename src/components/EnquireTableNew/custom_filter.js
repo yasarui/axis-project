@@ -90,12 +90,12 @@ const CustomFilter = (props) => {
 
    }
    return(
-        <Tabs>
+        <Tabs selectedIndex={props.selectedIndex} >
             <TabList>
                 <div className="custom-filter-wrap custom-filter clearfix">
                     <div className="custom-filter-lists clearfix">
                         <Tab>
-                            <div className="custom-filter-col1 clearfix" onClick={()=>props.toggleOverlay(false)} >
+                            <div className="custom-filter-col1 clearfix" onClick={()=>props.toggleOverlay(false,0)} >
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type">
                                         <label>View</label>
@@ -121,7 +121,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of First Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col2" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true)} >
+                            <div className="custom-filter-col2" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true,1)} >
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Column</label>
@@ -142,7 +142,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of Second Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col3" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true)}>
+                            <div className="custom-filter-col3" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true,2)}>
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Active Filters</label>
@@ -192,8 +192,8 @@ const CustomFilter = (props) => {
                         </div>
                     </div>
                     <div style={{"backgroundColor":"white"}}  className="custom-filter-button clearfix">
-                        <span onClick={()=>props.toggleOverlay(false)} className="common-btn">Apply</span>
-                        <span onClick={()=>props.toggleOverlay(false)} className="common-btn2">Clear</span>
+                        <span onClick={()=>props.toggleOverlay(false,0)} className="common-btn">Apply</span>
+                        <span onClick={()=>props.toggleOverlay(false,0)} className="common-btn2">Clear</span>
                     </div>
                 </div>
             </TabPanel>
@@ -318,8 +318,8 @@ const CustomFilter = (props) => {
                         </div>
                     </div>
                     <div style={{"backgroundColor":"white"}} className="custom-filter-button clearfix">
-                        <span className="common-btn">Apply</span>
-                        <span className="common-btn2">Clear</span>
+                        <span onClick={()=>props.toggleOverlay(false,0)} className="common-btn">Apply</span>
+                        <span onClick={()=>props.toggleOverlay(false,0)} className="common-btn2">Clear</span>
                     </div>
                 </div>                
             </TabPanel>
