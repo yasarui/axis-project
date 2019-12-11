@@ -22,24 +22,17 @@ class UploadPayment extends Component {
           isFavorite: true
         },
       ],
-      customTemplate: [
-        // {
-        //   id: 1,
-        //   name: 'Custom format 1',
-        //   isFavorite: false
-        // },
-        // {
-        //   id: 2,
-        //   name: 'Custom format 2',
-        //   isFavorite: true
-        // },
-        // {
-        //   id: 3,
-        //   name: 'Custom format 3',
-        //   isFavorite: false
-        // }
-      ]
+      customTemplate: this.getCustomTemplate()
     };
+  }
+
+  getCustomTemplate = () => {
+    var customTemplate = JSON.parse(sessionStorage.getItem('custom_template'));
+    var returnData = [];
+    if(customTemplate) {
+      returnData = customTemplate;
+    }
+    return returnData;
   }
 
   callbackFunction = (dataFromChild) => {

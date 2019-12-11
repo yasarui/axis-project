@@ -10,7 +10,8 @@ class CustomTemplate extends Component {
     this.state = {
       currentStep: 1,
       uploadSuccess: false,
-      showDesc: true
+      showDesc: true,
+      templateName: 'Template'
     };
   }
 
@@ -38,10 +39,35 @@ class CustomTemplate extends Component {
     this.props.callbackFromParent('payment');
   }
 
+  createTemplate = () => {
+    this.setSessionStorage();
+    this.props.callbackFromParent('payment');
+  }
+
+  setSessionStorage = () => {
+    var sessionLocalData = JSON.parse(sessionStorage.getItem('custom_template'));
+    var sessionData = [];
+    if(sessionLocalData){
+      sessionData = sessionLocalData;
+    }
+    var data = {
+      name: this.state.templateName,
+      isFavorite: false
+    }
+    sessionData.push(data);
+    sessionStorage.setItem('custom_template', JSON.stringify(sessionData));
+  }
+
   showHideDesc = () => {
     this.setState(state => ({
       showDesc: !this.state.showDesc
     }));
+  }
+
+  templateName = (event) => {
+    this.setState({
+      templateName: event.target.value
+    });
   }
 
   render() {
@@ -129,7 +155,7 @@ class CustomTemplate extends Component {
             <form class="finalise-detail-form">
               <div class="form-group clearfix">
                 <label>Template Name</label>
-                <input type="text" />
+                <input value={this.state.text} onChange={this.templateName} />
               </div>
               <div class="form-group clearfix">
                 <label>No. of footers</label>
@@ -164,7 +190,7 @@ class CustomTemplate extends Component {
                 </select>
               </div>
               <div className="data-field-btn">
-                <span className="common-btn" onClick={this.paymentPage}>Create</span>
+                <span className="common-btn" onClick={this.createTemplate}>Create</span>
                 <span className="common-btn2" onClick={this.previousStep}>Back</span>
               </div>
             </form>
