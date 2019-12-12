@@ -72,7 +72,7 @@ class UploadPayment extends Component {
         </div>
         <div className="new-upload">
           <h3>New Upload</h3>
-          <Upload pageType="uploadPage" callbackFromParent={this.callbackFunction} />
+          <Upload pageType="uploadPage" {...this.props} callbackFromParent={this.callbackFunction} />
         </div>
         <div className="templates clearfix">
           <div className="templates-col">
@@ -86,7 +86,7 @@ class UploadPayment extends Component {
                     <i className={(data.isFavorite ? "fas fa-star" : "far fa-star")}></i></span>
                     <div className="template-actions">
                       <a href="./images/logo-white.png" title="Download" download>
-                        <img src="./images/download1.png" />
+                        <img src="./images/download.svg" />
                       </a>
                     </div>
                 </li>
@@ -106,13 +106,13 @@ class UploadPayment extends Component {
                     <i className={(data.isFavorite ? "fas fa-star" : "far fa-star")}></i></span>
                   <div className="template-actions">
                     <a href="./images/logo-white.png" title="Download" download>
-                      <img src="./images/download1.png" />
+                      <img src="./images/download.svg" />
                     </a>
                     <span onClick={this.customTemplate} title="Edit">
-                      <img src="./images/edit1.png" />
+                      <img src="./images/edit.svg" />
                     </span>
                     <span onClick={this.removecustomTemplate.bind(this, i)} title="Delete">
-                    <img src="./images/delete1.png" />
+                    <img src="./images/delete.svg" />
                     </span>
                   </div>
                 </li>
@@ -123,10 +123,12 @@ class UploadPayment extends Component {
         </div>
         <div className="custom-tamplate-wrap">
           Choose format for custom template
-        <select>
-            <option>ePayment & cheque</option>
-            <option>ePayment & cheque</option>
-          </select>
+          <div className="select-wrap">
+            <select>
+              <option>ePayment & cheque</option>
+              <option>ePayment & cheque</option>
+            </select>
+          </div>
           <span className="common-btn" onClick={this.customTemplate}>Create</span>
         </div>
       </div>

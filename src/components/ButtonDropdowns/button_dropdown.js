@@ -5,14 +5,33 @@ const ButtonDropdown = ({varient}) => {
    function handleChange(e){
        console.log("value ",e.target.value);
    }
+   var dropdownText;
+   if(value) {
+    dropdownText = 'Accept';
+   }
+   switch(value) {
+    case 'success':
+      dropdownText = 'Accept'
+      break;
+    case 'warning':
+      dropdownText = 'Put on Hold'
+      break;
+    case 'danger':
+      dropdownText = 'Reject'
+      break;
+    case 'disable':
+      dropdownText = 'No Action'
+      break;
+   }
    return(
-    <div className="axis-select-dropdown-wrapper">
-        <select onChange={(e)=>setValue(e.target.value)} className={value} value={value}>
-            <option value="success"> Accept </option>
-            <option value="warning" > Put on Hold </option>
-            <option value="danger" > Reject </option>
-            <option value="disable"> No Action </option>
-        </select>
+    <div className={"axis-select-dropdown-wrapper " + (value)}>
+        <span className="value">{dropdownText}</span>
+        <ul>
+          <li className="accept-txt" onClick={(e)=>setValue('success')}>Accept</li>
+          <li className="warning-txt" onClick={(e)=>setValue('warning')}>Put on Hold</li>
+          <li className="danger-txt" onClick={(e)=>setValue('danger')}>Reject</li>
+          <li className="disable-txt" onClick={(e)=>setValue('disable')}>No Action</li>
+        </ul>
     </div>  
    )
 }

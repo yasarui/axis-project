@@ -2,44 +2,100 @@
    width:125px;
    height: 17px;
    position: relative;
-   select{
-     cursor: pointer;
-     border-radius:20px;
-     border:none;
-     width:100%;
-     font-size:10px;
-     text-transform: uppercase;
-     box-sizing:border-box;
-     padding-left:15px;
-     padding-top:7px;
-     appearance: none;
-     -webkit-appearance:none;
-     color:#fff;
-     outline:none;
-     position: relative;
+  //  select{
+  //    cursor: pointer;
+  //    border-radius:20px;
+  //    border:none;
+  //    width:100%;
+  //    font-size:10px;
+  //    text-transform: uppercase;
+  //    box-sizing:border-box;
+  //    padding-left:15px;
+  //    padding-top:7px;
+  //    appearance: none;
+  //    -webkit-appearance:none;
+  //    color:#fff;
+  //    outline:none;
+  //    position: relative;
+  //  }
+  span {
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    width: 100px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    padding: 4px 10px;
+    text-align: center;
+  }
+   &.success{
+     span {
+      background-color:#6AC259;     
+     }
    }
-   select.success{
-     background-color:#6AC259;     
-   }
-   select.warning{
+   &.warning{
+    span {
      background-color:#F5B300;
+    }
    }
-   select.danger{
+   &.danger{
+    span {
      background-color:#EC5F48;
+    }
    }
-   select.disable{
+   &.disable{
+    span {
      background-color:#A3A3A3;
+    }
+   }
+   .accept-txt {
+     color: #6AC259;
+   }
+   .warning-txt{
+    color:#F5B300;
+   }
+   .danger-txt {
+    color:#EC5F48;
+   }
+   .disable-txt{
+    color:#A3A3A3;
+   }
+   ul {
+     display: none;
+    position: absolute;
+    top: 19px;
+    left: 0;
+    background: #fff;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 120px;
+    border: 1px solid #ddd;
+    z-index: 9;
+     li {
+      border-top: 1px solid #ddd;
+      padding: 5px 10px;
+      list-style: none;
+      font-size: 13px;
+      cursor: pointer;
+      font-weight: 600;
+     }
+   }
+   &:hover ul {
+    display: block;
    }
 }
 .axis-select-dropdown-wrapper:after{
     content:"";
-    width:8px;
-    height:8px;
+    width:6px;
+    height:6px;
     border:1px solid #fff;
     position: absolute;
     background:transparent;
     right: 15px;
-    top:5px;
+    top:4px;
     transform: rotate(45deg);
     border-top:0;
     border-left:0;

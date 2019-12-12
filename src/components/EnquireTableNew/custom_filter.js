@@ -99,23 +99,25 @@ const CustomFilter = (props) => {
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type">
                                         <label>View</label>
-                                        <select>
+                                        <div className="select-wrap">
+                                          <select>
                                             <option>Default</option>
                                             <option>Custom</option>
-                                        </select>
+                                          </select>
+                                        </div>
                                     </div>
                                     <div className="create-update-action clearfix">
-                                        <span title="Delete"><i class="far fa-trash-alt"></i></span>
+                                        <span title="Delete"><img src="./images/delete.svg" /></span>
                                         <span title="Update">Update</span>
                                         <span title="Create New">Create New</span>
                                     </div>
                                 </div>
                                 <div className="clearfix">
                                     <div className="file-icons">
-                                        <span title=""><i class="far fa-file-pdf"></i></span>
-                                        <span title=""><i class="far fa-file-excel"></i></span>
-                                        <span title=""><i class="far fa-file"></i></span>
-                                        <span title=""><i class="far fa-envelope"></i></span>
+                                        <span title=""><img src="./images/pdf-file.svg" /></span>
+                                        <span title=""><img src="./images/xlsx-file.svg" /></span>
+                                        <span title=""><img src="./images/text-file.svg" /></span>
+                                        <span title=""><img src="./images/mail.svg" /></span>
                                     </div>
                                 </div>
                             </div> {/* End of First Tab Link Section */}
@@ -125,15 +127,19 @@ const CustomFilter = (props) => {
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Column</label>
-                                        <select>
-                                            <option>14/40</option>
-                                        </select>
+                                        <div className="select-wrap">
+                                          <select>
+                                              <option>14/40</option>
+                                          </select>
+                                        </div>
                                     </div>
                                     <div className="view-type row">
                                         <label>Rows</label>
-                                        <select>
-                                            <option>5</option>
-                                        </select>
+                                        <div className="select-wrap">
+                                          <select>
+                                              <option>5</option>
+                                          </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="clearfix">
@@ -146,9 +152,11 @@ const CustomFilter = (props) => {
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column">
                                         <label>Active Filters</label>
-                                        <select>
-                                            <option>7/40</option>
-                                        </select>
+                                        <div className="select-wrap">
+                                          <select>
+                                              <option>7/40</option>
+                                          </select>
+                                        </div>
                                     </div>
                                     <div class="text-toggle ">
                                         <input id="c" type="checkbox" />
@@ -206,9 +214,11 @@ const CustomFilter = (props) => {
                         </div>
                         <div className="all-column">
                             <label>Show</label>
-                            <select>
-                                <option>All</option>
-                            </select>
+                            <div className="select-wrap">
+                              <select>
+                                  <option>All</option>
+                              </select>
+                            </div>
                             <span>Columns</span>
                         </div>
                     </div>
@@ -260,9 +270,11 @@ const CustomFilter = (props) => {
                                             <td className="column-name">Column</td>
                                             <td className="column-data">
                                                 <div className="form-group tag-input">
+                                                  <div className="select-wrap">
                                                     <select style={{"width":"167px"}} >
                                                         <option>Select</option>
                                                     </select>
+                                                  </div>
                                                 </div>
                                             </td>
                                         </tr>
