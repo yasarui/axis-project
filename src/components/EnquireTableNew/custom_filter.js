@@ -23,7 +23,7 @@ const RightArrow = (props) => {
 }
 
 const settings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     centerPadding: '60px',
     slidesToShow: 5,
@@ -177,9 +177,11 @@ const CustomFilter = (props) => {
                         </div>
                         <div className="visible-column dropsection-wrapper">
                             <p>Drag and arrange the columns you want to see. Drag and drop columns you do not want to see to the bottom.</p>
+                              <div className="slider-wrapper">                               
                               <Droppable addScroll={true} handleDrop={modifyListOne}>
-                                    {renderDraggableListOne()}
+                                   <Slider {...settings} > {renderDraggableListOne()} </Slider>
                               </Droppable>
+                              </div>
                         </div>
                         <div className="current-filter-head clearfix">
                             <h3>Avliable Column <span>25</span></h3>

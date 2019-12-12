@@ -153,7 +153,7 @@ const RecentActivity = ({data,setSelectedIndex}) => {
           </tbody>
        </table>
        </div>
-       <AxisModal isOpen={modalIsOpen} size="Medium" closeModal={()=>setModalIsOpen(false)}> 
+       <AxisModal overlayColor="black" isOpen={modalIsOpen} size="Medium" closeModal={()=>setModalIsOpen(false)}> 
             <ViewDetails />
        </AxisModal>
      </Fragment>

@@ -502,28 +502,6 @@
 
 }
 
-.visible-column-list{
-   padding-left:50px;
-   padding-right:50px;
-   .slider-wrapper{
-     width: 90%;
-     margin:0 auto;
-   }
-   .nav-icons{
-     color:#98144E;
-     position: absolute;
-     top:6px;
-     z-index: 999;
-     cursor: pointer;
-    }
-   .nav-icons.left{
-     left:-50px;
-   }
-  .nav-icons.right{
-    right: -50px;
-   }
-}
-
 .table-overlay{
   .table-wrap{
     position: relative;
@@ -561,7 +539,7 @@
 *******/
 .dropsection-wrapper{
   position: relative;
-  min-height:100px;
+  min-height:70px;
   .dropsection{
     position: absolute;
     width: 100%;
@@ -573,5 +551,18 @@
     bottom: 0;
     padding: 30px;
     box-sizing: border-box; 
+    .nav-icons{
+      color:#98144E;
+      position: absolute;
+      top:6px;
+      z-index: 999;
+      cursor: pointer;
+    }
+    .nav-icons.left{
+      left:-20px;
+    }
+    .nav-icons.right{
+     right: -20px;
+    }
   }
 }
