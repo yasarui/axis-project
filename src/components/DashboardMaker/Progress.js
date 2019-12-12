@@ -151,14 +151,15 @@ const Progress = (props) => {
                                     <td style={{"width":"213px"}} >
                                         {item.amount}
                                     </td>
-                                    <td style={{"width":"86px"}} >
+                                    <td className="text-right" style={{"width":"86px"}} >
                                         {
                                           (index === 0) ? <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-times icon"></i> </span> : (
-                                          (index === 1) ? (<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-trash-alt icon"></i> </span>) :
+                                          (index === 1) ? (<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                            <img src="./images/delete.svg" /> </span>) :
                                           <Fragment>
-                                                <span> <i class="fas fa-mouse-pointer icon"></i> </span>
+                                                <span> <img src="./images/send.svg" /> </span>
                                                 &nbsp;&nbsp;
-                                                <span> <i class="fas fa-trash-alt icon"></i> </span>  
+                                                <span> <img src="./images/delete.svg" /> </span>  
                                            </Fragment>                                            
                                           )
                                         }

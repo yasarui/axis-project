@@ -230,14 +230,14 @@ class CustomTemplate extends Component {
           <div className={"template-steps-col " + (this.state.currentStep == 1 ? "active" : "") + (this.state.currentStep > 1 ? "completed" : "")}>
             <span className="step-count">
               <span className="count">1</span>
-              <span className="comp-tick"><i class="fas fa-check"></i></span>
+              <span className="comp-tick"><img src="./images/tick.svg" /></span>
             </span>
             Upload Sample File
         </div>
           <div className={"template-steps-col " + (this.state.currentStep == 2 ? "active" : "") + (this.state.currentStep > 2 ? "completed" : "")}>
             <span className="step-count">
               <span className="count">2</span>
-              <span className="comp-tick"><i class="fas fa-check"></i></span>
+              <span className="comp-tick"><img src="./images/tick.svg" /></span>
             </span>
             Identify Data-fields
         </div>

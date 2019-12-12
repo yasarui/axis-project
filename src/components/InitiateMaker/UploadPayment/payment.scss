@@ -116,8 +116,32 @@ select {
   border-bottom: 1px solid #bbb;
   font-size: 14px;
   padding: 5px 0;
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  position: relative;
   &:focus {
     outline: none;
+  }
+}
+.select-wrap {
+  display: inline-block;
+  position: relative;
+  select {
+    padding-right: 35px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    border-style: solid;
+    border-color: #98144E;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+    pointer-events: none;
   }
 }
 .common-btn {

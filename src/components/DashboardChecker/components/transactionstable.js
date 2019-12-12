@@ -6,7 +6,7 @@ import DateRangePicker from '@wojtekmaj/react-daterange-picker';
 
 const CalenderIcon = () => {
     return(
-     <i class="fas fa-calendar-alt"></i> 
+      <img src="./images/calender.svg" />
     )
  }
  
@@ -29,11 +29,13 @@ class TransactionsTable extends React.Component{
        return(
         <Fragment>
           <div className="transactions-tab-filter" >
-              <section>
+              <section className="default-view">
                   <label> View </label>
-                  <select>
-                      <option value="default" > Default </option>
-                   </select>
+                  <div className="select-wrap">
+                    <select>
+                        <option value="default" > Default </option>
+                    </select>
+                  </div>
               </section>
               <section>
                     <DateRangePicker
@@ -45,15 +47,19 @@ class TransactionsTable extends React.Component{
               </section>
               <section>
                   <label> Account Number </label>
-                  <select>
-                      <option> XXXX XXXX XXXX </option>
-                  </select>
+                  <div className="select-wrap">
+                    <select>
+                        <option> XXXX XXXX XXXX </option>
+                    </select>
+                  </div>
               </section>
               <section>
                   <label> Payment Method </label>
-                  <select>
-                      <option> ePayment @ Cheque </option>
-                  </select>
+                  <div className="select-wrap">
+                    <select>
+                        <option> ePayment @ Cheque </option>
+                    </select>
+                  </div>
               </section>              
           </div>
           <div className="table-wrap">

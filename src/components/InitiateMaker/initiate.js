@@ -24,10 +24,10 @@ class Initiate extends Component {
   render() {
     let htmlData;
     if (this.state.currentTab == 'payment') {
-      htmlData = <UploadPayment callbackFromParent={this.callbackFunction} />
+      htmlData = <UploadPayment {...this.props} callbackFromParent={this.callbackFunction} />
     }
     if (this.state.currentTab == 'template') {
-      htmlData = <CustomTemplate callbackFromParent={this.callbackFunction} />
+      htmlData = <CustomTemplate {...this.props} callbackFromParent={this.callbackFunction} />
     }
 
     return (

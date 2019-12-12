@@ -100,7 +100,7 @@ class Upload extends Component {
         <div className="popup-overlay">
           <div className="custom-popup">
             <span className="popup-close"><i class="far fa-window-close" onClick={this.hidePopup}></i></span>
-            <p className="warning-txt"><i class="fas fa-exclamation-circle"></i> Error: Wrong file format!</p>
+            <p className="warning-txt clearfix"><img src="./images/error.svg" /> <span>Error: Wrong file format!</span></p>
             <p>Please re-upload with the correct format</p>
             <span class="common-btn">Ok</span>
           </div>
@@ -111,9 +111,9 @@ class Upload extends Component {
         <div className="popup-overlay">
           <div className="custom-popup">
             <span className="popup-close"><i class="far fa-window-close" onClick={this.hidePopup}></i></span>
-            <p className="success-txt"><i class="far fa-check-circle"></i> Batch Accepted</p>
-            <span className="common-btn">Ok</span>
-            <span className="file-status">View file status</span>
+            <p className="success-txt clearfix"><img src="./images/success.svg" /> <span>Batch Accepted</span></p>
+            <span className="common-btn" onClick={()=>this.props.setSelectedIndex(0)}>Ok</span>
+            <span className="file-status" onClick={()=>this.props.setSelectedIndex(0)}>View file status</span>
           </div>
         </div>
     }

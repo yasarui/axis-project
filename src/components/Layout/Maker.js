@@ -45,7 +45,7 @@ class Maker extends Component {
             <Dashboard setSelectedIndex={this.setSelectedIndex} />
         </TabPanel>
         <TabPanel>
-            <Initiate />
+            <Initiate setSelectedIndex={this.setSelectedIndex} />
         </TabPanel>
         <TabPanel>
             <Enquire />

@@ -223,7 +223,7 @@ class EnquireTable extends Component {
                 </select>
               </div>
               <div className="create-update-action clearfix">
-                <span title="Delete"><i class="far fa-trash-alt"></i></span>
+                <span title="Delete"><img src="./images/delete.svg" /> </span>
                 <span title="Update">Update</span>
                 <span title="Create New">Create New</span>
               </div>

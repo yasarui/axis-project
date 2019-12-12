@@ -11,10 +11,12 @@ const DefaultFilter = () => {
                 <div className="custom-filter-top clearfix">
                     <div className="view-type">
                         <label>View</label>
-                        <select>
-                            <option>Default</option>
-                            <option>Custom</option>
-                        </select>
+                        <div className="select-wrap">
+                          <select>
+                              <option>Default</option>
+                              <option>Custom</option>
+                          </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,8 +44,8 @@ class EnquireTable extends React.Component{
                 <Tabs>
                     <div className="main-nav-tabs">
                         <TabList>
-                            <Tab> Standard  </Tab>
-                            <Tab> Custom </Tab>
+                            <Tab> Standard  <span></span></Tab>
+                            <Tab> Custom <span></span></Tab>
                         </TabList>
                     </div>
                     <div className="clearfix"></div>
