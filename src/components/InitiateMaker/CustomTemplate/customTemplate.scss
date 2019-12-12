@@ -224,6 +224,19 @@
       min-width: 220px;
       font-size: 13px;
     }
+    &.input-footer input,
+    &.input-header input {
+      max-width: 40px;
+      min-width: 40px;
+    }
+    &.option-date select,
+    &.option-file select {
+      min-width: 130px;
+    }
+    &.option-delimiter select {
+      min-width: 70px;
+      width: 70px;
+    }
   }
 }
 .main-layout .content-section table.custom-field-tabel {

@@ -406,8 +406,9 @@ body{
        }
       
       .batches-table{
-        border-top-left-radius:0;
-        border-top-right-radius:0;
+        // border-top-left-radius:0;
+        // border-top-right-radius:0;
+        border-radius: 0;
         tbody{
           margin-top:-2px;
         }

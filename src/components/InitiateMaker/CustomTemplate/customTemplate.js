@@ -157,37 +157,43 @@ class CustomTemplate extends Component {
                 <label>Template Name</label>
                 <input value={this.state.text} onChange={this.templateName} />
               </div>
-              <div class="form-group clearfix">
+              <div class="form-group input-footer clearfix">
                 <label>No. of footers</label>
                 <input type="text" />
               </div>
-              <div class="form-group clearfix">
+              <div class="form-group input-header clearfix">
                 <label>No. of headers</label>
                 <input type="text" />
               </div>
-              <div class="form-group clearfix">
+              <div class="form-group option-file clearfix">
                 <label>File extension</label>
-                <select>
-                  <option>Choose</option>
-                  <option>Choose 1</option>
-                  <option>Choose 2</option>
-                </select>
+                <div className="select-wrap">
+                  <select>
+                    <option>Choose</option>
+                    <option>Choose 1</option>
+                    <option>Choose 2</option>
+                  </select>
+                </div>
               </div>
-              <div class="form-group clearfix">
+              <div class="form-group option-delimiter clearfix">
                 <label>Delimiter</label>
-                <select>
-                  <option></option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                </select>
+                <div className="select-wrap">
+                  <select>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                  </select>
+                </div>
               </div>
-              <div class="form-group clearfix">
+              <div class="form-group option-date clearfix">
                 <label>Date format</label>
-                <select>
-                  <option>dd-mm-yyyy</option>
-                  <option>mm-dd-yyyy</option>
-                  <option>yyyy-mm-dd</option>
-                </select>
+                <div className="select-wrap">
+                  <select>
+                    <option>dd-mm-yyyy</option>
+                    <option>mm-dd-yyyy</option>
+                    <option>yyyy-mm-dd</option>
+                  </select>
+                </div>
               </div>
               <div className="data-field-btn">
                 <span className="common-btn" onClick={this.createTemplate}>Create</span>
