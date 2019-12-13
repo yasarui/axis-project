@@ -36,9 +36,15 @@ const settings = {
 const CustomFilter = (props) => {
    const list1 = [1,2,3,4,5,6,7,8,9,10];
    const list2 = [11,12,13,14,15,16,17,18,19,20];
+   const list3 = ['Value1', 'Value2'];
+   const list4 = ['Value1', 'Value2','Value1', 'Value2','Value1', 'Value2','Value1', 'Value2','Value1', 'Value2','Value1', 'Value2','Value1', 'Value2','Value1', 'Value2','Value1', 'Value2'];
    const [firstList,setFirstList] = useState(list1)
    const [secondList,setSecondList] = useState(list2);
    const [popupList,setpopupList] = useState('');
+   const [columnList,setColumnList] = useState(list3);
+   const [columnList1,setColumnList1] = useState(list4);
+   const textInput = React.createRef();
+   const textInput1 = React.createRef();
    function renderDraggableListOne(){
        return firstList.map((item)=>{
             return (<DraggableItem key={item} data={item} >  
@@ -100,6 +106,32 @@ const CustomFilter = (props) => {
    function callbackFunction() {
     setpopupList('');
    }
+
+   function addColumn(e) {
+    if (e.key === 'Enter') {
+      let dataList = [...columnList];
+      dataList.push(e.target.value)
+      setColumnList(dataList);
+      e.target.value = '';
+    }
+  }
+
+  function focusProps(){
+    textInput.current.focus();
+  }
+
+  function focusProps1(){
+    textInput1.current.focus();
+  }
+
+  function addColumn1(e) {
+    if (e.key === 'Enter') {
+      let dataList = [...columnList1];
+      dataList.push(e.target.value)
+      setColumnList1(dataList);
+      e.target.value = '';
+    }
+  }
 
    return(
         <Tabs selectedIndex={props.selectedIndex} >
@@ -257,26 +289,26 @@ const CustomFilter = (props) => {
                                         <tr>
                                             <td className="column-name">Column</td>
                                             <td className="column-data">
-                                                <div className="axis-tags-wrapper">
-                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i>  </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                <div className="axis-tags-wrapper" onClick={()=>focusProps()}>
+                                                  <div className="axis-tag-wrap">
+                                                    {columnList.map((data, i) => {
+                                                      return <span className="axis-tags" > {data} <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                    })}
+                                                    <input type="text" onKeyDown={(e)=>addColumn(e)}  ref={textInput} />
+                                                  </div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td className="column-name">Column</td>
                                             <td className="column-data">
-                                                <div className="axis-tags-wrapper">
-                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>  
-                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>  
-                                                  <span className="axis-tags" > Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>
-                                                  <span className="axis-tags"> Value 1 <i class="fa fa-times" aria-hidden="true"></i> </span>                       
+                                                <div className="axis-tags-wrapper" onClick={()=>focusProps1()}>
+                                                  <div className="axis-tag-wrap">
+                                                    {columnList1.map((data, i) => {
+                                                      return <span className="axis-tags" > {data} <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                    })}
+                                                    <input type="text" onKeyDown={(e)=>addColumn1(e)}  ref={textInput1} />
+                                                  </div>
                                                 </div>
                                             </td>
                                         </tr>

@@ -499,6 +499,18 @@
       margin-left:5px;
     }
   }
+  .axis-tag-wrap {
+    display: inline-block;
+  }
+  input {
+    background: inherit;
+    border: 0;
+    height: 38px;
+    outline: none;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .visible-column-list{
