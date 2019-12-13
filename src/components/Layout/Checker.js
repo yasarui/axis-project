@@ -30,9 +30,18 @@ class Checker extends Component {
         <div class="sidebar-menu">
           <span onClick={this.hideMenu} className="mobile-menu-close"><i class="fas fa-times"></i></span>
           <TabList>
-              <Tab onClick={this.hideMenu}> <i className="fas fa-home"></i> Home  </Tab>
-              <Tab onClick={this.hideMenu}> <i className="fas fa-check"></i> Approve </Tab>
-              <Tab onClick={this.hideMenu}> <i className="fas fa-table"></i> Enquire </Tab>
+              <Tab onClick={this.hideMenu}> 
+              <span className="home"><img src="./images/home.svg" /></span>
+              <span className="home active-icon"><img src="./images/home-active.svg" /></span>
+              Home  </Tab>
+              <Tab onClick={this.hideMenu}> 
+              <span className="approve"><img src="./images/approve.svg" /></span>
+              <span className="approve active-icon"><img src="./images/approve-active.svg" /></span>
+               Approve </Tab>
+              <Tab onClick={this.hideMenu}> 
+              <span className="enquire"><img src="./images/enquire.svg" /></span>
+              <span className="enquire active-icon"><img src="./images/enquire-active.svg" /></span>
+              Enquire </Tab>
           </TabList>
         </div>
       </div>

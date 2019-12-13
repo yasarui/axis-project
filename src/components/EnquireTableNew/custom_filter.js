@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Slider from "react-slick";
 import DraggableItem from './draggable_item';
 import Droppable from '../Utils/Droppable';
+import EnquirePopup from '../EnquirePopup';
 
 const LeftArrow = (props) => {
     const { className, style, onClick } = props;
@@ -37,6 +38,7 @@ const CustomFilter = (props) => {
    const list2 = [11,12,13,14,15,16,17,18,19,20];
    const [firstList,setFirstList] = useState(list1)
    const [secondList,setSecondList] = useState(list2);
+   const [popupList,setpopupList] = useState('');
    function renderDraggableListOne(){
        return firstList.map((item)=>{
             return (<DraggableItem key={item} data={item} >  
@@ -89,6 +91,16 @@ const CustomFilter = (props) => {
       setFirstList(temp);
 
    }
+
+   const popupData = '';
+   function showPopup(data) {
+    setpopupList(data);
+   }
+
+   function callbackFunction() {
+    setpopupList('');
+   }
+
    return(
         <Tabs selectedIndex={props.selectedIndex} >
             <TabList>
@@ -108,8 +120,8 @@ const CustomFilter = (props) => {
                                     </div>
                                     <div className="create-update-action clearfix">
                                         <span title="Delete"><img src="./images/delete.svg" /></span>
-                                        <span title="Update">Update</span>
-                                        <span title="Create New">Create New</span>
+                                        <span title="Update" onClick={()=>showPopup('update')}>Update</span>
+                                        <span title="Create New" onClick={()=>showPopup('create')}>Create New</span>
                                     </div>
                                 </div>
                                 <div className="clearfix">
@@ -117,7 +129,7 @@ const CustomFilter = (props) => {
                                         <span title=""><img src="./images/pdf-file.svg" /></span>
                                         <span title=""><img src="./images/xlsx-file.svg" /></span>
                                         <span title=""><img src="./images/text-file.svg" /></span>
-                                        <span title=""><img src="./images/mail.svg" /></span>
+                                        <span title="" onClick={()=>showPopup('mail')}><img src="./images/mail.svg" /></span>
                                     </div>
                                 </div>
                             </div> {/* End of First Tab Link Section */}
@@ -337,6 +349,7 @@ const CustomFilter = (props) => {
                     </div>
                 </div>                
             </TabPanel>
+            <EnquirePopup type={popupList} callbackFromParent={()=>callbackFunction()} />
         </Tabs>
    )
 }

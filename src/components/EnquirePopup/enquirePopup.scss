@@ -1,0 +1,66 @@
+.popup-overlay {
+  .custom-popup {
+    &.send-mail {
+      margin-left: -225px;
+      width: 550px;
+      text-align: left;
+      .common-btn {
+        min-width: 100px;
+      }
+      &.create-new {
+        margin-left: -190px;
+        width: 380px;
+      }
+      &.update {
+        margin-left: -175x;
+        width: 350px;
+      }
+    }
+    .custom-popup-head {
+      margin-bottom: 10px;
+      h3 {
+        font-weight: 600;
+        color: #777;
+        margin: 0;
+        font-size: 16px;
+        float: left;
+      }
+    }
+    .popup-close img {
+      width: 21px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      label {
+        color: #999;
+        font-size: 14px;
+        display: block;
+      }
+      input {
+        width: 100%;
+      }
+    }
+    .mail-type {
+      margin-bottom: 35px;
+      p {
+        color: #aaa;
+        font-size: 14px;
+      }
+      .custom-radio-btn .radio-button-wrap,
+      .custom-checkbox .checkbox-wrap {
+        float: none;
+        margin-bottom: 15px;
+      }
+      .select-wrap {
+        margin: 0 8px;
+      }
+      select {
+        padding: 2px 30px 5px 0;
+        color: #bbb;
+      }
+      .radio-button-wrap input:checked ~ .select-wrap select {
+        color: #000;
+      }
+    }
+  }
+}

@@ -36,6 +36,23 @@ body{
           margin-bottom:5px;
           font-size:16px;
         }
+        span {
+          width: 22px;
+          height: 22px;
+          margin: 0 auto 2px;
+          display: block;
+          img {
+            width: 22px;
+          }
+          &.enquire {
+            img {
+              width: 18px;
+            }
+          }
+          &.active-icon {
+            display: none;
+          }
+        }
       }
       li.react-tabs__tab--selected{
         background-color:#fff;
@@ -43,6 +60,12 @@ body{
         border-left:5px solid #98144E;
         i{
           color:#98144E;
+        }
+        span {
+          display: none;
+          &.active-icon {
+            display: block;
+          }
         }
       }
     }

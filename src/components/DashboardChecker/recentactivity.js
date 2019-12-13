@@ -110,7 +110,7 @@ const RecentActivity = ({data}) => {
                   return (
                     <tr>
                       <td> 
-                        <i class="icon fa fa-eye" aria-hidden="true"></i> {item._id.substr(1,5)}
+                        <img src="./images/eye.svg" /> {item._id.substr(1,5)}
                       </td>
                       <td> 
                          {item.name} 

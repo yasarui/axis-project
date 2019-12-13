@@ -34,9 +34,18 @@ class Maker extends Component {
         <div class="sidebar-menu">
           <span onClick={this.hideMenu} className="mobile-menu-close"><i class="fas fa-times"></i></span>
         <TabList>
-            <Tab onClick={()=>this.hideMenu(0)}> <i className="fas fa-home"></i> Home  </Tab>
-            <Tab onClick={()=>this.hideMenu(1)}> <i className="fas fa-upload"></i> Initiate </Tab>
-            <Tab onClick={()=>this.hideMenu(2)}> <i className="fas fa-table"></i> Enquire </Tab>
+            <Tab onClick={()=>this.hideMenu(0)}> 
+            <span className="home"><img src="./images/home.svg" /></span>
+            <span className="home active-icon"><img src="./images/home-active.svg" /></span>
+             Home  </Tab> 
+            <Tab onClick={()=>this.hideMenu(1)}> 
+            <span className="initate"><img src="./images/initate.svg" /></span>
+            <span className="initate active-icon"><img src="./images/initate-active.svg" /></span>
+             Initiate </Tab>
+            <Tab onClick={()=>this.hideMenu(2)}> 
+            <span className="enquire"><img src="./images/enquire.svg" /></span>
+            <span className="enquire active-icon"><img src="./images/enquire-active.svg" /></span>
+             Enquire </Tab>
         </TabList>
       </div>
     </div>

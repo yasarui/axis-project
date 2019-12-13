@@ -104,7 +104,8 @@ const RecentActivity = ({data,setSelectedIndex}) => {
                   return (
                     <tr>
                       <td> 
-                        <i onClick={()=>setSelectedIndex(2)} class="icon fa fa-eye" aria-hidden="true"></i>
+                        <img onClick={()=>setSelectedIndex(2)}  src="./images/eye.svg" />
+                        {/* <i onClick={()=>setSelectedIndex(2)} class="icon fa fa-eye" aria-hidden="true"></i> */}
                         &nbsp;&nbsp;
                         {item._id.substr(1,5)}
                       </td>
