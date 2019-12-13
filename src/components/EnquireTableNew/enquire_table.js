@@ -2,6 +2,7 @@ import React from 'react';
 import enquireTableData from '../fixture/enquire_table_data.json';
 import Button from '../Buttons';
 import Actions from '../Utils/actions';
+import ActionStatus from '../Utils/actionStatus';
 import ButtonDropdown from '../ButtonDropdowns';
 
 class EnquireTable extends React.Component{
@@ -86,7 +87,11 @@ class EnquireTable extends React.Component{
           <table className="enquiry-table" >
             <thead>
                 <tr>
-                    <th onClick={()=>this.openAction()} > Action </th>
+                    <th> 
+                       <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                        {this.state.selectedHeader === 0 ? 
+                            <ActionStatus {...actionProps} tableIndex="1" columnName="_id" />: ""}
+                    </th>
                     {!this.state.hideColumn._id &&
                         <th className={this.state.selectedHeader === 1 ? "active":""} 
                             onClick={()=>this.openAction(1)} > 
