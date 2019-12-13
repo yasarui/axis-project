@@ -82,9 +82,9 @@
       cursor: pointer;
       font-weight: 600;
      }
-   }
-   &:hover ul {
-    display: block;
+     &.show-dropdown {
+      display: block;
+     }
    }
    select option{
      font-weight: 500;
