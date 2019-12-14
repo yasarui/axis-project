@@ -32,7 +32,7 @@ class Maker extends Component {
     <Tabs className="main-layout" selectedIndex={this.state.selectedIndex} >
       <div className={"sidebar " + (this.props.hideMenuMaker ? "open" : "")}>
         <div class="sidebar-menu">
-          <span onClick={this.hideMenu} className="mobile-menu-close"><i class="fas fa-times"></i></span>
+          <span onClick={()=>this.hideMenu(0)} className="mobile-menu-close"><i class="fas fa-times"></i></span>
         <TabList>
             <Tab onClick={()=>this.hideMenu(0)}> 
             <span className="home"><img src="./images/home.svg" /></span>
