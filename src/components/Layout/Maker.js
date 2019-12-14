@@ -17,11 +17,11 @@ class Maker extends Component {
     this.props.callbackFromMaker(false);
     this.setState({
       selectedIndex:index
-    })
+    });
+    document.getElementById("maker-content-section").scrollTop = 0;
   }
 
   setSelectedIndex = (index) => {
-     console.log("Set selected index function is running");
      this.setState({
        selectedIndex:index
      })

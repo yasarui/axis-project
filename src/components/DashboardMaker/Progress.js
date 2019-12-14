@@ -6,6 +6,7 @@ import Button from '../Buttons';
 import { ProgressBar,SuccessFailureTransactions }  from '../Utils';
 import AxisModal from '../Modal';
 import ActivityHistory from '../Utils/ActivityHistory';
+import ViewDetails from '../Utils/ViewDetails';
 
 const Progress = (props) => {
 
@@ -15,7 +16,9 @@ const Progress = (props) => {
 
    const [ isHistoryPopup,setHistoryPopup ] = useState(false);
 
-   const [selectAll,setSelectAll] = useState(false)
+   const [selectAll,setSelectAll] = useState(false);
+
+   const [modalIsOpen,setModalIsOpen] = useState(false);
 
    const sortAssending = (e,key) => {
         let temp = [...batchesData];
@@ -146,7 +149,7 @@ const Progress = (props) => {
                                         </span>                                 
                                     </td>
                                     <td style={{"width":"183px"}} >
-                                        {(index % 2 == 0)?  <ProgressBar width={`${(index)}0`} /> :  <SuccessFailureTransactions /> }
+                                        {(index % 2 == 0)?  <ProgressBar width={`${(index)}0`} /> :  <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)} /> }
                                     </td>
                                     <td style={{"width":"213px"}} >
                                         {item.amount}
@@ -190,6 +193,9 @@ const Progress = (props) => {
             <AxisModal isOpen={isHistoryPopup} size="Extra-Large" overlayColor="black" closeModal={()=>setHistoryPopup(false)} >
                <ActivityHistory />
             </AxisModal>
+            <AxisModal overlayColor="black" isOpen={modalIsOpen} size="Medium" closeModal={()=>setModalIsOpen(false)}> 
+            <ViewDetails />
+       </AxisModal>
     </Fragment>
    )
 }

@@ -17,6 +17,7 @@ class Checker extends Component {
 
   hideMenu = () => {
     this.props.callbackFromChecker(false);
+    document.getElementById("checker-content-section").scrollTop = 0;
   }
 
   handleTabSelect = (index,approveTabIndex) => {
@@ -45,7 +46,7 @@ class Checker extends Component {
           </TabList>
         </div>
       </div>
-        <div className="content-section">
+        <div className="content-section" id="checker-content-section">
         <TabPanel>
             <Dashboard setTabIndex={this.handleTabSelect} />
         </TabPanel>
