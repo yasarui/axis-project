@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>81D3BE27-A8CB-49F2-90F5-2B79AFED0122@SVG</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Enquire" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Web-assets" transform="translate(-323.000000, -83.000000)">
+            <g id="Icons/Account/Insufficient" transform="translate(323.000000, 83.000000)">
+                <circle id="Oval" fill="#E6E6E6" cx="8" cy="8" r="8"></circle>
+                <g id="triangle-(1)-copy" transform="translate(7.000000, 2.000000)" fill="#FF7761">
+                    <path d="M1,0.5 C1.55224606,0.5 2,1.07184226 2,1.36402038 L2,7.71288846 C2,8.00506658 1.55224606,8.5 1,8.5 C0.447753875,8.5 4.4408921e-16,8.00506658 4.4408921e-16,7.71288846 L4.4408921e-16,1.36402038 C4.4408921e-16,1.07184226 0.447753875,0.5 1,0.5 Z" id="Path" fill-rule="nonzero"></path>
+                    <circle id="Oval" cx="1" cy="11" r="1"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

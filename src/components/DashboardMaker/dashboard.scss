@@ -17,6 +17,7 @@
           border:2px solid #98144E;
           color:#98144E;
           font-weight:bold;
+          cursor: pointer;
         }
         span{
           color:#888;
@@ -32,6 +33,21 @@
       select {
         font-size: 13px;
         margin: 0 5px;
+        cursor: pointer;
+        padding-right: 20px;
       }
     }
+}
+.maker-filter-section.maker-filter-custom {
+  margin: 10px 0 30px;
+  span {
+    font-size: 12px;
+    color: #666;
+  }
+  select {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+    padding-right: 20px;
+  }
 }

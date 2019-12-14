@@ -2,12 +2,14 @@ import React,{ Fragment } from 'react';
 import accounts_data from '../../fixture/accounts_data.json';
 import Button from '../../Buttons';
 import ButtonDropdown from '../../ButtonDropdowns';
+import ActionStatus from '../../Utils/actionStatus';
 
 class AccountsTable extends React.Component{
     constructor(props){
        super(props);
        this.state = {
-           data:[]
+           data:[],
+           selectedHeader:null
        }
     }
     componentDidMount(){
@@ -34,6 +36,18 @@ class AccountsTable extends React.Component{
         })
         this.setState({data:temp})
    }
+
+   openAction(index){
+    if(index === this.state.selectedHeader){
+        this.setState({
+            selectedHeader:null
+        })
+    }else{
+       this.setState({
+         selectedHeader:index
+       })
+    }
+  }
 
     render(){
        return(
@@ -70,7 +84,9 @@ class AccountsTable extends React.Component{
                                 <span onClick={(e)=>this.sortDessending(e,'amount')}className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th> Action </th>
+                        <th>  <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                        {this.state.selectedHeader === 0 ? 
+                            <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                         </tr>
                     </thead>
                     <tbody className="tbody-shadow" >
@@ -82,12 +98,8 @@ class AccountsTable extends React.Component{
                                 <td> {item.name} </td>
                                 <td style={{"textAlign":"right"}}> 
                                   ₹​{item.amount} &nbsp;&nbsp;
-                                  {(item.button == "danger") ?                                   <span className="red-clr"> 
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                  </span> : 
-                                  <span className="green-clr"> 
-                                    <i class="far fa-check-circle"></i> 
-                                  </span> }
+                                  {(item.button == "danger") ?                                   <img src="/images/warning.svg" /> : 
+                                  <img src="/images/gray-green-tick.svg" /> }
                                   <a className="refresh-link" href="#"> Refresh </a>
                                 </td>
                                 <td style={{"textAlign":"right"}}> 
@@ -107,8 +119,8 @@ class AccountsTable extends React.Component{
                             <td></td>
                             <td></td>
                             <td>
-                                <span> <i class="far fa-check-circle green-clr"></i> &nbsp;&nbsp;&nbsp;&nbsp; Sufficient &nbsp;&nbsp; 4  </span>
-                                <span> <i class="fas fa-exclamation-triangle red-clr"></i> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> 
+                                <span> <img src="/images/gray-green-tick.svg" /> &nbsp;&nbsp;&nbsp;&nbsp;Sufficient &nbsp;&nbsp; 4  </span>
+                                <span> <img src="/images/warning.svg" /> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> 
                             </td>
                             <td>
                                 <span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
@@ -122,6 +134,18 @@ class AccountsTable extends React.Component{
                     </tfoot>
                 </table>
             </div>
+            <div className="maker-filter-section maker-filter-custom">
+                    <span> View </span>
+                    <div className="select-wrap">
+                    <select>
+                        <option> 5 </option>
+                        <option> 10 </option>
+                        <option> 15 </option>
+                        <option> 20 </option>
+                    </select>
+                  </div>
+                    <span> rows at a time </span>
+                </div>  
           </Fragment>
        ) 
     }

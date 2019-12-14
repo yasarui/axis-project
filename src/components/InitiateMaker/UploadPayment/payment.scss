@@ -127,6 +127,7 @@ select {
 .select-wrap {
   display: inline-block;
   position: relative;
+  cursor: pointer;
   select {
     padding-right: 35px;
   }

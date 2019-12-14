@@ -3,12 +3,14 @@ import batches_data from '../../fixture/batches_data.json';
 import Button from '../../Buttons';
 import moment from 'moment';
 import ButtonDropdown from '../../ButtonDropdowns';
+import ActionStatus from '../../Utils/actionStatus';
 
 class BatchTable extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-          data:[]
+          data:[],
+          selectedHeader:null
       }
     }
     componentDidMount(){
@@ -16,6 +18,17 @@ class BatchTable extends React.Component{
             data:batches_data.data
         })
     }
+    openAction(index){
+      if(index === this.state.selectedHeader){
+          this.setState({
+              selectedHeader:null
+          })
+      }else{
+         this.setState({
+           selectedHeader:index
+         })
+      }
+   }
     render(){
       return(
          <Fragment>
@@ -59,7 +72,9 @@ class BatchTable extends React.Component{
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th> Actions </th>
+                    <th> <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                        {this.state.selectedHeader === 0 ? 
+                            <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                   </tr>
               </thead>
               <tbody style={{"height":"300px"}} className="tbody-shadow" >
@@ -120,13 +135,25 @@ class BatchTable extends React.Component{
                             <span className="red-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
                             <span className="grey-clr"> ₹ X,XXX <i class="fas fa-circle small-icon"></i> </span>
                         </td>
-                        <td> 
+                        <td style={{"vertical-align": "middle"}}> 
                             <Button> AUTHORISE </Button>
                         </td>
                  </tr>
               </tfoot>
             </table>
           </div>
+          <div className="maker-filter-section maker-filter-custom">
+                    <span> View </span>
+                    <div className="select-wrap">
+                    <select>
+                        <option> 5 </option>
+                        <option> 10 </option>
+                        <option> 15 </option>
+                        <option> 20 </option>
+                    </select>
+                  </div>
+                    <span> rows at a time </span>
+                </div>  
          </Fragment>
       )
     }

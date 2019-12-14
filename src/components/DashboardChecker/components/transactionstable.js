@@ -3,6 +3,7 @@ import accounts_data from '../../fixture/accounts_data.json';
 import Button from '../../Buttons';
 import ButtonDropdown from '../../ButtonDropdowns';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+import ActionStatus from '../../Utils/actionStatus';
 
 const CalenderIcon = () => {
     return(
@@ -17,6 +18,7 @@ class TransactionsTable extends React.Component{
        this.state = {
            data:[],
             date: [new Date(), new Date()],
+            selectedHeader:null
        }
     }
     onChange = date => this.setState({ date })
@@ -24,6 +26,17 @@ class TransactionsTable extends React.Component{
         this.setState({
             data:accounts_data.data
         })
+    }
+    openAction(index){
+      if(index === this.state.selectedHeader){
+          this.setState({
+              selectedHeader:null
+          })
+      }else{
+         this.setState({
+           selectedHeader:index
+         })
+      }
     }
     render(){
        return(
@@ -67,11 +80,9 @@ class TransactionsTable extends React.Component{
               <thead>
                   <tr>
                     <th style={{"width":"189px"}} > 
-                        Column
-                        <div className="sortIconsWrapper">
-                            <span className="headerSortUp"></span>
-                            <span className="headerSortDown"></span>
-                        </div> 
+                    <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                        {this.state.selectedHeader === 0 ? 
+                            <ActionStatus tableIndex="1" columnName="_id" />: ""}
                     </th>
                     <th style={{"width":"176px"}}> 
                         Column 
@@ -182,6 +193,18 @@ class TransactionsTable extends React.Component{
               </tfoot>
             </table> 
           </div>
+          <div className="maker-filter-section maker-filter-custom">
+                    <span> View </span>
+                    <div className="select-wrap">
+                    <select>
+                        <option> 5 </option>
+                        <option> 10 </option>
+                        <option> 15 </option>
+                        <option> 20 </option>
+                    </select>
+                  </div>
+                    <span> rows at a time </span>
+                </div>  
         </Fragment>
        ) 
     }

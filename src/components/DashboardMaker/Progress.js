@@ -154,7 +154,7 @@ const Progress = (props) => {
                                     <td style={{"width":"213px"}} >
                                         {item.amount}
                                     </td>
-                                    <td className="text-right" style={{"width":"86px"}} >
+                                    <td className="text-right table-btn-actions" style={{"width":"86px"}} >
                                         {
                                           (index === 0) ? <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-times icon"></i> </span> : (
                                           (index === 1) ? (<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
