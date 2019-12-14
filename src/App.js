@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showMenu: false
+      showMenu: false,
+      isMobile: window.innerWidth <= 766
     }
   }
 
@@ -33,6 +34,16 @@ class App extends Component {
   }
 
   render() {
+    let mainRoute = '';
+    if(this.state.isMobile){
+      mainRoute = <div>
+      <Route path='/' render={(props) => <Checker {...props} hideMenuChecker={this.state.showMenu}
+      callbackFromChecker={this.callbackFromChecker} />} /></div>
+    } else {
+      mainRoute = <div><Route path='/' exact render={(props) => <Maker {...props} hideMenuMaker={this.state.showMenu} callbackFromMaker={this.callbackFromMaker} />} />
+      <Route path='/checker' render={(props) => <Checker {...props} hideMenuChecker={this.state.showMenu}
+      callbackFromChecker={this.callbackFromChecker} />} /></div>
+    }
    return(
     <Router>
     <div className="whole-wrapper">
@@ -40,9 +51,7 @@ class App extends Component {
         <Switch>
            {/* <Route path="/" exact component={Maker} />
            <Route path="/checker" component={Checker} /> */}
-          <Route path='/' exact render={(props) => <Maker {...props} hideMenuMaker={this.state.showMenu} callbackFromMaker={this.callbackFromMaker} />} />
-          <Route path='/checker' render={(props) => <Checker {...props} hideMenuChecker={this.state.showMenu}
-          callbackFromChecker={this.callbackFromChecker} />} />
+          {mainRoute}
         </Switch>
     </div>
     </Router>

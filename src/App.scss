@@ -104,7 +104,9 @@ body{
         width: 172px;
         position: relative;
         margin-bottom:10px;
-
+        .mobile-route {
+          display: none;
+        }
         span{
           font-size:12px;
           margin-right:5px;

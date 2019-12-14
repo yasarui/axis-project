@@ -10,7 +10,8 @@ class BatchTable extends React.Component{
       super(props);
       this.state = {
           data:[],
-          selectedHeader:null
+          selectedHeader:null,
+          isMobile: window.innerWidth <= 766
       }
     }
     componentDidMount(){
@@ -30,6 +31,33 @@ class BatchTable extends React.Component{
       }
    }
     render(){
+      let mobileAuthoriseBtn='';
+      let mobileMinTotal='';
+      let mobileTotal='';
+      let webAuthoriseBtn='';
+      let webMinTotal='';
+      let webTotal='';
+      if(this.state.isMobile){
+        mobileAuthoriseBtn =<div><Button> AUTHORISE </Button></div>;
+        mobileMinTotal = <div><span className="green-clr"> XXXX  </span> 
+        <span className="orange-clr"> XX  </span>
+        <span className="red-clr"> XX </span>
+        <span className="grey-clr"> X </span></div>;
+        mobileTotal = <div><span className="green-clr" > ₹ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="orange-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="red-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="grey-clr"> ₹ X,XXX <i class="fas fa-circle small-icon"></i> </span></div>;
+      } else {
+        webAuthoriseBtn =<div><Button> AUTHORISE </Button></div>;
+        webMinTotal = <div><span className="green-clr"> XXXX  </span> 
+        <span className="orange-clr"> XX  </span>
+        <span className="red-clr"> XX </span>
+        <span className="grey-clr"> X </span></div>;
+        webTotal = <div><span className="green-clr" > ₹ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="orange-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="red-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="grey-clr"> ₹ X,XXX <i class="fas fa-circle small-icon"></i> </span></div>;
+      }
       return(
          <Fragment>
           <div className="table-wrap checker-batches-table-wrapper">
@@ -119,24 +147,19 @@ class BatchTable extends React.Component{
               </tbody>
               <tfoot className="table-footer">
                 <tr>
-                        <td style={{"width":"73px"}} ></td>
-                        <td style={{"width":"135px"}}></td>
+                        <td style={{"width":"73px", "vertical-align": "middle"}} >{mobileAuthoriseBtn}</td>
+                        <td style={{"width":"135px"}}>{mobileMinTotal}</td>
                         <td style={{"width":"125px"}}></td>
                         <td style={{"width":"159px"}}></td>
                         <td style={{"width":"90px"}} > 
-                            <span className="green-clr"> XXXX  </span> 
-                            <span className="orange-clr"> XX  </span>
-                            <span className="red-clr"> XX </span>
-                            <span className="grey-clr"> X </span>
+                            {webMinTotal}
                         </td>
                         <td style={{"width":"122px"}} >
-                            <span className="green-clr" > ₹ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
-                            <span className="orange-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
-                            <span className="red-clr"> ₹ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
-                            <span className="grey-clr"> ₹ X,XXX <i class="fas fa-circle small-icon"></i> </span>
+                            {webTotal}
                         </td>
                         <td style={{"vertical-align": "middle"}}> 
-                            <Button> AUTHORISE </Button>
+                        {mobileTotal}
+                        {webAuthoriseBtn}
                         </td>
                  </tr>
               </tfoot>

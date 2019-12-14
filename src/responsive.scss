@@ -107,6 +107,30 @@
   }
 }
 @media screen and (min-width:100px) and (max-width:766px) {
+  .mobile-enq-checker {
+    span {
+      color: #98144E;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: 600;
+      i {
+        font-size: 19px;
+        margin-right: 2px;
+      }
+    }
+    display: block;
+  }
+  .main-layout .content-section .mobile-enq-checker .page-title {
+    margin-bottom: 10px;
+  }
+  .main-layout .content-section .route-select {
+    .web-route {
+      display: none;
+    }
+    .mobile-route {
+      display: inline-block;
+    }
+  }
   .enquire-table-wrap {
     .custom-filter-table-wrap{
       padding: 20px 10px;
@@ -114,6 +138,14 @@
     .custom-filter-button span {
       margin-bottom: 15px;
     }
+  }
+  .table-wrap.recent-activity-table-wrapper {
+    display: none;
+  }
+  .enquire-table-wrap .main-nav-tabs,
+  .enquire-table-filter,
+  .recent-activity {
+    display: none;
   }
   header {
     padding-top: 10px;
@@ -211,6 +243,9 @@
         }
         span.count {
           font-size: 24px;
+        }
+        &.transaction {
+          display: none;
         }
       }
       .table-wrap {

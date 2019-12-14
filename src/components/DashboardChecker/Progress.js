@@ -26,7 +26,7 @@ const Progress = (props) => {
                     </div>
                 </Tab>
                 <Tab>
-                    <div className="progress-tile">
+                    <div className="progress-tile transaction">
                         <span className="text"> TRANSACTIONS </span>
                         <span className="count"> 1,300 </span>              
                     </div>

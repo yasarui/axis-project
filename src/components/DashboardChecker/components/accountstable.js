@@ -9,7 +9,8 @@ class AccountsTable extends React.Component{
        super(props);
        this.state = {
            data:[],
-           selectedHeader:null
+           selectedHeader:null,
+           isMobile: window.innerWidth <= 766
        }
     }
     componentDidMount(){
@@ -50,6 +51,27 @@ class AccountsTable extends React.Component{
   }
 
     render(){
+      let mobileAuthoriseBtn='';
+      let mobileMinTotal='';
+      let mobileTotal='';
+      let webAuthoriseBtn='';
+      let webMinTotal='';
+      let webTotal='';
+      if(this.state.isMobile){
+        mobileAuthoriseBtn =<div><Button> AUTHORISE </Button></div>;
+        mobileMinTotal = <div><span> <img src="/images/gray-green-tick.svg" /> &nbsp;&nbsp;&nbsp;&nbsp;Sufficient &nbsp;&nbsp; 4  </span>
+        <span> <img src="/images/warning.svg" /> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> </div>;
+        mobileTotal = <div><span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="orange-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="red-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span> </div>;
+      } else {
+        webAuthoriseBtn =<div><Button> AUTHORISE </Button></div>;
+        webMinTotal = <div><span> <img src="/images/gray-green-tick.svg" /> &nbsp;&nbsp;&nbsp;&nbsp;Sufficient &nbsp;&nbsp; 4  </span>
+        <span> <img src="/images/warning.svg" /> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> </div>;
+        webTotal = <div><span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="orange-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
+        <span className="red-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span> </div>;
+      }
        return(
           <Fragment>
             <div className="table-wrap checker-accounts-table has-bottom-table">
@@ -116,19 +138,17 @@ class AccountsTable extends React.Component{
                     </tbody>
                     <tfoot className="table-footer" >
                         <tr>
-                            <td></td>
+                            <td>{mobileAuthoriseBtn}</td>
                             <td></td>
                             <td>
-                                <span> <img src="/images/gray-green-tick.svg" /> &nbsp;&nbsp;&nbsp;&nbsp;Sufficient &nbsp;&nbsp; 4  </span>
-                                <span> <img src="/images/warning.svg" /> &nbsp;Insufficient &nbsp;&nbsp; 2   </span> 
+                               {webMinTotal}
                             </td>
                             <td>
-                                <span className="green-clr" > ₹​ XX,XX,XXX <i class="fas fa-circle small-icon"></i> </span>
-                                <span className="orange-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span>
-                                <span className="red-clr"> ₹​ XX,XXX <i class="fas fa-circle small-icon"></i> </span> 
+                                {webTotal}
                             </td>
                             <td>
-                                <Button> AUTHORISE </Button>                             
+                                {webAuthoriseBtn}   
+                                {mobileTotal}                         
                             </td>
                         </tr>
                     </tfoot>

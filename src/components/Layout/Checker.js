@@ -24,6 +24,12 @@ class Checker extends Component {
     this.setState({tabIndex:index,approveTabIndex})
   }
 
+  setSelectedIndex = (index) => {
+    this.setState({
+      tabIndex:index
+    })
+ }
+
   render() {
    return(
     <Tabs className="main-layout" selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex:tabIndex}) }>
@@ -54,7 +60,7 @@ class Checker extends Component {
             <Dashboard tab={true} approveTabIndex={this.state.approveTabIndex} />
         </TabPanel>
         <TabPanel>
-            <Enquire />
+            <Enquire setSelectedIndex={this.setSelectedIndex} />
         </TabPanel>
         </div>
     </Tabs>
