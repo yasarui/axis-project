@@ -402,10 +402,11 @@
     .content-section {
       .last-updated-time {
         top: 29px;
-        max-width: 185px;
+        max-width: 195px;
         text-align: right;
         span {
           display: block;
+          margin-bottom: 3px;
         }
         i {
           margin-top: 5px;

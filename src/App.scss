@@ -724,8 +724,8 @@ body{
 
 .checker-transactions-table{
   border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-  border-top-right-radius:10px;
+  border-bottom-right-radius:20px;
+  border-top-right-radius:20px;
    th{
      height:40px !important;
    }
@@ -761,8 +761,8 @@ body{
   height: 553px;
   border-top-left-radius:10px;
   border-bottom-left-radius:10px;
-  border-top-right-radius:10px;
-  border-bottom-right-radius:10px;
+  border-top-right-radius:20px;
+  border-bottom-right-radius:20px;
 
   .fake-radius{
     width:20px;
@@ -844,9 +844,9 @@ body{
 .checker-batches-table-wrapper{
   overflow-y: scroll;
   height: 553px;
-  border-bottom-left-radius:20px;
-  border-bottom-right-radius:30px;
-  border-top-right-radius:30px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:20px;
+  border-top-right-radius:20px;
   thead th {
     position: sticky !important;
     top: 0;
@@ -887,7 +887,7 @@ body{
   height: 471px;
   overflow: hidden;
   border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
+  border-bottom-right-radius:20px;
   thead th {
     position: sticky !important;
     top: 0;
@@ -926,9 +926,9 @@ body{
 .checker-accounts-table{
   overflow-y: scroll;
   height: 470px;
-  border-bottom-left-radius:20px;
-  border-bottom-right-radius:30px;
-  border-top-right-radius:30px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:20px;
+  border-top-right-radius:20px;
   thead th {
     position: sticky !important;
     top: 0;
