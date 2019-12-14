@@ -623,3 +623,15 @@
     border-bottom: 1px solid #eee;
   }
 }
+.column.drop-column-btn {
+  .select-wrap {
+    &:after {
+      right: 11px;
+    }
+    span {
+      padding: 2px 30px 2px 5px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+  }
+}

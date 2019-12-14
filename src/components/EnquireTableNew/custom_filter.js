@@ -169,12 +169,10 @@ const CustomFilter = (props) => {
                         <Tab>
                             <div className="custom-filter-col2" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true,1)} >
                                 <div className="custom-filter-top clearfix">
-                                    <div className="view-type column">
+                                    <div className="view-type column drop-column-btn">
                                         <label>Column</label>
                                         <div className="select-wrap">
-                                          <select>
-                                              <option>14/40</option>
-                                          </select>
+                                          <span>14/40</span>
                                         </div>
                                     </div>
                                     <div className="view-type row">
@@ -236,8 +234,8 @@ const CustomFilter = (props) => {
                               </div>
                         </div>
                         <div className="current-filter-head clearfix">
-                            <h3>Avliable Column <span>25</span></h3>
-                            <p>Drag abd drop column you want to view to the top.</p>
+                            <h3>Available Column <span>25</span></h3>
+                            <p>Drag and drop column you want to view to the top.</p>
                         </div>
                         <div className="avliable-column-list clearfix">
                            <Droppable handleDrop={modifyListTwo} >
