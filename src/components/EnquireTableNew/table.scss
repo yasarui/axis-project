@@ -175,6 +175,16 @@
       }
       .custom-filter-col3 {
         width: 38%;
+        .custom-filter-top {
+          .select-wrap {
+            &:after {
+              right: 10px
+            }
+            select {
+              padding: 3px 7px;
+            }
+          }
+        }
       }
       .custom-filter-top {
         margin-bottom: 15px;
@@ -218,7 +228,7 @@
       label {
         color: #888;
         font-size: 12px;
-        margin-right: 10px;
+        margin-right: 15px;
       }
       select {
         font-size: 13px;

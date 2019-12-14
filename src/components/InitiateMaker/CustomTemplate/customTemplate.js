@@ -351,7 +351,7 @@ class CustomTemplate extends Component {
             </div>
           </div>
           <div className="data-field-btn">
-            <span className="common-btn3" onClick={this.nextStep}>Proceed</span>
+            <span className="common-btn" onClick={this.nextStep}>Proceed</span>
             <span className="common-btn2" onClick={this.previousStep}>Back</span>
           </div>
         </div>
