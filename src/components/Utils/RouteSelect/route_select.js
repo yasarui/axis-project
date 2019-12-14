@@ -11,9 +11,12 @@ const RouteSelect = () => {
    return(
     <div className="route-select">
         <span> Viewing as </span> 
-        <select onChange={handleChange}>
-            <option value="/"> Maker </option>
+        <select className="web-route" onChange={handleChange}>
             <option value="/checker"> Checker </option>
+            <option value="/"> Maker </option>
+        </select>
+        <select className="mobile-route" onChange={handleChange}>
+            <option value="/"> Checker </option>
         </select>
     </div>
    )

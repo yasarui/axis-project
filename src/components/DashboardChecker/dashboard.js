@@ -26,9 +26,12 @@ const Dashboard = (props) => {
            <h1 className="page-title" > Salary Payments </h1> 
             <div className="route-select">
                <span> Viewing as </span>
-                <select onChange={handleChange}>
+                <select className="web-route" onChange={handleChange}>
                     <option value="/checker"> Checker </option>
                     <option value="/"> Maker </option>
+                </select>
+                <select className="mobile-route" onChange={handleChange}>
+                    <option value="/"> Checker </option>
                 </select>
            </div>
            <p className="last-updated-time" > 
@@ -38,7 +41,7 @@ const Dashboard = (props) => {
            <div className="checker-dashboard-progress-wrapper clearfix">
               { (props.tab) ? <Progress approveTabIndex={props.approveTabIndex} /> : <ProgressEmpty setTabIndex={props.setTabIndex} /> }
            </div>
-           <h2 className="sub-heading"  > RECENT ACTIVITY </h2>
+           <h2 className="sub-heading recent-activity"  > RECENT ACTIVITY </h2>
            <RecentActivity data={RecentActivityData.data} />
            <h2 style={{"marginTop":"20px"}} className="sub-heading" > ADMIN ALERTS </h2>
            <AdminAlerts messages={AdminMessagesData.messages} />

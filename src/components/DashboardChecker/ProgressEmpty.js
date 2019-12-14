@@ -11,7 +11,7 @@ const ProgressEmpty = (props) => {
                 <span className="text"> ACCOUNTS </span>
                 <span className="count"> 3 </span>              
             </div>   
-            <div className="progress-tile" onClick={()=>props.setTabIndex(1,2)}>
+            <div className="progress-tile transaction" onClick={()=>props.setTabIndex(1,2)}>
                 <span className="text"> TRANSACTIONS </span>
                 <span className="count"> 1,300 </span>              
              </div>    
