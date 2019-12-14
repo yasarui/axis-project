@@ -75,7 +75,7 @@ class TransactionsTable extends React.Component{
                   </div>
               </section>              
           </div>
-          <div className="table-wrap">
+          <div className="table-wrap checker-transactions-table-wrapper">
             <table className="checker-transactions-table has-table-bottom">
               <thead>
                   <tr>

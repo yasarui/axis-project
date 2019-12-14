@@ -19,6 +19,10 @@
 .admin-alerts-table-wrapper{
    height: 200px;
    overflow-y: scroll;
+   border-top-left-radius:20px;
+   border-bottom-left-radius:20px;
+   border-top-right-radius:30px;
+   border-bottom-right-radius:30px;
    thead th {
     position: sticky !important;
     top: 0;
