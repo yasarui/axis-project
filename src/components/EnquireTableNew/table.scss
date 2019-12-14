@@ -169,12 +169,15 @@
       .custom-filter-col1 {
         border-left: 0;
         width: 37%;
+        cursor: pointer;
       }
       .custom-filter-col2 {
         width: 25%;
+        cursor: pointer;
       }
       .custom-filter-col3 {
         width: 38%;
+        cursor: pointer;
         .custom-filter-top {
           .select-wrap {
             &:after {
@@ -233,6 +236,7 @@
       select {
         font-size: 13px;
         min-width: 100px;
+        padding-left: 2px;
       }
       &.column {
         select {

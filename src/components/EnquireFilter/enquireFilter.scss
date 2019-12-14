@@ -53,6 +53,7 @@
         min-width: 140px;
         padding: 0;
         padding-bottom: 4px;
+        padding-left: 2px;
       }
     }
     .error-msg {
@@ -68,7 +69,7 @@
 }
 
 .react-daterange-picker__calendar{
-  z-index: 999 !important;}
+  z-index: 9999 !important;}
 .react-daterange-picker__range-divider{
   display:inline-flex;
   align-items: center;

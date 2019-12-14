@@ -120,6 +120,7 @@ body{
           border-bottom: 1px solid #636e72;
           position: relative;
           cursor: pointer;
+          padding-left: 2px;
         }
         &:after{
           content:"";
@@ -722,9 +723,9 @@ body{
 }
 
 .checker-transactions-table{
-  border-bottom-left-radius:20px;
-  border-bottom-right-radius:30px;
-  border-top-right-radius:30px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  border-top-right-radius:10px;
    th{
      height:40px !important;
    }
@@ -758,10 +759,10 @@ body{
 .recent-activity-table-wrapper{
   overflow-y: scroll;
   height: 553px;
-  border-top-left-radius:20px;
-  border-bottom-left-radius:20px;
-  border-top-right-radius:30px;
-  border-bottom-right-radius:30px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
 
   .fake-radius{
     width:20px;
@@ -885,8 +886,8 @@ body{
   overflow-y: scroll;
   height: 471px;
   overflow: hidden;
-  border-bottom-left-radius:20px;
-  border-bottom-right-radius:30px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
   thead th {
     position: sticky !important;
     top: 0;
@@ -996,4 +997,13 @@ body{
 button,
 select {
   cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+select {
+  padding-left: 2px;
+}
+.slick-list {
+  padding-top: 1px;
 }

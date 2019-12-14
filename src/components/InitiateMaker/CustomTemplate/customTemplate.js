@@ -314,7 +314,7 @@ class CustomTemplate extends Component {
                   return(
                     <DraggableLi id={item.id} type="mandatory"  >
                       <span onClick={()=>this.addMandatoryList(item.id)} className="plus-btn">
-                        <i className="fas fa-plus"></i>
+                        <img src="/images/add.svg" />
                       </span>
                       {item.text}
                       {item.added ? (
@@ -334,7 +334,7 @@ class CustomTemplate extends Component {
                   return(
                     <DraggableLi id={item.id} type="optional">
                         <span onClick={()=>this.addOptionalList(item.id)} className="plus-btn">
-                           <i className="fas fa-plus"></i>
+                           <img src="/images/add.svg" />
                         </span>
                         {item.text}
                         {item.added ? (
