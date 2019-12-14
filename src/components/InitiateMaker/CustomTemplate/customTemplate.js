@@ -290,9 +290,16 @@ class CustomTemplate extends Component {
                    {this.state.sampleArr.map((item,index)=>{
                      return(<tr>
                        <td><span className="custom-data-count">{item}</span> Custom data {item}</td>
+                       {this.state.finalFormList.length === index ? (
+                       <td className="no-padding-td"> 
+                         <span className="drop-here"> Drag and Drop Here </span>
+                       </td>                         
+                       ) : (
                        <td> 
-                         {this.returnTableData(index)}
+                          {this.returnTableData(index)}
                        </td>
+                       )}
+
                      </tr>)                     
                    })}
                 </tbody>
