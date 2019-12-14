@@ -154,11 +154,7 @@ const Progress = (props) => {
                                     <td>
                                         {item.amount}
                                     </td>
-<<<<<<< Updated upstream
                                     <td className="text-right table-btn-actions" style={{"width":"86px"}} >
-=======
-                                    <td className="text-right">
->>>>>>> Stashed changes
                                         {
                                           (index === 0) ? <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-times icon"></i> </span> : (
                                           (index === 1) ? (<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
