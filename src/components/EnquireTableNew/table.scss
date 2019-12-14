@@ -395,7 +395,7 @@
       .all-column,
       .find-column {
         float: left;
-        margin-right: 20px;
+        margin: 0 20px 0 23px;
         label {
           color: #999;
           font-size: 13px;
@@ -415,7 +415,7 @@
     }
     .custom-filter-table-wrap {
       background: #C8C8C8;
-      padding: 20px 18px;
+      padding: 20px 40px;
       .custom-filter-table {
         background: #fff;
       }
@@ -439,8 +439,8 @@
           margin-right: 10px;
         }
         input {
-          max-width: 85px;
-          min-width: 85px;
+          max-width: 100px;
+          min-width: 100px;
           background: inherit;
         }
       }
@@ -606,5 +606,20 @@
     padding: 4px;
     color:#98144E;
     font-weight: 600;
+  }
+}
+.custom-filter-table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  td.column-name {
+    width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #555;
+    padding: 20px 8px;
+  }
+  td {
+    border-bottom: 1px solid #eee;
   }
 }

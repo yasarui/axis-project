@@ -46,7 +46,7 @@ const Progress = (props) => {
                 </div>
                 <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile">
                     <span className="text"> APPROVED TRANSACTIONS </span>
-                    <span className="count"> 1300 </span>              
+                    <span className="count"> 1,300 </span>              
                 </div>
                 <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile">
                     <span className="text"> TRANSACTIONS ON HOLD </span>

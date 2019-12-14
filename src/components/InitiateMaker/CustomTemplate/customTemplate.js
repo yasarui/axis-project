@@ -78,6 +78,13 @@ const optionalList = [
    type:"Optional",
    added:false,
    format:"default"        
+  },
+  {
+   id:11,
+   text:"Optional Field 10",
+   type:"Optional",
+   added:false,
+   format:"default"        
   }
 ]
 
@@ -243,7 +250,7 @@ class CustomTemplate extends Component {
           <span className="input-type"> {this.state.finalFormList[index].type} </span>
           <span className="input-length"> VARCHAR-128 </span>
 
-          {this.state.finalFormList[index].type === "Optional" && <span className="edit-icon-wrapper"> <i className="fas fa-edit"></i> </span>}
+          {this.state.finalFormList[index].type === "Optional" && <span className="edit-icon-wrapper"> <img src="/images/edit.svg" /> </span>}
         </Fragment>)
      )
     }
@@ -292,7 +299,7 @@ class CustomTemplate extends Component {
               </table>
               </DroppableTd>
             </div>
-            <div className="data-fields-lists">
+            <div className="data-fields-lists custom-drag-drop-table-scroll">
               <p>Choose format (Drag and drop or click on "+")</p>
               <h3>Mandatory</h3>
               <ul>

@@ -288,6 +288,7 @@
       padding: 8px 10px;
       font-weight: 600;
       color: #666;
+      text-transform: uppercase;
     }
     td {
       font-size: 13px;
@@ -325,6 +326,8 @@
          font-weight: 600;
          i{
            cursor: pointer;
+           color: #861f41;
+           margin-right: 3px;
          }
        }
        .input-length{

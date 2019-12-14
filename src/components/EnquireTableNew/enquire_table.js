@@ -70,9 +70,17 @@ class EnquireTable extends React.Component{
         })
     }
     handleTdClick(e){
+      if (e.nativeEvent.which === 3) {
         this.setState({
-            showFilterTooltip:!this.state.showFilterTooltip
+          showFilterTooltip:!this.state.showFilterTooltip
         })
+      }
+      if (e.nativeEvent.which === 1) {
+        this.setState({
+          showFilterTooltip: false
+        })
+      }
+      e.preventDefault(); return false;
     }
     render(){
       const actionProps = {
@@ -147,12 +155,12 @@ class EnquireTable extends React.Component{
                     return (
                         <tr>
                             <td> <ButtonDropdown varient="success" /> </td>
-                            { !this.state.hideColumn._id && <td onClick={(e)=>this.handleTdClick(e)} > {item._id} </td> }
-                            { !this.state.hideColumn.name && <td onClick={(e)=>this.handleTdClick(e)} > {item.name} </td> }
-                            { !this.state.hideColumn.created && <td onClick={(e)=>this.handleTdClick(e)} > {item.created} </td> }
-                            { !this.state.hideColumn.accepted && <td onClick={(e)=>this.handleTdClick(e)} > {item.accepted} </td> }
-                            { !this.state.hideColumn.rejected && <td onClick={(e)=>this.handleTdClick(e)} > {item.rejected} </td> }
-                            { !this.state.hideColumn.putOnHold && <td onClick={(e)=>this.handleTdClick(e)}> {item.putOnHold} </td> }
+                            { !this.state.hideColumn._id && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item._id} </td> }
+                            { !this.state.hideColumn.name && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item.name} </td> }
+                            { !this.state.hideColumn.created && <td onClick={(e)=>this.handleTdClick(e)}  onContextMenu={(e)=>this.handleTdClick(e)}> {item.created} </td> }
+                            { !this.state.hideColumn.accepted && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item.accepted} </td> }
+                            { !this.state.hideColumn.rejected && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item.rejected} </td> }
+                            { !this.state.hideColumn.putOnHold && <td onClick={(e)=>this.handleTdClick(e)}  onContextMenu={(e)=>this.handleTdClick(e)}> {item.putOnHold} </td> }
                         </tr>
                     )
                 })}
