@@ -238,6 +238,10 @@
       }
       .progress-tiles-wrapper .progress-tile {
         margin-right: 10px;
+        padding-top: 10px;
+        float: left;
+        display: block;
+        width: 100px;
         span.text {
           font-size: 10px;
         }
