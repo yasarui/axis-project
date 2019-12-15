@@ -101,8 +101,29 @@ class CustomTemplate extends Component {
       mandatoryList:mandatoryList,
       optionalList:optionalList,
       finalFormList:[],
-      sampleArr:[1,2,3,4,5,6]
+      sampleArr:[1,2,3,4,5,6],
+      customValue:"Custom Value 1"
     };
+  }
+
+  modifyFormList = (index) => {
+    console.log("Tick button has been clicked ",index);
+    let final = [...this.state.finalFormList];
+     final.forEach((item,i)=>{
+        if(i == index){
+           item.format = "default";
+           item.text = this.state.customValue;
+        }
+     });
+     this.setState({
+       finalFormList:final
+     })
+  }
+
+  handleCustomValueChange(e){
+     this.setState({
+       customValue:e.target.value
+     })
   }
 
   addMandatoryList = (index) => {
@@ -233,14 +254,14 @@ class CustomTemplate extends Component {
         <Fragment>
            <span onClick={()=>this.removeItemFromList(this.state.finalFormList[index])} className="td-text" >
                 <i className="fas fa-minus"></i>&nbsp;&nbsp;
-          </span>
-          <input type="text" defaultValue="Custom field 1" />
-          <span className="input-type"> {this.state.finalFormList[index].type} </span>
-          <span className="input-length"> VARCHAR-128 </span>
-          {<span className="edit-icon-wrapper"> 
-              <i class="fas fa-check-square"></i> &nbsp;&nbsp;
-              <i class="fas fa-times"></i> 
-          </span>}
+           </span>
+           <input type="text" onChange={(e)=>this.handleCustomValueChange(e)} value={this.state.customValue} defaultValue="Custom field 1" />
+           <span className="input-type"> {this.state.finalFormList[index].type} </span>
+           <span className="input-length"> VARCHAR-128 </span>
+           {<span className="edit-icon-wrapper"> 
+                <i onClick={()=>this.modifyFormList(index)} class="fas fa-check-square cursorPointer"></i> &nbsp;
+                <i class="fas fa-times cursorPointer"></i> 
+           </span>}
         </Fragment>
         ):
         (<Fragment>
