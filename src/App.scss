@@ -859,22 +859,22 @@ body{
 
   }
   /* width */
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: 4px;
-  }
-  /* Track */
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background:#E1E1E1; 
-  }
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: #999; 
-  }
+  // &::-webkit-scrollbar {
+  //   width: 5px;
+  //   height: 4px;
+  // }
+  // /* Track */
+  // &::-webkit-scrollbar-track {
+  //   background: #f1f1f1; 
+  // }
+  // /* Handle */
+  // &::-webkit-scrollbar-thumb {
+  //   background:#E1E1E1; 
+  // }
+  // /* Handle on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: #999; 
+  // }
   tfoot{
       td{
         position: sticky !important;
@@ -900,23 +900,23 @@ body{
   tfoot td{
 
   }
-  /* width */
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: 4px;
-  }
-  /* Track */
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background:#E1E1E1; 
-  }
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: #999; 
-  }
+  // /* width */
+  // &::-webkit-scrollbar {
+  //   width: 5px;
+  //   height: 4px;
+  // }
+  // /* Track */
+  // &::-webkit-scrollbar-track {
+  //   background: #f1f1f1; 
+  // }
+  // /* Handle */
+  // &::-webkit-scrollbar-thumb {
+  //   background:#E1E1E1; 
+  // }
+  // /* Handle on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: #999; 
+  // }
   tfoot{
     td{
       position: sticky !important;
@@ -939,29 +939,53 @@ body{
     border-bottom:1px solid #e7e7e7;
     z-index: 999;
   }
-  /* width */
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: 4px;
-  }
-  /* Track */
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background:#E1E1E1; 
-  }
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: #999; 
-  }
+  // /* width */
+  // &::-webkit-scrollbar {
+  //   width: 5px;
+  //   height: 4px;
+  // }
+  // /* Track */
+  // &::-webkit-scrollbar-track {
+  //   background: #f1f1f1; 
+  // }
+  // /* Handle */
+  // &::-webkit-scrollbar-thumb {
+  //   background:#E1E1E1; 
+  // }
+  // /* Handle on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: #999; 
+  // }
   tfoot{
     td{
       position: sticky !important;
       bottom: 0;
       background-color:#FFFBEE !important;
     }
+  }
+}
+
+@media screen and (min-width:740px){
+  .checker-transactions-table-wrapper,
+  .checker-batches-table-wrapper,
+  .checker-accounts-table{
+      /* width */
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 4px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background:#E1E1E1; 
+      }
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #999; 
+      }
   }
 }
 

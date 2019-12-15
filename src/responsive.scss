@@ -561,12 +561,3 @@
 }
 
 
-@media screen and (max-width:640px){
-  .checker-transactions-table-wrapper,
-  .checker-batches-table-wrapper,
-  .checker-accounts-table{
-    &::-webkit-scrollbar-track {
-      background:transparent; 
-    }     
-  }
-}
