@@ -163,6 +163,7 @@ body{
           padding-bottom:15px;
           margin-bottom:10px;
           box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+          outline:none;
           cursor: pointer;
           span{
             display:block;
@@ -242,7 +243,7 @@ body{
         background:#fff;
         border-collapse: separate;
         border-radius:10px;
-        // border-spacing: 0;
+        border-spacing: 0;
         tbody{
           border-top:1px solid #E7E7E7;
         }
@@ -250,7 +251,7 @@ body{
           /*box-shadow: 0px 8px 16px -8px rgb(169, 167, 167);*/
         }
         tr:nth-child(odd) td{
-           background: #ffffff;
+           background-color: #ffffff;
         }
         tr:nth-child(even) td{
            background:#FAFAFA;
@@ -885,6 +886,7 @@ body{
 .checker-transactions-table-wrapper{
   overflow-y: scroll;
   height: 471px;
+  // overflow: hidden;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:20px;
   thead th {
@@ -964,10 +966,13 @@ body{
   /*box-shadow: -1px 8px 14px -9px rgba(0,0,0,0.75);*/
   
   td{
+    background-image: url('/images/box-sadow.png');
+    background-position: top left;
+    background-repeat: repeat-x;
     background-color:#FFFBEE !important;    
-    -webkit-box-shadow: 0px -5px 4px 0px rgba(153,153,153,0.24);
-    -moz-box-shadow: 0px -5px 4px 0px rgba(153,153,153,0.24);
-    box-shadow: 0px -5px 4px 0px rgba(153,153,153,0.24);
+    // -webkit-box-shadow: 0px -5px 4px 0px rgba(153,153,153,0.24);
+    // -moz-box-shadow: 0px -5px 4px 0px rgba(153,153,153,0.24);
+    // box-shadow: 0px -5px 4px 0px rgba(153,153,153,0.24);
     z-index: 10;
   }
   span{
@@ -1011,4 +1016,7 @@ select {
 /*** Utils scss ******/
 .cursorPointer{
   cursor: pointer
+}
+.textarea:focus, input:focus,li{
+  outline: none;
 }
