@@ -27,7 +27,8 @@ class Checker extends Component {
   setSelectedIndex = (index) => {
     this.setState({
       tabIndex:index
-    })
+    });
+    document.getElementById("checker-content-section").scrollTop = 0;
  }
 
   render() {
@@ -54,10 +55,10 @@ class Checker extends Component {
       </div>
         <div className="content-section" id="checker-content-section">
         <TabPanel>
-            <Dashboard setTabIndex={this.handleTabSelect} />
+            <Dashboard setSelectedIndex={this.setSelectedIndex}  setTabIndex={this.handleTabSelect} />
         </TabPanel>
         <TabPanel>
-            <Dashboard tab={true} approveTabIndex={this.state.approveTabIndex} />
+            <Dashboard setSelectedIndex={this.setSelectedIndex} tab={true} approveTabIndex={this.state.approveTabIndex} />
         </TabPanel>
         <TabPanel>
             <Enquire setSelectedIndex={this.setSelectedIndex} />

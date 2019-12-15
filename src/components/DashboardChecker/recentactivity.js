@@ -12,19 +12,19 @@ const EmptyTd = () => {
   )
 }
 
-const createTd = (index,item,setModalIsOpen) => {
+const createTd = (index,item,setModalIsOpen,setSelectedIndex) => {
    if(index == 0){
       return <ProgressBar width="70" />
    }else if (index == 1){
       return <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)}  />
    }else if (index == 2){
-      return <Fragment> {item.created} <a className="view-details" href="#"> View Transactions </a> </Fragment>
+      return <Fragment> {item.created} <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a> </Fragment>
    }else{
      return <td></td>
    }
 }
 
-const RecentActivity = ({data}) => {
+const RecentActivity = ({data,setSelectedIndex}) => {
 
   const [recentData,setRecentData] = useState(data);
   const [modalIsOpen,setModalIsOpen] = useState(false);
@@ -116,26 +116,26 @@ const RecentActivity = ({data}) => {
                          {item.name} 
                       </td>
                       <td> 
-                        {createTd(index,item,setModalIsOpen)}
+                        {createTd(index,item,setModalIsOpen,setSelectedIndex)}
                       </td>
                       <td> 
                          {(index < 3) ? <EmptyTd />: 
                          (<Fragment>
-                            {item.accepted} <a className="view-details" href="#"> View Transactions
+                            {item.accepted} <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions
                            </a>
                          </Fragment>)}
                         </td>
                       <td> 
                       {(index < 3) ? <EmptyTd /> : 
                          (<Fragment>
-                            {item.putOnHold} <a className="view-details" href="#"> View Transactions
+                            {item.putOnHold} <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions
                            </a>
                          </Fragment>)}
                       </td>
                       <td> 
                       {(index < 3) ? <EmptyTd /> : 
                          (<Fragment>
-                            {item.rejected} <a className="view-details" href="#"> View Transactions
+                            {item.rejected} <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions
                            </a>
                          </Fragment>)} 
                       </td>

@@ -25,6 +25,7 @@ class Maker extends Component {
      this.setState({
        selectedIndex:index
      })
+     document.getElementById("maker-content-section").scrollTop = 0;
   }
 
   render() {

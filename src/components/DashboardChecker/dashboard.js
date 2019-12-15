@@ -42,7 +42,7 @@ const Dashboard = (props) => {
               { (props.tab) ? <Progress approveTabIndex={props.approveTabIndex} /> : <ProgressEmpty setTabIndex={props.setTabIndex} /> }
            </div>
            <h2 className="sub-heading recent-activity"  > RECENT ACTIVITY </h2>
-           <RecentActivity data={RecentActivityData.data} />
+           <RecentActivity {...props} data={RecentActivityData.data} />
            <h2 style={{"marginTop":"20px"}} className="sub-heading" > ADMIN ALERTS </h2>
            <AdminAlerts messages={AdminMessagesData.messages} />
        </div>
