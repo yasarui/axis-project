@@ -334,9 +334,16 @@ class CustomTemplate extends Component {
                 {this.state.mandatoryList.map((item,index)=>{
                   return(
                     <DraggableLi id={item.id} type="mandatory"  >
-                      <span onClick={()=>this.addMandatoryList(item.id)} className="plus-btn">
-                        <img src="/images/add.svg" />
-                      </span>
+                      {item.added ? (
+                        <span onClick={()=>this.removeItemFromList(item)} className="plus-btn" >
+                          <i className="fas fa-minus"></i>
+                        </span>
+                      ) : (
+                        <span onClick={()=>this.addMandatoryList(item.id)} className="plus-btn">
+                           <img src="/images/add.svg" />
+                        </span>
+                      )}
+
                       {item.text}
                       {item.added ? (
                        <span className="added-icon">
@@ -354,9 +361,15 @@ class CustomTemplate extends Component {
                  {this.state.optionalList.map((item,index)=>{
                   return(
                     <DraggableLi id={item.id} type="optional">
-                        <span onClick={()=>this.addOptionalList(item.id)} className="plus-btn">
-                           <img src="/images/add.svg" />
-                        </span>
+                        {item.added ? (
+                          <span onClick={()=>this.removeItemFromList(item)} className="plus-btn">
+                            <i className="fas fa-minus"></i>
+                          </span>
+                        ) : (
+                          <span onClick={()=>this.addOptionalList(item.id)} className="plus-btn">
+                            <img src="/images/add.svg" />
+                         </span>
+                        )}
                         {item.text}
                         {item.added ? (
                        <span className="added-icon">
