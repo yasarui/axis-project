@@ -92,6 +92,10 @@ class Upload extends Component {
     this.props.callbackFromParent(true);
   }
 
+  triggerClick() {
+    document.getElementById("fileselect").click()
+  }
+
   render() {
     let popupData;
     let uploadButton;
@@ -138,7 +142,7 @@ class Upload extends Component {
               <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
               <p>Drag-and-drop salary payment file here</p>
               <p className="upload-or-txt">OR</p>
-              <div class="custom-upload-wrap">
+              <div class="custom-upload-wrap" onClick={this.triggerClick}>
                 <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
                 <span>Browse</span>
               </div>
