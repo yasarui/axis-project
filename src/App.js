@@ -33,27 +33,39 @@ class App extends Component {
     });
   }
 
+  renderRoute(){
+     if(this.state.isMobile){
+        return (
+           <Route path='/' render={(props) => <Checker {...props} hideMenuChecker={this.state.showMenu}
+            callbackFromChecker={this.callbackFromChecker} />} />
+        )
+     }else{
+        return <Fragment>
+            <Route path='/' exact render={(props) => <Maker {...props} hideMenuMaker={this.state.showMenu} callbackFromMaker={this.callbackFromMaker} />} />
+            <Route path='/checker' render={(props) => <Checker {...props} hideMenuChecker={this.state.showMenu}
+            callbackFromChecker={this.callbackFromChecker} />} />
+        </Fragment>
+     }
+  }
+
   render() {
     let mainRoute = '';
     if(this.state.isMobile){
       mainRoute = <div>
-      <Route path='/' render={(props) => <Checker {...props} hideMenuChecker={this.state.showMenu}
-      callbackFromChecker={this.callbackFromChecker} />} /></div>
+      </div>
     } else {
-      mainRoute = <div><Route path='/' exact render={(props) => <Maker {...props} hideMenuMaker={this.state.showMenu} callbackFromMaker={this.callbackFromMaker} />} />
-      <Route path='/checker' render={(props) => <Checker {...props} hideMenuChecker={this.state.showMenu}
-      callbackFromChecker={this.callbackFromChecker} />} /></div>
+      mainRoute = <div></div>
     }
    return(
     <Router>
-    <div className="whole-wrapper">
-      <Header callbackFromHeader={this.callbackFromHeader} />
-        <Switch>
-           {/* <Route path="/" exact component={Maker} />
-           <Route path="/checker" component={Checker} /> */}
-          {mainRoute}
-        </Switch>
-    </div>
+      <div className="whole-wrapper">
+        <Header callbackFromHeader={this.callbackFromHeader} />
+          <Switch>
+            {this.renderRoute()};
+            {/* <Route path="/" exact component={Maker} />
+            <Route path="/checker" component={Checker} />  */}
+          </Switch>
+      </div>
     </Router>
    )
   }

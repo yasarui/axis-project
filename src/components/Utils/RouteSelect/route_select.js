@@ -12,8 +12,8 @@ const RouteSelect = () => {
     <div className="route-select">
         <span> Viewing as </span> 
         <select className="web-route" onChange={handleChange}>
-            <option value="/checker"> Checker </option>
             <option value="/"> Maker </option>
+            <option value="/checker"> Checker </option>
         </select>
         <select className="mobile-route" onChange={handleChange}>
             <option value="/"> Checker </option>
