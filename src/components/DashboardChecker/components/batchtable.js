@@ -105,7 +105,7 @@ class BatchTable extends React.Component{
                             <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                   </tr>
               </thead>
-              <tbody style={{"height":"300px"}} className="tbody-shadow" >
+              <tbody onClick={()=>this.setState({selectedHeader:null})} style={{"height":"300px"}} className="tbody-shadow" >
                   {this.state.data.map((item,index)=>{
                       return(
                         <tr>
@@ -139,7 +139,7 @@ class BatchTable extends React.Component{
                                 <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
                             </td>
                             <td style={{"width":"181px"}}> 
-                                <ButtonDropdown varient={item.button} />
+                                <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient={item.button} />
                             </td>
                         </tr>
                       )

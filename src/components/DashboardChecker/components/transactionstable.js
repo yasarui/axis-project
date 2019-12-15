@@ -122,12 +122,12 @@ class TransactionsTable extends React.Component{
                     <th style={{"width":"170px"}} > Actions </th>
                   </tr>
               </thead>
-              <tbody style={{"height":"300px"}} className="tbody-shadow">
+              <tbody onClick={()=>this.setState({selectedHeader:null})} style={{"height":"300px"}} className="tbody-shadow">
                   {this.state.data.map((item,index)=>{
                       return(
                         <tr>
                           <td style={{"width":"150px"}} > 
-                             <ButtonDropdown varient="success" />
+                             <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient="success" />
                           </td>
                           <td style={{"width":"170px"}}> XXXXX </td>
                           <td style={{"width":"170px"}}></td>

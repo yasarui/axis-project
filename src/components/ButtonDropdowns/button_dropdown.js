@@ -59,7 +59,7 @@ const ButtonDropdown = ({varient,hideHeaderFilter}) => {
       break;
    }
    function showDropdown() {
-      hideHeaderFilter(null)
+      if(hideHeaderFilter) hideHeaderFilter(null);
       setDropdownValue(!dropdownValue);
    }
    function setDropdownStatus(val) {

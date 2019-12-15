@@ -111,7 +111,7 @@ class AccountsTable extends React.Component{
                             <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                         </tr>
                     </thead>
-                    <tbody className="tbody-shadow" >
+                    <tbody onClick={()=>this.setState({selectedHeader:null})} className="tbody-shadow" >
                         {this.state.data.map((item,index)=>{
                             return(
                             <tr>
@@ -129,7 +129,7 @@ class AccountsTable extends React.Component{
                                     <span className={item.iconClr}> <i class="fas fa-circle small-icon"></i> </span> 
                                 </td>
                                 <td> 
-                                    <ButtonDropdown varient={item.button} />
+                                    <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient={item.button} />
                                 </td>
                             </tr>
                             )
