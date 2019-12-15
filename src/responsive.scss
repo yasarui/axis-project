@@ -378,6 +378,15 @@
         width: 120px;
       }
     }
+    .enquire-filters {
+      width: 208px;
+      .select-wrap {
+        display: block;
+      }
+      select {
+        width: 100%;
+      }
+    }
   }
   .templates .templates-col {
     float: none;
@@ -515,6 +524,15 @@
   }
 }
 @media screen and (min-width:100px) and (max-width:500px) {
+  .enquire-wrap .enquire-filters {
+    width: calc(100% - 100px);
+    .select-wrap {
+      display: block;
+    }
+    select {
+      width: 100%;
+    }
+  }
   .main-layout .content-section .checker-dashboard .progress-tiles-wrapper .progress-tile {
     margin-right: 5px;
     width: 85px;
