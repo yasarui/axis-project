@@ -861,6 +861,7 @@ body{
   /* width */
   &::-webkit-scrollbar {
     width: 5px;
+    height: 4px;
   }
   /* Track */
   &::-webkit-scrollbar-track {
@@ -875,12 +876,12 @@ body{
     background: #999; 
   }
   tfoot{
-    td{
-      position: sticky !important;
-      bottom: 0;
-      background-color:#FFFBEE !important;
-    }
-  }
+      td{
+        position: sticky !important;
+        bottom: 0;
+        background-color:#FFFBEE !important;
+      }
+   }
 }
 
 .checker-transactions-table-wrapper{
@@ -902,6 +903,7 @@ body{
   /* width */
   &::-webkit-scrollbar {
     width: 5px;
+    height: 4px;
   }
   /* Track */
   &::-webkit-scrollbar-track {
@@ -940,6 +942,7 @@ body{
   /* width */
   &::-webkit-scrollbar {
     width: 5px;
+    height: 4px;
   }
   /* Track */
   &::-webkit-scrollbar-track {
