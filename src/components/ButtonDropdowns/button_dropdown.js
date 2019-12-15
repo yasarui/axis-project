@@ -16,7 +16,7 @@ import './button_dropdown.scss';
 //   });
 // }
 
-const ButtonDropdown = ({varient}) => {
+const ButtonDropdown = ({varient,hideHeaderFilter}) => {
 
   function useOutsideAlerter(ref) {
     function handleClickOutside(event) {
@@ -59,6 +59,7 @@ const ButtonDropdown = ({varient}) => {
       break;
    }
    function showDropdown() {
+      hideHeaderFilter(null)
       setDropdownValue(!dropdownValue);
    }
    function setDropdownStatus(val) {

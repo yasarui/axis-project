@@ -72,12 +72,14 @@ class EnquireTable extends React.Component{
     handleTdClick(e){
       if (e.nativeEvent.which === 3) {
         this.setState({
-          showFilterTooltip:!this.state.showFilterTooltip
+          showFilterTooltip:!this.state.showFilterTooltip,
+          selectedHeader:null
         })
       }
       if (e.nativeEvent.which === 1) {
         this.setState({
-          showFilterTooltip: false
+          showFilterTooltip: false,
+          selectedHeader:null
         })
       }
       e.preventDefault(); return false;
@@ -154,7 +156,7 @@ class EnquireTable extends React.Component{
                 {this.state.data.map((item,index)=>{
                     return (
                         <tr>
-                            <td> <ButtonDropdown varient="success" /> </td>
+                            <td> <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient="success" /> </td>
                             { !this.state.hideColumn._id && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item._id} </td> }
                             { !this.state.hideColumn.name && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item.name} </td> }
                             { !this.state.hideColumn.created && <td onClick={(e)=>this.handleTdClick(e)}  onContextMenu={(e)=>this.handleTdClick(e)}> {item.created} </td> }
