@@ -1,11 +1,45 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import './button_dropdown.scss';
+
+// function useOutsideAlerter(ref) {
+//   function handleClickOutside(event) {
+//     if (ref.current && !ref.current.contains(event.target)) {
+//       alert("You clicked outside of me!");
+//     }
+//   }
+
+//   useEffect(() => {
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => {
+//       document.removeEventListener("mousedown", handleClickOutside);
+//     };
+//   });
+// }
+
 const ButtonDropdown = ({varient}) => {
+
+  function useOutsideAlerter(ref) {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setDropdownValue(false);
+      }
+    }
+  
+    useEffect(() => {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    });
+  }
+
    const [value,setValue] = useState(varient);
    const [dropdownValue,setDropdownValue] = useState(false);
    function handleChange(e){
        console.log("value ",e.target.value);
    }
+   
+
    var dropdownText;
    if(value) {
     dropdownText = 'Accept';
@@ -25,14 +59,18 @@ const ButtonDropdown = ({varient}) => {
       break;
    }
    function showDropdown() {
-    setDropdownValue(!dropdownValue);
+      setDropdownValue(!dropdownValue);
    }
    function setDropdownStatus(val) {
-    setValue(val);
-    setDropdownValue(!dropdownValue);
+      setValue(val);
+      setDropdownValue(!dropdownValue);
    }
+
+   const wrapperRef = useRef(null);
+   useOutsideAlerter(wrapperRef);
+
    return(
-    <div className={"axis-select-dropdown-wrapper " + (value)}>
+    <div ref={wrapperRef} className={"axis-select-dropdown-wrapper " + (value)}>
         <span className="value" onClick={()=>showDropdown()}>{dropdownText}</span>
         <ul className={dropdownValue? "show-dropdown" : "hide-dropdown"}>
           <li className="accept-txt" onClick={(e)=>setDropdownStatus('success')}>Accept</li>
