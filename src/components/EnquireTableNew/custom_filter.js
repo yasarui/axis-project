@@ -71,6 +71,7 @@ const CustomFilter = (props) => {
       setSecondList(list2);
    }
 
+
    function modifyListOne(item){
        let data1 = []
        if(firstList.length > 0){
@@ -132,6 +133,23 @@ const CustomFilter = (props) => {
       e.target.value = '';
     }
   }
+
+  function clearPills(){
+    setColumnList([]);
+    setColumnList1([]);
+  }
+
+  function removePillList1(index){
+      let temp = [...columnList];
+      temp.splice(index,1);
+      setColumnList(temp);
+  }
+
+  function removePillList2(index){
+    let temp = [...columnList1];
+    temp.splice(index,1);
+    setColumnList1(temp);
+}
 
    return(
         <Tabs selectedIndex={props.selectedIndex} >
@@ -208,7 +226,7 @@ const CustomFilter = (props) => {
                                     </div>
                                 </div>
                                 <div className="clearfix">
-                                    <span className="reset-filter-txt">Clear</span>
+                                    <span onClick={()=>clearPills()} className="reset-filter-txt">Clear</span>
                                 </div>
                             </div> {/* End of Third Link Section */}
                         </Tab>
@@ -290,7 +308,10 @@ const CustomFilter = (props) => {
                                                 <div className="axis-tags-wrapper" onClick={()=>focusProps()}>
                                                   <div className="axis-tag-wrap">
                                                     {columnList.map((data, i) => {
-                                                      return <span className="axis-tags" > {data} <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                      return <span className="axis-tags" > 
+                                                                 {data} 
+                                                                 <i style={{"cursor":"pointer"}} onClick={()=>removePillList1(i)} class="fa fa-times" aria-hidden="true"></i> 
+                                                             </span>
                                                     })}
                                                     <input type="text" onKeyDown={(e)=>addColumn(e)}  ref={textInput} />
                                                   </div>
@@ -303,7 +324,8 @@ const CustomFilter = (props) => {
                                                 <div className="axis-tags-wrapper" onClick={()=>focusProps1()}>
                                                   <div className="axis-tag-wrap">
                                                     {columnList1.map((data, i) => {
-                                                      return <span className="axis-tags" > {data} <i class="fa fa-times" aria-hidden="true"></i> </span>
+                                                      return <span className="axis-tags" > {data} 
+                                                             <i style={{"cursor":"pointer"}} onClick={()=>removePillList2(i)} class="fa fa-times" aria-hidden="true"></i> </span>
                                                     })}
                                                     <input type="text" onKeyDown={(e)=>addColumn1(e)}  ref={textInput1} />
                                                   </div>
