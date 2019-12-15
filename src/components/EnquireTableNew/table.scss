@@ -491,6 +491,17 @@
   td{
     cursor: pointer;
   }
+  th {
+    .table-actions {
+      &:after {
+        top: 1px;
+      }
+      span {
+        padding-top: 0;
+      }
+    }
+  }
+  
 }
 .enquire-table-wrap li.react-tabs__tab--selected:not(:first-child) > div{
    border-bottom:none !important;
