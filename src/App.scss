@@ -845,6 +845,7 @@ body{
 .checker-batches-table-wrapper{
   overflow-y: scroll;
   height: 553px;
+  border-top-left-radius:0 !important;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:20px;
   border-top-right-radius:20px;
@@ -966,6 +967,7 @@ body{
 }
 
 @media screen and (min-width:740px){
+  .admin-alerts-table-wrapper,
   .checker-transactions-table-wrapper,
   .checker-batches-table-wrapper,
   .checker-accounts-table{

@@ -268,13 +268,14 @@
           border: 0;
         }
         tr{
-          width: 100%;
-          display: block;
+          //width: 100%;
+          //display: block;
           td {
-            padding: 6px 0 0px 20px;
-            border: 0;
-            width: 96%;
+            padding: 6px 10px 0px 20px;
+            //border: 0;
+            //width: 95%;
             display: block;
+            text-overflow:wrap;
             span.date {
               font-size: 12px;
               color: #999;
@@ -282,7 +283,11 @@
             }
             span.time {
               color: #999;
+              display: inline-block;
             }
+          }
+          td.body-date{
+            width:auto;
           }
           &:nth-child(odd) {
             background-color: #f9f9f9;
@@ -330,7 +335,7 @@
     }
   }
   .main-layout .table-wrap {
-    border-radius: 5px;
+    border-radius: 10px;
   }
   .transactions-tab-filter {
     display: block;
@@ -523,9 +528,15 @@
     width: 80%;
   }
 }
+@media screen and (max-width:640px){
+  .date-range-wrapper{
+    display: flex;
+    justify-content:space-between;
+  }
+}
 @media screen and (min-width:100px) and (max-width:500px) {
   .enquire-wrap .enquire-filters {
-    width: calc(100% - 100px);
+    width: calc(100% - 90px);
     .select-wrap {
       display: block;
     }
@@ -533,6 +544,7 @@
       width: 100%;
     }
   }
+
   .main-layout .content-section .checker-dashboard .progress-tiles-wrapper .progress-tile {
     margin-right: 5px;
     width: 85px;
