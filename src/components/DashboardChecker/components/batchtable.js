@@ -100,7 +100,7 @@ class BatchTable extends React.Component{
                             <span className="headerSortDown"></span>
                         </div>
                     </th>
-                    <th> <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                    <th style={{"width":"100px"}}> <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
                         {this.state.selectedHeader === 0 ? 
                             <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                   </tr>
@@ -110,7 +110,7 @@ class BatchTable extends React.Component{
                       return(
                         <tr>
                             <td>  
-                                <i class="fas fa-eye icon"></i> {item._id.substr(1,5)} 
+                              <img src="/images/eye.svg" /> {item._id.substr(1,5)} 
                             </td>
                             <td>  
                               <span className="date" > 
@@ -138,7 +138,7 @@ class BatchTable extends React.Component{
                             <td style={{"textAlign":"right"}}> ₹​{item.amount} 
                                 <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
                             </td>
-                            <td style={{"width":"181px"}}> 
+                            <td> 
                                 <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient={item.button} />
                             </td>
                         </tr>

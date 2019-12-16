@@ -119,11 +119,10 @@ const Progress = (props) => {
                             return (
                                 <tr>
                                     <td>  
-                                        <label className="checkbox-wrapper" >
-                            {selectAll ? <input type="checkbox" className="checkbox" checked={true}/> : <input type="checkbox" className="checkbox" /> }
-                                            <span className="label-text"> 
-                                                {item._id.substring(1,5)} 
-                                            </span>
+                                        <label class="checkbox-wrap">
+                                        {item._id.substring(1,5)} 
+                                          {selectAll ? <input type="checkbox" className="checkbox" checked={true}/> : <input type="checkbox" className="checkbox" /> }
+                                          <span class="checkmark"></span>
                                         </label>
                                     </td>
                                     <td>  

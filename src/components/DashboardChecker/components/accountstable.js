@@ -106,7 +106,7 @@ class AccountsTable extends React.Component{
                                 <span onClick={(e)=>this.sortDessending(e,'amount')}className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th>  <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                        <th style={{"width":"100px"}}>  <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
                         {this.state.selectedHeader === 0 ? 
                             <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                         </tr>
@@ -116,7 +116,7 @@ class AccountsTable extends React.Component{
                             return(
                             <tr>
                                 <td> 
-                                    <i class="fas fa-eye icon"></i> {item.account_number}</td>
+                                    <img src="/images/eye.svg" /> {item.account_number}</td>
                                 <td> {item.name} </td>
                                 <td style={{"textAlign":"right"}}> 
                                   ₹​{item.amount} &nbsp;&nbsp;

@@ -79,6 +79,9 @@
         td{
           color:#666;
           font-weight:bold;
+          img {
+            margin-left: 5px;
+          }
         }
     }
     button{
@@ -95,6 +98,7 @@
     right: 0px;
     bottom: 0px;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
 }
 .axis-transparent-overlay{
   position: fixed;
@@ -103,4 +107,5 @@
   right: 0px;
   bottom: 0px;
   background-color: rgba(255, 255, 255, 0);    
+  z-index: 999;
 }

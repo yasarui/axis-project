@@ -210,12 +210,10 @@ const CustomFilter = (props) => {
                         <Tab>
                             <div className="custom-filter-col3" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true,2)}>
                                 <div className="custom-filter-top clearfix">
-                                    <div className="view-type column">
+                                  <div className="view-type column drop-column-btn">
                                         <label>Active Filters</label>
                                         <div className="select-wrap">
-                                          <select>
-                                              <option>7/40</option>
-                                          </select>
+                                          <span>7/40</span>
                                         </div>
                                     </div>
                                     <div class="text-toggle ">

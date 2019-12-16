@@ -1,5 +1,15 @@
 .enquire-table-wrap{
     margin-top:35px;
+    .react-tabs__tab-panel {
+      .react-tabs {
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        -webkit-box-shadow: 0px 2px 3px 0px rgba(214,190,200,1);
+        -moz-box-shadow: 0px 2px 3px 0px rgba(214,190,200,1);
+        box-shadow: 0px 2px 3px 0px rgba(214,190,200,1);
+      }
+    }
     div.main-nav-tabs{
       .react-tabs__tab-list {
         margin: 0;
@@ -150,6 +160,7 @@
         padding: 15px;
         border-left: 1px solid #E7E7E7;
         border-bottom: 1px solid #E7E7E7;
+        border-top: 5px solid #fff;
         box-sizing: border-box;
         position: relative;
         &.active {
@@ -222,7 +233,7 @@
         .custom-filter-col1,
         .custom-filter-col2,
         .custom-filter-col3 {
-          min-height: 100px;
+          min-height: 104px;
         }
       }
     }
@@ -258,9 +269,12 @@
         font-size: 12px;
         font-weight: 600;
         color: #98144E;
-        margin: 11px 0 0 30px;
-        display: inline-block;
+        margin: 7px 0 0 30px;
+        float: left;
         cursor: pointer;
+        &:first-child {
+          margin-top: 7px;
+        }
         &:hover {
           color: #666;
         }
@@ -505,7 +519,7 @@
 }
 .enquire-table-wrap li.react-tabs__tab--selected:not(:first-child) > div{
    border-bottom:none !important;
-   border-top:5px solid #98144E;
+   border-top-color: #98144E;
 }
 
 .axis-tags-wrapper{
@@ -650,6 +664,7 @@
 }
 .column.drop-column-btn {
   .select-wrap {
+    margin-top: 3px;
     &:after {
       right: 11px;
     }

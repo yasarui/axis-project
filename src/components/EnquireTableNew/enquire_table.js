@@ -97,7 +97,7 @@ class EnquireTable extends React.Component{
           <table className="enquiry-table" >
             <thead>
                 <tr>
-                    <th> 
+                    <th style={{"width":"100px"}}> 
                        <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
                         {this.state.selectedHeader === 0 ? 
                             <ActionStatus {...actionProps} tableIndex="1" columnName="_id" />: ""}
@@ -111,7 +111,7 @@ class EnquireTable extends React.Component{
                         </th>
                     }
                     {!this.state.hideColumn.name &&
-                        <th className={this.state.selectedHeader === 2 ? "active":""} 
+                        <th  style={{"width":"250px"}} className={this.state.selectedHeader === 2 ? "active":""} 
                             onClick={()=>this.openAction(2)}> 
                             Staff 
                             {this.state.selectedHeader === 2 ? 

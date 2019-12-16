@@ -20,7 +20,7 @@ export default function ViewDetails(){
                 <tr>
                     <td> XXXXXX </td>
                     <td> 440/460 </td>
-                    <td> 20/460 <i class="fas fa-download download-icon"></i> </td>
+                    <td> 20/460 <img src="/images/download.svg" /> </td>
                 </tr>
             </tbody>
         </table>
