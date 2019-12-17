@@ -727,11 +727,18 @@ body{
   border-bottom-left-radius:10px;
   border-bottom-right-radius:20px;
   border-top-right-radius:20px;
-   th{
+   th{  
      height:40px !important;
    }
 }
-
+.main-layout .content-section table.checker-transactions-table {
+  tr th {
+    vertical-align: middle;
+  }
+  .sortIconsWrapper {
+    top: 19px;
+  }
+}
 .checker-batches-table{
    th{
      height: 54px !important;
