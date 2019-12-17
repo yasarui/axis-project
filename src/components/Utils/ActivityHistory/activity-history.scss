@@ -17,11 +17,14 @@
             font-size: 13px;
             margin-right: 10px;
             background: #fff;
-            border: 2px solid #98144E;
-            color: #98144E;
+            border: 2px solid #871F40;
+            color: #871F40;
             font-weight: bold;
             margin-bottom:0;
             cursor: pointer;
+            &:hover {
+              background: #E6E6E6;
+            }
         }
         span {
             color: #888;

@@ -152,6 +152,7 @@ const CustomFilter = (props) => {
 }
 
    return(
+     <div>
         <Tabs selectedIndex={props.selectedIndex} >
             <TabList>
                 <div className="custom-filter-wrap custom-filter clearfix">
@@ -399,8 +400,9 @@ const CustomFilter = (props) => {
                     </div>
                 </div>                
             </TabPanel>
-            <EnquirePopup type={popupList} callbackFromParent={()=>callbackFunction()} />
         </Tabs>
+        <EnquirePopup type={popupList} callbackFromParent={()=>callbackFunction()} />
+      </div>
    )
 }
 

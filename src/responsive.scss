@@ -148,12 +148,13 @@
     display: none;
   }
   header {
-    padding-top: 10px;
     height: 70px;
     .mobile-menu {
       display: block;
       float: left;
-      margin: 15px 0 0 25px;
+      position: absolute;
+      top: 26px;
+      left: 20px;
       span {
         background: #fff;
         height: 3px;
@@ -163,9 +164,21 @@
         margin-bottom: 4px;
       }
     }
-    .header-inner .white-section {
-      width: 60%;
-      top: 58px;
+    .header-inner {
+      .logo {
+        padding: 11px 20px 20px 50px;
+      }
+      .white-section {
+        width: calc(100% - 225px);
+        &:before {
+          top: 23px;
+          left: 4px;
+        }
+        &:after {
+          top: 10px;
+          left: 32px;
+        }
+      }
     }
   }
   .main-layout {
@@ -224,6 +237,7 @@
     }
     .content-section {
       width: 100%;
+      padding-left: 20px;
       .page-title {
         font-size: 20px;
       }
@@ -419,7 +433,7 @@
   .main-layout {
     .content-section {
       .last-updated-time {
-        top: 29px;
+        top: 90px;
         max-width: 195px;
         text-align: right;
         span {

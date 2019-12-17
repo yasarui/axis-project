@@ -2,14 +2,17 @@
     width: 137px;
     height: 32px;
     text-transform: uppercase;
-    background-color:#91214e;
+    background-color:#871F40;
     color: #fff;
     border: none;
     border-radius: 20px;
+    &:hover {
+      background: #62162E;
+    }
 }
 .axis-button-multi-text{
     width:100%;
-    background-color:#91214e;
+    background-color:#871F40;
     height:46px;
     color:#fff;
     text-align:center;
@@ -20,6 +23,9 @@
       opacity:.5;
       display:block;
     }
+    &:hover {
+      background: #62162E;
+    }
 }
 .axis-button-outline{
     width: 137px;
@@ -29,18 +35,24 @@
     border:2px solid #91214e;
     color: #91214e;
     border-radius: 20px; 
+    &:hover {
+      background: #E6E6E6;
+    }
 }
 .axis-button-outline-full-size{
-    border:2px solid #91214e;
+    border:2px solid #871F40;
     background:#fff;
     border-radius:15px;
     padding:6px;
     text-transform:uppercase;
     width: 100%;
     display:block;
-    color:#91214e;
+    color:#871F40;
     text-align:center;
     font-weight:600;
+    &:hover {
+      background: #E6E6E6;
+    }
 }
 .axis-success-button{
     width: 137px;
@@ -69,7 +81,7 @@
     text-transform: uppercase;
     color:#fff;
     border-radius:20px;
-    background-color:#A3A3A3;
+    background-color:#A0A0A0;
     border:none;
 }
 .axis-warning-button{

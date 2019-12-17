@@ -1,8 +1,9 @@
 body{
   font-family: 'Open Sans', sans-serif;
+  background: #E6E6E6;
 }
 .main-layout{
-    height: calc(100vh - 90px);
+    // height: calc(100vh - 0px);
     font-family: 'Open Sans', sans-serif;
     width:100%;
     display:flex;
@@ -10,8 +11,12 @@ body{
     box-sizing:border-box;
     overflow: hidden;
    .sidebar{
-      width: 8%;
+      width: 100px;
       background-color:#2d3436;
+      position: fixed;
+      top: 90px;
+      height: 100%;
+      z-index: 1;
       .mobile-menu-close {
         display: none;
       }
@@ -57,7 +62,7 @@ body{
       li.react-tabs__tab--selected{
         background-color:#fff;
         color:#98144E;
-        border-left:5px solid #98144E;
+        border-left:5px solid #861f41;
         i{
           color:#98144E;
         }
@@ -70,14 +75,12 @@ body{
       }
     }
     .content-section{
-      width:92%;
+      width: 100%;
       background-color:#E6E6E6;
       color:#4A4A4A;
       box-sizing: border-box;
-      padding:20px;
-      overflow-y:scroll;
+      padding:105px 20px 20px 120px;
       position: relative;
-      
       .page-title{
          font-weight:400;
          font-size:28px;
@@ -89,7 +92,7 @@ body{
       .last-updated-time{
          position: absolute;
          right:20px;
-         top:52px;
+         top:142px;
          font-size:12px;
          color:#888;
          i{
@@ -130,7 +133,7 @@ body{
           width: 8px;
           height: 8px;
           border-style: solid;
-          border-color: #98144E;
+          border-color: #861f41;
           border-width: 0px 2px 2px 0px;
           transform: rotate(45deg);
           pointer-events: none;
@@ -156,7 +159,7 @@ body{
           height: 73px;
           box-sizing:border-box;
           color:#fff;
-          background-color:#98144E;
+          background-color:#861f41;
           text-align:center;
           border-radius:4px;
           padding-top:15px;
@@ -182,13 +185,13 @@ body{
         .react-tabs__tab--selected .progress-tile.active{
            background-color:#fff;
            color:#4A4A4A;
-           border-top:3px solid #98144E
+           border-top:3px solid #861f41;
         }
         /** The below css is used only on Dashboard Maker - batches Table **/
         .progress-tile.active{
           background-color:#fff;
           color:#4A4A4A;
-          border-top:3px solid #98144E;
+          border-top:3px solid #861f41;
           box-shadow:none;
           position: relative;
         }
@@ -207,7 +210,7 @@ body{
           .react-tabs__tab--selected .progress-tile{
             background-color:#fff;
             color:#4A4A4A;
-            border-top:3px solid #98144E;
+            border-top:3px solid #861f41;
             box-shadow:none;
             position: relative;            
           }
@@ -348,8 +351,8 @@ body{
            input[type="checkbox"]:checked + .label-text::before{
              content:'\2713';
              color:#fff;
-             background-color:#98144E;
-             border-color:#98144E;
+             background-color:#861f41;
+             border-color:#861f41;
            }
         }
 
@@ -584,7 +587,7 @@ body{
         position: absolute;
         z-index: 5;
         text-align: center;
-        background: #98144E;
+        background: #861f41;
         transform: translate3d(0,0,0);
         color: #fff;
       }
@@ -616,7 +619,7 @@ body{
     left: 0;
     height: 14px;
     width: 14px;
-    border: 2px solid #98144E;
+    border: 2px solid #861f41;
     border-radius: 50%;
   }
   .checkmark:after {
@@ -625,7 +628,7 @@ body{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #98144E;
+    background: #861f41;
   }
   input:checked ~ .checkmark:after {
     display: block;
@@ -673,11 +676,11 @@ body{
     left: 0;
     height: 14px;
     width: 14px;
-    border: 2px solid #98144E;
+    border: 2px solid #861f41;
     border-radius: 3px;
   }
   input:checked ~ .checkmark {
-    background-color: #98144E;
+    background-color: #861f41;
   }
   .checkmark:after {
     content: "";
@@ -829,7 +832,7 @@ body{
     top: 0;
     background:#fff;
     border-bottom:1px solid #e7e7e7;
-    z-index: 999;
+    z-index: 98;
   }
   /* width */
   &::-webkit-scrollbar {
@@ -861,7 +864,7 @@ body{
     top: 0;
     background:#fff;
     border-bottom:1px solid #e7e7e7;
-    z-index: 999;
+    z-index: 99;
   }
   tfoot td{
 
@@ -903,7 +906,7 @@ body{
     top: 0;
     background:#fff;
     border-bottom:1px solid #e7e7e7;
-    z-index: 999;
+    z-index: 98;
   }
   tfoot td{
 
@@ -945,7 +948,7 @@ body{
     top: 0;
     background:#fff;
     border-bottom:1px solid #e7e7e7;
-    z-index: 999;
+    z-index: 98;
   }
   // /* width */
   // &::-webkit-scrollbar {
@@ -1033,7 +1036,11 @@ body{
 .table-btn-actions {
   span {
     cursor: pointer;
-    margin-left: 15px;
+    margin: 0 11px;
+    &.send-icon {
+      float: left;
+      margin-left: 10px;
+    }
   }
 }
 button,

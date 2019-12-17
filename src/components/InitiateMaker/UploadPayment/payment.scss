@@ -146,7 +146,7 @@ select {
   }
 }
 .common-btn {
-  background: #861f41;
+  background: #871F40;
   color: #fff;
   border-radius: 15px;
   height: 30px;
@@ -160,13 +160,13 @@ select {
   min-width: 70px;
   cursor: pointer;
   &:hover {
-    background: #666;
+    background: #62162E;
   }
 }
 .common-btn2 {
   background: #fff;
-  color: #861f41;
-  border: 2px solid #861f41;
+  color: #871F40;
+  border: 2px solid #871F40;
   border-radius: 15px;
   padding: 0 20px;
   height: 26px;
@@ -177,8 +177,7 @@ select {
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    background: #861f41;
-    color: #fff;
+    background: #E6E6E6;
   }
 }
 .common-btn3 {
