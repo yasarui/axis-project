@@ -11,35 +11,40 @@ const mandatoryList = [
     text:"Mandatory field 1",
     type:"Mandatory",
     added:false,
-    format:"default"
+    format:"default",
+    editable:false
   },
   {
     id:2,
     text:"Mandatory field 2",
     type:"Mandatory",
     added:false,
-    format:"default"  
+    format:"default",
+    editable:false
   },
   {
     id:3,
     text:"Mandatory field 3",
     type:"Mandatory",
     added:false,
-    format:"default"   
+    format:"default",
+    editable:false
   },
   {
     id:4,
     text:"Mandatory field 4",
     type:"Mandatory",
     added:false,
-    format:"default"
+    format:"default",
+    editable:false
   },
   {
     id:5,
     text:"Mandatory field 5",
     type:"Mandatory",
     added:false,
-    format:"default"
+    format:"default",
+    editable:false
   }
 ]
 
@@ -49,42 +54,54 @@ const optionalList = [
     text:"Create Your Own",
     type:"Optional",
     added:false,
-    format:"custom"     
+    format:"custom",
+    name:"customValue",
+    editable:false   
   },
   {
     id:7,
     text:"Optional Field 6",
     type:"Optional",
     added:false,
-    format:"default"       
+    format:"default",
+    name:"optional7",
+    editable:false     
   },
   {
    id:8,
    text:"Optional Field 7",
    type:"Optional",
    added:false,
-   format:"default"    
+   format:"default",
+   name:"optional8",
+   editable:false 
   },
   {
    id:9,
    text:"Optional Field 8",
    type:"Optional",
    added:false,
-   format:"default"      
+   format:"default",
+   name:"optional9",
+   editable:false    
   },
   {
    id:10,
    text:"Optional Field 9",
    type:"Optional",
    added:false,
-   format:"default"        
+   format:"default",
+   name:"optional10",
+   editable:false     
   },
   {
    id:11,
    text:"Optional Field 10",
    type:"Optional",
    added:false,
-   format:"default"        
+   format:"default",
+   name:"optional11",
+   editable:false    
   }
 ]
 
@@ -102,17 +119,21 @@ class CustomTemplate extends Component {
       optionalList:optionalList,
       finalFormList:[],
       sampleArr:[1,2,3,4,5,6],
-      customValue:"Custom Value 1"
+      customValue:"Custom Value 1",
+      optional7:"Optional Field 7",
+      optional8:"Optional Field 7",
+      optional9:"Optional Field 8",
+      optional10:"Optional Field 9",
+      optional11:"Optional Field 10"
     };
   }
 
-  modifyFormList = (index) => {
-    console.log("Tick button has been clicked ",index);
-    let final = [...this.state.finalFormList];
+  modifyFormList = (index,name) => {
+     let final = [...this.state.finalFormList];
      final.forEach((item,i)=>{
         if(i == index){
-           item.format = "default";
-           item.text = this.state.customValue;
+           item.editable = false;
+           item.text = this.state[name];
         }
      });
      this.setState({
@@ -158,6 +179,34 @@ class CustomTemplate extends Component {
     })
   }
   
+  enableEdit = (editItem) => {
+    if(editItem.type === "Optional"){
+      let temp = [...this.state.finalFormList]
+      temp.forEach((item)=>{
+         if(item.id === editItem.id){
+           item.editable = true
+         }
+      });
+      this.setState({
+        finalFormList:temp
+      })
+    }
+  }
+
+  disableEdit = (index) => {
+    let temp = [...this.state.finalFormList]
+    temp[index].editable = false;
+    this.setState({
+      finalFormList:temp
+    })
+  }
+
+  handleFieldEditChange = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
+
   removeItemFromList = (removeItem) => {
     if(removeItem.type === "Mandatory"){
         let temp = [...this.state.mandatoryList];
@@ -238,6 +287,8 @@ class CustomTemplate extends Component {
       showDesc: !this.state.showDesc
     }));
   }
+  
+  
 
   templateName = (event) => {
     this.setState({
@@ -248,19 +299,20 @@ class CustomTemplate extends Component {
     if(!this.state.finalFormList[index]){
       return 
     }else{
+      let name = this.state.finalFormList[index].name;
       return(
-        (this.state.finalFormList[index].format == "custom") ?
+        (this.state.finalFormList[index].editable) ?
         (
         <Fragment>
            <span onClick={()=>this.removeItemFromList(this.state.finalFormList[index])} className="td-text" >
                 <i className="fas fa-minus"></i>&nbsp;&nbsp;
            </span>
-           <input type="text" onChange={(e)=>this.handleCustomValueChange(e)} value={this.state.customValue} defaultValue="Custom field 1" />
+           <input type="text" onChange={this.handleFieldEditChange} value={this.state[name]} name={name}  />
            <span className="input-type"> {this.state.finalFormList[index].type} </span>
            <span className="input-length"> VARCHAR-128 </span>
            {<span className="edit-icon-wrapper"> 
-                <i onClick={()=>this.modifyFormList(index)} class="fas fa-check-square cursorPointer"></i> &nbsp;
-                <i class="fas fa-times cursorPointer"></i> 
+                <i onClick={()=>this.modifyFormList(index,name)} class="fas fa-check-square cursorPointer"></i> &nbsp;
+                <i onClick={()=>this.disableEdit(index)}class="fas fa-times cursorPointer"></i> 
            </span>}
         </Fragment>
         ):
@@ -271,7 +323,10 @@ class CustomTemplate extends Component {
           <span className="input-type"> {this.state.finalFormList[index].type} </span>
           <span className="input-length"> VARCHAR-128 </span>
 
-          {this.state.finalFormList[index].type === "Optional" && <span className="edit-icon-wrapper"> <img src="/images/edit.svg" /> </span>}
+          {this.state.finalFormList[index].type === "Optional" && 
+                 <span onClick={()=>this.enableEdit(this.state.finalFormList[index])} className="edit-icon-wrapper"> 
+                      <img src="/images/edit.svg" /> 
+                 </span>}
         </Fragment>)
      )
     }
