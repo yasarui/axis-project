@@ -23,7 +23,7 @@ const Dashboard = (props) => {
       </p>
       <h2 className="sub-heading"> PENDING </h2>
       <Progress {...props} />
-      <h2 className="sub-heading"> RECENT ACTIVITY </h2>
+      <h2 className="sub-heading recent-active-mob"> RECENT ACTIVITY </h2>
       <RecentActivity {...props} data={RecentActivityData.data} />
       <h2 style={{"marginTop":"20px"}}className="sub-heading"> ADMIN ALERTS </h2>
       <AdminAlerts messages={AdminMessagesData.messages} />

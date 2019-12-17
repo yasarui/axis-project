@@ -39,7 +39,7 @@ class Maker extends Component {
             <span className="home"><img src="./images/home.svg" /></span>
             <span className="home active-icon"><img src="./images/home-active.svg" /></span>
              Home  </Tab> 
-            <Tab onClick={()=>this.hideMenu(1)}> 
+            <Tab className="mobile-initiate" onClick={()=>this.hideMenu(1)}> 
             <span className="initate"><img src="./images/initate.svg" /></span>
             <span className="initate active-icon"><img src="./images/initate-active.svg" /></span>
              Initiate </Tab>

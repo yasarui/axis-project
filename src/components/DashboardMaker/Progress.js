@@ -51,11 +51,11 @@ const Progress = (props) => {
                     <span className="text"> APPROVED TRANSACTIONS </span>
                     <span className="count"> 1,300 </span>              
                 </div>
-                <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile">
+                <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile transactions-reject">
                     <span className="text"> TRANSACTIONS ON HOLD </span>
                     <span className="count"> 130 </span>              
                 </div>
-                <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile">
+                <div onClick={()=>props.setSelectedIndex(2)} className="progress-tile ">
                     <span className="text"> REJECTED TRANSACTIONS </span>
                     <span className="count"> 235 </span>              
                 </div>
