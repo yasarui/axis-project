@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       showMenu: false,
-      isMobile: window.innerWidth <= 766
+      isMobile: window.innerWidth <= 0
     }
   }
 

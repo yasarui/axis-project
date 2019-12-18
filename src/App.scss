@@ -851,7 +851,9 @@ body{
     background: #999; 
   }
 }
-
+.maker-batches-table-wrapper{
+  border-top-left-radius: 0 !important;
+}
 .checker-batches-table-wrapper{
   overflow-y: scroll;
   height: 553px;
@@ -975,12 +977,20 @@ body{
     }
   }
 }
-
+@media screen and (max-width:740px){
+  .maker-batches-table-wrapper,.table-wrap{
+    /* width */
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 4px;
+    }
+  }
+}
 @media screen and (min-width:740px){
   .admin-alerts-table-wrapper,
   .checker-transactions-table-wrapper,
   .checker-batches-table-wrapper,
-  .checker-accounts-table{
+  .checker-accounts-table,.maker-batches-table-wrapper{
       /* width */
       &::-webkit-scrollbar {
         width: 5px;

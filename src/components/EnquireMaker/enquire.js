@@ -11,6 +11,10 @@ class Enquire extends Component {
   render() {
     return (
       <div>
+        <div className="mobile-enq-checker">
+          <span><i class="fas fa-chevron-left"></i> Back</span>
+          <h1 className="page-title">Transaction</h1>
+        </div>
         <div className="payment-header">
            <RouteSelect />
         </div>
