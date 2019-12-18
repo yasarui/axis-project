@@ -173,7 +173,7 @@ const CustomFilter = (props) => {
     let temp = [...columnList1];
     temp.splice(index,1);
     setColumnList1(temp);
-}
+ }
 
    return(
      <div>
@@ -182,7 +182,7 @@ const CustomFilter = (props) => {
                 <div className="custom-filter-wrap custom-filter clearfix">
                     <div className="custom-filter-lists clearfix">
                         <Tab>
-                            <div className="custom-filter-col1 clearfix" onClick={()=>props.toggleOverlay(false,0)} >
+                            <div className="custom-filter-col1 clearfix" onClick={(e)=>props.toggleOverlay(false,0,e)} >
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type">
                                         <label>View</label>
@@ -210,7 +210,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of First Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col2" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true,1)} >
+                            <div className="custom-filter-col2" style={{"cursor":"pointer"}} onClick={(e)=>props.toggleOverlay(true,1,e)} >
                                 <div className="custom-filter-top clearfix">
                                     <div className="view-type column drop-column-btn">
                                         <label>Column</label>
@@ -233,7 +233,7 @@ const CustomFilter = (props) => {
                             </div> {/* End of Second Tab Link Section */}
                         </Tab>
                         <Tab>
-                            <div className="custom-filter-col3" style={{"cursor":"pointer"}} onClick={()=>props.toggleOverlay(true,2)}>
+                            <div className="custom-filter-col3" style={{"cursor":"pointer"}} onClick={(e)=>props.toggleOverlay(true,2,e)}>
                                 <div className="custom-filter-top clearfix">
                                   <div className="view-type column drop-column-btn">
                                         <label>Active Filters</label>

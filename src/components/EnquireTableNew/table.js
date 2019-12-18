@@ -32,11 +32,21 @@ class EnquireTable extends React.Component{
            selectedIndex:0
         }
      }
-     toggleOverlay(state,index){
-         this.setState({
-             overlay:state,
-             selectedIndex:index
-         })
+     toggleOverlay(state,index,e){
+
+         if(e.target.type == "input") return;
+         if(index == this.state.selectedIndex){
+            this.setState({
+                overlay:false,
+                selectedIndex:0
+            })
+         }else{
+            this.setState({
+                overlay:state,
+                selectedIndex:index
+            })
+         }
+         e.stopPropagation();
      }
      render(){
          return(
@@ -56,7 +66,7 @@ class EnquireTable extends React.Component{
                         <Table type={this.props.type} />
                     </TabPanel>
                     <TabPanel>
-                        <CustomFilter selectedIndex={this.state.selectedIndex} toggleOverlay={(val,index)=>this.toggleOverlay(val,index)} />
+                        <CustomFilter selectedIndex={this.state.selectedIndex} toggleOverlay={(val,index,e)=>this.toggleOverlay(val,index,e)} />
                         <div className={this.state.overlay ? "table-overlay":""}>
                            <Table type={this.props.type} />
                         </div>
