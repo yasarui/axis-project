@@ -46,16 +46,16 @@ const CustomFilter = (props) => {
    const textInput = React.createRef();
    const textInput1 = React.createRef();
    function renderDraggableListOne(){
-       return firstList.map((item)=>{
-            return (<DraggableItem key={item} data={item} >  
-                  <span> Column {item} </span>
+       return firstList.map((item,index)=>{
+            return (<DraggableItem key={item} data={item} index={index} >  
+                  <Fragment> Column {item} </Fragment>
              </DraggableItem>)
        });
    }
    function renderDraggableListTwo(){
-       return secondList.map((item)=>{
-            return (<DraggableItem key={item} data={item} >  
-                <span> Column {item} </span>
+       return secondList.map((item,index)=>{
+            return (<DraggableItem key={item} data={item} index={index} >  
+                <Fragment> Column {item} </Fragment>
             </DraggableItem>)
        });
    }
@@ -73,12 +73,24 @@ const CustomFilter = (props) => {
 
 
    function modifyListOne(item){
+       console.log("Mondify List One function is Running");
        let data1 = []
        if(firstList.length > 0){
          data1 = [...firstList];          
        }
-       data1.push(item);
-       data1.sort();
+       if(localStorage){
+           let targetIndex = localStorage.getItem('targetId');
+           if(targetIndex){
+              data1.splice(targetIndex,0,item);
+              sessionStorage.removeItem("targetId");
+           }else{
+            data1.push(item);               
+           }
+       }else{
+           data1.push(item);
+       }
+       
+       //data1.sort();
        setFirstList(data1);
 
        var temp = [...secondList];

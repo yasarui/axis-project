@@ -15,11 +15,18 @@ export default class Draggable extends React.Component{
        e.dataTransfer.setData('transfer',e.target.dataset.id);
    }
    notAllowDrop = (e) =>{
-       e.stopPropagation();
+       //e.stopPropagation();
+   }
+   onDrop = e => {
+     const targetId = e.target.dataset.index;
+     if(localStorage){
+       console.log("Finally index is ",targetId);
+       localStorage.setItem("targetId",targetId);
+     }
    }
    render(){
      return(
-        <li data-id={this.props.data} className="draggable-li" id={this.props.id} draggable="true" onDragStart={this.drag} onDragOver={this.notAllowDrop} >
+        <li data-id={this.props.data} data-index={this.props.index} onDrop={this.onDrop} className="draggable-li" id={this.props.id} draggable="true" onDragStart={this.drag} onDragOver={this.notAllowDrop} >
           {this.props.children}
         </li>
      )
