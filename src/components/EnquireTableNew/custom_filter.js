@@ -73,21 +73,26 @@ const CustomFilter = (props) => {
 
 
    function modifyListOne(item){
-       console.log("Mondify List One function is Running");
+       let val = parseInt(item);
        let data1 = []
        if(firstList.length > 0){
          data1 = [...firstList];          
        }
+       if(data1.includes(val)){
+           data1 = data1.filter((item)=>{
+               return item != val;
+           })
+       }
        if(localStorage){
            let targetIndex = localStorage.getItem('targetId');
            if(targetIndex){
-              data1.splice(targetIndex,0,item);
+              data1.splice(targetIndex,0,val);
               sessionStorage.removeItem("targetId");
            }else{
-            data1.push(item);               
+            data1.push(val);               
            }
        }else{
-           data1.push(item);
+           data1.push(val);
        }
        
        //data1.sort();
@@ -100,12 +105,19 @@ const CustomFilter = (props) => {
    }
 
    function modifyListTwo(item){
+      let val = parseInt(item);
       let data2 = [...secondList];
-      data2.push(item);
+      if(data2.includes(val)){
+        data2 = data2.filter((item)=>{
+            return item != val;
+        })
+     }
+      data2.push(val);
+
       setSecondList(data2);
       
       var temp = [...firstList];
-      temp = temp.filter(e => e != item);
+      temp = temp.filter(e => e != val);
       temp.sort();
       setFirstList(temp);
 

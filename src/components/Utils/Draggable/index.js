@@ -20,7 +20,6 @@ export default class Draggable extends React.Component{
    onDrop = e => {
      const targetId = e.target.dataset.index;
      if(localStorage){
-       console.log("Finally index is ",targetId);
        localStorage.setItem("targetId",targetId);
      }
    }

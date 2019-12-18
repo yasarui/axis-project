@@ -4,7 +4,6 @@ import './style.scss';
 
 export default class Droppable extends React.Component{
     drop = (e) => {
-        console.log("Dropping works");
         e.preventDefault();
         const data = e.dataTransfer.getData('transfer');
         this.props.handleDrop(data);
