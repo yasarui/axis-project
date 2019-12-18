@@ -15,7 +15,7 @@ class Enquire extends Component {
            <RouteSelect />
         </div>
         <EnquireFilter />
-        <EnquireTable />
+        <EnquireTable type="maker" />
       </div>
     )
   }

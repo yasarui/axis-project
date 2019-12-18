@@ -30,7 +30,7 @@ const Enquire = (props) => {
           </div>
         </div>
         <EnquireFilter />
-        <EnquireTable />
+        <EnquireTable type="ckecker" />
      </div>    
   )
 }

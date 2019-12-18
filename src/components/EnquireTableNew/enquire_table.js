@@ -97,8 +97,8 @@ class EnquireTable extends React.Component{
           <table className="enquiry-table" >
             <thead>
                 <tr>
-                    <th style={{"width":"100px"}}> 
-                       <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                    <th style={{"width":"100px"}} className={(this.props.type=='maker' ? 'hidden': '')}> 
+      <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
                         {this.state.selectedHeader === 0 ? 
                             <ActionStatus {...actionProps} tableIndex="1" columnName="_id" />: ""}
                     </th>
@@ -156,7 +156,7 @@ class EnquireTable extends React.Component{
                 {this.state.data.map((item,index)=>{
                     return (
                         <tr>
-                            <td> <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient="success" /> </td>
+                            <td className={(this.props.type=='maker' ? 'hidden': '')}> <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient="success" /> </td>
                             { !this.state.hideColumn._id && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item._id} </td> }
                             { !this.state.hideColumn.name && <td onClick={(e)=>this.handleTdClick(e)} onContextMenu={(e)=>this.handleTdClick(e)} > {item.name} </td> }
                             { !this.state.hideColumn.created && <td onClick={(e)=>this.handleTdClick(e)}  onContextMenu={(e)=>this.handleTdClick(e)}> {item.created} </td> }

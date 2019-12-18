@@ -53,12 +53,12 @@ class EnquireTable extends React.Component{
                         <div className="enquire-table-filter">
                            <DefaultFilter />
                         </div>
-                        <Table />
+                        <Table type={this.props.type} />
                     </TabPanel>
                     <TabPanel>
                         <CustomFilter selectedIndex={this.state.selectedIndex} toggleOverlay={(val,index)=>this.toggleOverlay(val,index)} />
                         <div className={this.state.overlay ? "table-overlay":""}>
-                           <Table />
+                           <Table type={this.props.type} />
                         </div>
                     </TabPanel>
                 </Tabs>
