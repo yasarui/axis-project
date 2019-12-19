@@ -58,7 +58,7 @@ class Maker extends Component {
             <Initiate setSelectedIndex={this.setSelectedIndex} />
         </TabPanel>
         <TabPanel>
-            <Enquire />
+            <Enquire setSelectedIndex={this.setSelectedIndex} />
         </TabPanel>
         </div>
     </Tabs>
