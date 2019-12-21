@@ -899,7 +899,7 @@ body{
 
 .checker-transactions-table-wrapper{
   overflow-y: scroll;
-  height: 471px;
+  height: 553px;
   // overflow: hidden;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:20px;
@@ -1073,4 +1073,31 @@ select {
 }
 .textarea:focus, input:focus,li{
   outline: none;
+}
+.main-layout .content-section {
+  .checker-dashboard-progress-wrapper {
+    .checker-accounts-table,
+    .checker-transactions-table-wrapper,
+    .checker-batches-table-wrapper {
+      height: 553px;
+      min-height: 553px;
+      background: #fff;
+      position: relative;
+      table {
+        min-height: 463px;
+        height: 553px;
+      }
+    }
+    .checker-transactions-table-wrapper {
+      height: 472px;
+      min-height: 472px;
+      table {
+        min-height: 472px;
+        height: 472px;
+      }
+    }
+    .table-footer td {
+      height: 80px;
+    }
+  }
 }

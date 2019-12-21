@@ -122,7 +122,7 @@ class TransactionsTable extends React.Component{
                     <th style={{"width":"170px"}} > Actions </th>
                   </tr>
               </thead>
-              <tbody onClick={()=>this.setState({selectedHeader:null})} style={{"height":"300px"}} className="tbody-shadow">
+              <tbody onClick={()=>this.setState({selectedHeader:null})}className="tbody-shadow">
                   {this.state.data.map((item,index)=>{
                       return(
                         <tr>
