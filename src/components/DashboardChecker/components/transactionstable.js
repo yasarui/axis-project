@@ -75,7 +75,7 @@ class TransactionsTable extends React.Component{
                   </div>
               </section>              
           </div>
-          <div>
+          <div style={{"borderTopRightRadius":"0px"}} className="table-scroll-inside-fix remove-white-space">
             <div className="table-wrap checker-transactions-table-wrapper">
                 <table className="checker-transactions-table has-table-bottom">
                 <thead>

@@ -1015,10 +1015,23 @@ body{
     padding-bottom:10px;
     background:#fff;
     border-radius:10px;
+    position: relative;
   }
   .table-scroll-inside-fix.remove-white-space{
     padding-bottom:0;
     border-top-left-radius:0;
+  }
+  .table-scroll-inside-fix.remove-white-space::after{
+    content:"";
+    width:10px;
+    height:100px;
+    background:#FFFBEE;
+    position: absolute;
+    bottom:0;
+    right: 0;
+    z-index:999;
+    border-top-left-radius:10px;
+    border-bottom-right-radius:10px;
   }
 }
 
