@@ -60,110 +60,112 @@ class BatchTable extends React.Component{
       }
       return(
          <Fragment>
-          <div className="table-wrap checker-batches-table-wrapper">
-            <table className="checker-batches-table">
-              <thead>
-                  <tr>
-                    <th> Batch ID </th>
-                    <th> 
-                      Created
-                      <div className="sortIconsWrapper">
-                            <span className="headerSortUp"></span>
-                            <span className="headerSortDown"></span>
-                        </div>
-                    </th>
-                    <th> 
-                      Last action 
+          <div className="table-scroll-inside-fix remove-white-space">
+            <div className="table-wrap checker-batches-table-wrapper">
+                <table className="checker-batches-table">
+                <thead>
+                    <tr>
+                        <th> Batch ID </th>
+                        <th> 
+                        Created
                         <div className="sortIconsWrapper">
-                            <span className="headerSortUp"></span>
-                            <span className="headerSortDown"></span>
-                        </div>
-                    </th>
-                    <th> 
-                        Last action date 
-                        <div className="sortIconsWrapper">
-                            <span className="headerSortUp"></span>
-                            <span className="headerSortDown"></span>
-                        </div>
-                    </th>
-                    <th> 
-                        Transactions Pending 
-                        <div className="sortIconsWrapper">
-                            <span className="headerSortUp"></span>
-                            <span className="headerSortDown"></span>
-                        </div>
-                    </th>
-                    <th> 
-                        Amount Pending approval
-                        <div className="sortIconsWrapper">
-                            <span className="headerSortUp"></span>
-                            <span className="headerSortDown"></span>
-                        </div>
-                    </th>
-                    <th style={{"width":"100px"}}> <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
-                        {this.state.selectedHeader === 0 ? 
-                            <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
-                  </tr>
-              </thead>
-              <tbody onClick={()=>this.setState({selectedHeader:null})}className="tbody-shadow" >
-                  {this.state.data.map((item,index)=>{
-                      return(
-                        <tr>
-                            <td>  
-                              <img src="/images/eye.svg" /> {item._id.substr(1,5)} 
+                                <span className="headerSortUp"></span>
+                                <span className="headerSortDown"></span>
+                            </div>
+                        </th>
+                        <th> 
+                        Last action 
+                            <div className="sortIconsWrapper">
+                                <span className="headerSortUp"></span>
+                                <span className="headerSortDown"></span>
+                            </div>
+                        </th>
+                        <th> 
+                            Last action date 
+                            <div className="sortIconsWrapper">
+                                <span className="headerSortUp"></span>
+                                <span className="headerSortDown"></span>
+                            </div>
+                        </th>
+                        <th> 
+                            Transactions Pending 
+                            <div className="sortIconsWrapper">
+                                <span className="headerSortUp"></span>
+                                <span className="headerSortDown"></span>
+                            </div>
+                        </th>
+                        <th> 
+                            Amount Pending approval
+                            <div className="sortIconsWrapper">
+                                <span className="headerSortUp"></span>
+                                <span className="headerSortDown"></span>
+                            </div>
+                        </th>
+                        <th style={{"width":"100px"}}> <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                            {this.state.selectedHeader === 0 ? 
+                                <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
+                    </tr>
+                </thead>
+                <tbody onClick={()=>this.setState({selectedHeader:null})}className="tbody-shadow" >
+                    {this.state.data.map((item,index)=>{
+                        return(
+                            <tr>
+                                <td>  
+                                <img src="/images/eye.svg" /> {item._id.substr(1,5)} 
+                                </td>
+                                <td>  
+                                <span className="date" > 
+                                        {moment(item.date).format('dddd DD-MM-YY')} 
+                                </span>
+                                <span className="time"> 
+                                        {moment(item.date).format('h:mm:ss a')} 
+                                </span>   
+                                </td>
+                                <td> 
+                                    {item.name}
+                                    <a class="view-details" href="#"> View history </a>
+                                </td>
+                                <td> 
+                                <span className="date" > 
+                                        {moment(item.lastDate).format('dddd DD-MM-YY')} 
+                                </span>
+                                <span className="time"> 
+                                        {moment(item.lastDate).format('h:mm:ss a')} 
+                                </span>  
+                                </td>
+                                <td style={{"textAlign":"right"}} className="textalign-right"> 
+                                {item.pending} 
+                                </td>
+                                <td style={{"textAlign":"right"}}> ₹​{item.amount} 
+                                    <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
+                                </td>
+                                <td> 
+                                    <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient={item.button} />
+                                </td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+                <tfoot className="table-footer">
+                    <tr>
+                            <td style={{"width":"73px", "vertical-align": "middle"}} >{mobileAuthoriseBtn}</td>
+                            <td style={{"width":"135px"}}>{mobileMinTotal}</td>
+                            <td style={{"width":"125px"}}></td>
+                            <td style={{"width":"159px"}}></td>
+                            <td style={{"width":"90px"}} > 
+                                {webMinTotal}
                             </td>
-                            <td>  
-                              <span className="date" > 
-                                    {moment(item.date).format('dddd DD-MM-YY')} 
-                              </span>
-                              <span className="time"> 
-                                    {moment(item.date).format('h:mm:ss a')} 
-                              </span>   
+                            <td style={{"width":"122px"}} >
+                                {webTotal}
                             </td>
-                            <td> 
-                                {item.name}
-                                <a class="view-details" href="#"> View history </a>
+                            <td style={{"vertical-align": "middle"}}> 
+                            {mobileTotal}
+                            {webAuthoriseBtn}
                             </td>
-                            <td> 
-                            <span className="date" > 
-                                    {moment(item.lastDate).format('dddd DD-MM-YY')} 
-                              </span>
-                              <span className="time"> 
-                                    {moment(item.lastDate).format('h:mm:ss a')} 
-                              </span>  
-                            </td>
-                            <td style={{"textAlign":"right"}} className="textalign-right"> 
-                              {item.pending} 
-                            </td>
-                            <td style={{"textAlign":"right"}}> ₹​{item.amount} 
-                                <span className={item.iconClr} > <i class="fas fa-circle small-icon"></i> </span> 
-                            </td>
-                            <td> 
-                                <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient={item.button} />
-                            </td>
-                        </tr>
-                      )
-                  })}
-              </tbody>
-              <tfoot className="table-footer">
-                <tr>
-                        <td style={{"width":"73px", "vertical-align": "middle"}} >{mobileAuthoriseBtn}</td>
-                        <td style={{"width":"135px"}}>{mobileMinTotal}</td>
-                        <td style={{"width":"125px"}}></td>
-                        <td style={{"width":"159px"}}></td>
-                        <td style={{"width":"90px"}} > 
-                            {webMinTotal}
-                        </td>
-                        <td style={{"width":"122px"}} >
-                            {webTotal}
-                        </td>
-                        <td style={{"vertical-align": "middle"}}> 
-                        {mobileTotal}
-                        {webAuthoriseBtn}
-                        </td>
-                 </tr>
-              </tfoot>
-            </table>
+                    </tr>
+                </tfoot>
+                </table>
+            </div>
           </div>
           <div className="maker-filter-section maker-filter-custom">
                     <span> View </span>

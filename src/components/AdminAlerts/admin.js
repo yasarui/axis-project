@@ -27,36 +27,38 @@ const AdminAlerts = ({messages}) => {
    }
    
    return(
-      <div className="admin-alerts-table-wrapper">
-        <table className="admin-alerts-table">
-           <thead>
-              <tr>
-                <th className="head-message">
-                   Message
-                </th>
-                <th className="head-date">
-                  <div className="sortIconsWrapper">
-                     <span className="headerSortUp" onClick={()=>sortTableAssending()} ></span>
-                     <span className="headerSortDown" onClick={()=>sortTableDesending()} ></span>
-                   </div>
-                  Date 
-                </th>
-              </tr>
-           </thead>
-           <tbody>
-              {adminMessages.map((item,index)=>{
-                 return(
-                    <tr>
-                      <td className="body-message"> {item.message} </td>
-                      <td className="body-date">
-                         <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
-                         <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>
-                      </td>
-                    </tr>
-                 )
-              })}
-           </tbody>
-        </table>
+      <div className="table-scroll-inside-fix" >
+        <div className="admin-alerts-table-wrapper">
+          <table className="admin-alerts-table">
+            <thead>
+                <tr>
+                  <th className="head-message">
+                    Message
+                  </th>
+                  <th className="head-date">
+                    <div className="sortIconsWrapper">
+                      <span className="headerSortUp" onClick={()=>sortTableAssending()} ></span>
+                      <span className="headerSortDown" onClick={()=>sortTableDesending()} ></span>
+                    </div>
+                    Date 
+                  </th>
+                </tr>
+            </thead>
+            <tbody>
+                {adminMessages.map((item,index)=>{
+                  return(
+                      <tr>
+                        <td className="body-message"> {item.message} </td>
+                        <td className="body-date">
+                          <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
+                          <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>
+                        </td>
+                      </tr>
+                  )
+                })}
+            </tbody>
+          </table>
+        </div>
       </div>
    )
 }

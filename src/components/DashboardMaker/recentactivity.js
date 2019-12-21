@@ -45,114 +45,116 @@ const RecentActivity = ({data,setSelectedIndex}) => {
    }
    return (
      <Fragment>
-        <div className="table-wrap recent-activity-table-wrapper">
-          <table className="recent-activity-table">
-          <thead>
-             <tr>
-               <th> Batch ID</th>
-               <th> 
-                   Staff
-                   <div className="sortIconsWrapper">
-                     <span onClick={(e)=>sortAssending(e,'name')} className="headerSortUp"></span>
-                     <span onClick={(e)=>sortDessending(e,'name')} className="headerSortDown"></span>
-                   </div>
-                   <small></small>
-              </th>
-               <th> 
-                   Created
-                   <div className="sortIconsWrapper">
-                     <span  onClick={(e)=>sortAssending(e,'created')} className="headerSortUp"></span>
-                     <span  onClick={(e)=>sortDessending(e,'created')} className="headerSortDown"></span>
-                   </div>
-                   <small> Transactions (amount) </small>
-              </th>
-               <th> 
-                   Accepted
-                   <div className="sortIconsWrapper">
-                     <span onClick={(e)=>sortAssending(e,'accepted')} className="headerSortUp"></span>
-                     <span onClick={(e)=>sortDessending(e,'accepted')} className="headerSortDown"></span>
-                   </div>
-                   <small> Transactions (amount) </small>
-               </th>
-               <th> 
-                   Put on hold 
-                   <div className="sortIconsWrapper">
-                     <span onClick={(e)=>sortAssending(e,'putOnHold')} className="headerSortUp"></span>
-                     <span onClick={(e)=>sortDessending(e,'putOnHold')} className="headerSortDown"></span>
-                   </div>
-                   <small> Transactions (amount) </small>
-               </th>
-               <th> 
-                   Rejected
-                   <div className="sortIconsWrapper">
-                     <span onClick={(e)=>sortAssending(e,'rejected')} className="headerSortUp"></span>
-                     <span onClick={(e)=>sortDessending(e,'rejected')} className="headerSortDown"></span>
-                   </div>
-                   <small> Transactions (amount) </small>
-               </th>
-               <th> 
-                   Last activity date 
-                   <div className="sortIconsWrapper">
-                     <span onClick={(e)=>sortAssending(e,'date')} className="headerSortUp"></span>
-                     <span onClick={(e)=>sortDessending(e,'date')} className="headerSortDown"></span>
-                   </div>
-               </th>
-             </tr>
-          </thead>
-          <tbody>
-              {recentData.map((item,index)=>{
-                  return (
-                    <tr>
-                      <td> 
-                        <img onClick={()=>setSelectedIndex(2)}  src="./images/eye.svg" />
-                        {/* <i onClick={()=>setSelectedIndex(2)} class="icon fa fa-eye" aria-hidden="true"></i> */}
-                        &nbsp;&nbsp;
-                        {item._id.substr(1,5)}
-                      </td>
-                      <td> 
-                         {item.name} 
-                      </td>
-                      <td>
-                        {(index % 2 == 0)?  <ProgressBar width={item.uploaded} /> :  <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)}  /> }
-                      </td>
-                      <td> 
-                         { index < 3 ? ( <EmptyTd /> ) : 
-                            ( (index % 2 == 0 ) ? <td></td> : <Fragment> 
-                               <bold> XX </bold> 
-                               <span className="amount">(₹{item.accepted})</span> 
-                               <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>  
-                            </Fragment>)
-                         }
-                      </td>
-                      <td> 
-                         {
-                           index < 3 ? (<EmptyTd />) : 
-                             ( (index % 3 == 0) ? <td></td> : <Fragment>
-                                <bold> XX </bold> 
-                                <span className="amount">(₹{item.putOnHold})</span> 
-                                <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>         
-                             </Fragment>)
-                         }
-                      </td>
-                      <td> 
-                        {
-                          index < 3 ? (<EmptyTd />) :
-                             ((index % 4 == 0 ) ? <td></td> : <Fragment>
-                                <bold> XX </bold> 
-                                <span className="amount">(₹{item.rejected})</span> 
-                                <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>          
-                             </Fragment>)
-                        }
-                      </td>
-                      <td> 
-                            <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
-                            <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>  
-                      </td>
-                    </tr>
-                  )
-              })} 
-          </tbody>
-       </table>
+        <div className="table-scroll-inside-fix">
+          <div className="table-wrap recent-activity-table-wrapper">
+            <table className="recent-activity-table">
+                <thead>
+                  <tr>
+                    <th> Batch ID</th>
+                    <th> 
+                        Staff
+                        <div className="sortIconsWrapper">
+                          <span onClick={(e)=>sortAssending(e,'name')} className="headerSortUp"></span>
+                          <span onClick={(e)=>sortDessending(e,'name')} className="headerSortDown"></span>
+                        </div>
+                        <small></small>
+                    </th>
+                    <th> 
+                        Created
+                        <div className="sortIconsWrapper">
+                          <span  onClick={(e)=>sortAssending(e,'created')} className="headerSortUp"></span>
+                          <span  onClick={(e)=>sortDessending(e,'created')} className="headerSortDown"></span>
+                        </div>
+                        <small> Transactions (amount) </small>
+                    </th>
+                    <th> 
+                        Accepted
+                        <div className="sortIconsWrapper">
+                          <span onClick={(e)=>sortAssending(e,'accepted')} className="headerSortUp"></span>
+                          <span onClick={(e)=>sortDessending(e,'accepted')} className="headerSortDown"></span>
+                        </div>
+                        <small> Transactions (amount) </small>
+                    </th>
+                    <th> 
+                        Put on hold 
+                        <div className="sortIconsWrapper">
+                          <span onClick={(e)=>sortAssending(e,'putOnHold')} className="headerSortUp"></span>
+                          <span onClick={(e)=>sortDessending(e,'putOnHold')} className="headerSortDown"></span>
+                        </div>
+                        <small> Transactions (amount) </small>
+                    </th>
+                    <th> 
+                        Rejected
+                        <div className="sortIconsWrapper">
+                          <span onClick={(e)=>sortAssending(e,'rejected')} className="headerSortUp"></span>
+                          <span onClick={(e)=>sortDessending(e,'rejected')} className="headerSortDown"></span>
+                        </div>
+                        <small> Transactions (amount) </small>
+                    </th>
+                    <th> 
+                        Last activity date 
+                        <div className="sortIconsWrapper">
+                          <span onClick={(e)=>sortAssending(e,'date')} className="headerSortUp"></span>
+                          <span onClick={(e)=>sortDessending(e,'date')} className="headerSortDown"></span>
+                        </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {recentData.map((item,index)=>{
+                        return (
+                          <tr>
+                            <td> 
+                              <img onClick={()=>setSelectedIndex(2)}  src="./images/eye.svg" />
+                              {/* <i onClick={()=>setSelectedIndex(2)} class="icon fa fa-eye" aria-hidden="true"></i> */}
+                              &nbsp;&nbsp;
+                              {item._id.substr(1,5)}
+                            </td>
+                            <td> 
+                              {item.name} 
+                            </td>
+                            <td>
+                              {(index % 2 == 0)?  <ProgressBar width={item.uploaded} /> :  <SuccessFailureTransactions handleClick={()=>setModalIsOpen(true)}  /> }
+                            </td>
+                            <td> 
+                              { index < 3 ? ( <EmptyTd /> ) : 
+                                  ( (index % 2 == 0 ) ? <td></td> : <Fragment> 
+                                    <bold> XX </bold> 
+                                    <span className="amount">(₹{item.accepted})</span> 
+                                    <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>  
+                                  </Fragment>)
+                              }
+                            </td>
+                            <td> 
+                              {
+                                index < 3 ? (<EmptyTd />) : 
+                                  ( (index % 3 == 0) ? <td></td> : <Fragment>
+                                      <bold> XX </bold> 
+                                      <span className="amount">(₹{item.putOnHold})</span> 
+                                      <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>         
+                                  </Fragment>)
+                              }
+                            </td>
+                            <td> 
+                              {
+                                index < 3 ? (<EmptyTd />) :
+                                  ((index % 4 == 0 ) ? <td></td> : <Fragment>
+                                      <bold> XX </bold> 
+                                      <span className="amount">(₹{item.rejected})</span> 
+                                      <a onClick={()=>setSelectedIndex(2)} className="view-details" href="#"> View Transactions </a>          
+                                  </Fragment>)
+                              }
+                            </td>
+                            <td> 
+                                  <span className="date" > {moment(item.date).format('dddd DD-MM-YY')} </span>
+                                  <span className="time"> {moment(item.date).format('h:mm:ss a')} </span>  
+                            </td>
+                          </tr>
+                        )
+                    })} 
+                </tbody>
+            </table>
+         </div>
        </div>
        <AxisModal overlayColor="black" isOpen={modalIsOpen} size="Medium" closeModal={()=>setModalIsOpen(false)}> 
             <ViewDetails />

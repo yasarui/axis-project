@@ -74,85 +74,87 @@ class AccountsTable extends React.Component{
       }
        return(
           <Fragment>
-            <div className="table-wrap checker-accounts-table has-bottom-table">
-                <table className="has-bottom">
-                    <thead style={{"borderBottom":"1px solid #e7e7e7"}} >
-                        <tr>
-                        <th> 
-                            Debit Account 
-                            <div className="sortIconsWrapper">
-                                <span onClick={(e)=>this.sortAssending(e,'account_number')} className="headerSortUp"></span>
-                                <span onClick={(e)=>this.sortDessending(e,'account_number')} className="headerSortDown"></span>
-                            </div>
-                        </th>
-                        <th> 
-                            Debit Account Name 
-                            <div className="sortIconsWrapper">
-                                <span onClick={(e)=>this.sortAssending(e,'name')} className="headerSortUp"></span>
-                                <span onClick={(e)=>this.sortDessending(e,'name')} className="headerSortDown"></span>
-                            </div>
-                        </th>
-                        <th> 
-                            Current Balance 
-                            <div className="sortIconsWrapper">
-                                <span onClick={(e)=>this.sortAssending(e,'balance')} className="headerSortUp"></span>
-                                <span onClick={(e)=>this.sortDessending(e,'balance')}className="headerSortDown"></span>
-                            </div>
-                        </th>
-                        <th> 
-                            Amount Under Approval 
-                            <div className="sortIconsWrapper">
-                                <span onClick={(e)=>this.sortAssending(e,'amount')} className="headerSortUp"></span>
-                                <span onClick={(e)=>this.sortDessending(e,'amount')}className="headerSortDown"></span>
-                            </div>
-                        </th>
-                        <th style={{"width":"100px"}}>  <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
-                        {this.state.selectedHeader === 0 ? 
-                            <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
-                        </tr>
-                    </thead>
-                    <tbody onClick={()=>this.setState({selectedHeader:null})} className="tbody-shadow" >
-                        {this.state.data.map((item,index)=>{
-                            return(
+            <div className="table-scroll-inside-fix remove-white-space">
+                <div className="table-wrap checker-accounts-table has-bottom-table">
+                    <table className="has-bottom">
+                        <thead style={{"borderBottom":"1px solid #e7e7e7"}} >
                             <tr>
-                                <td> 
-                                    <img src="/images/eye.svg" /> {item.account_number}</td>
-                                <td> {item.name} </td>
-                                <td style={{"textAlign":"right"}}> 
-                                  ₹​{item.amount} &nbsp;&nbsp;
-                                  {(item.button == "danger") ?                                   <img src="/images/warning.svg" /> : 
-                                  <img src="/images/gray-green-tick.svg" /> }
-                                  <a className="refresh-link" href="#"> Refresh </a>
+                            <th> 
+                                Debit Account 
+                                <div className="sortIconsWrapper">
+                                    <span onClick={(e)=>this.sortAssending(e,'account_number')} className="headerSortUp"></span>
+                                    <span onClick={(e)=>this.sortDessending(e,'account_number')} className="headerSortDown"></span>
+                                </div>
+                            </th>
+                            <th> 
+                                Debit Account Name 
+                                <div className="sortIconsWrapper">
+                                    <span onClick={(e)=>this.sortAssending(e,'name')} className="headerSortUp"></span>
+                                    <span onClick={(e)=>this.sortDessending(e,'name')} className="headerSortDown"></span>
+                                </div>
+                            </th>
+                            <th> 
+                                Current Balance 
+                                <div className="sortIconsWrapper">
+                                    <span onClick={(e)=>this.sortAssending(e,'balance')} className="headerSortUp"></span>
+                                    <span onClick={(e)=>this.sortDessending(e,'balance')}className="headerSortDown"></span>
+                                </div>
+                            </th>
+                            <th> 
+                                Amount Under Approval 
+                                <div className="sortIconsWrapper">
+                                    <span onClick={(e)=>this.sortAssending(e,'amount')} className="headerSortUp"></span>
+                                    <span onClick={(e)=>this.sortDessending(e,'amount')}className="headerSortDown"></span>
+                                </div>
+                            </th>
+                            <th style={{"width":"100px"}}>  <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                            {this.state.selectedHeader === 0 ? 
+                                <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
+                            </tr>
+                        </thead>
+                        <tbody onClick={()=>this.setState({selectedHeader:null})} className="tbody-shadow" >
+                            {this.state.data.map((item,index)=>{
+                                return(
+                                <tr>
+                                    <td> 
+                                        <img src="/images/eye.svg" /> {item.account_number}</td>
+                                    <td> {item.name} </td>
+                                    <td style={{"textAlign":"right"}}> 
+                                    ₹​{item.amount} &nbsp;&nbsp;
+                                    {(item.button == "danger") ?                                   <img src="/images/warning.svg" /> : 
+                                    <img src="/images/gray-green-tick.svg" /> }
+                                    <a className="refresh-link" href="#"> Refresh </a>
+                                    </td>
+                                    <td style={{"textAlign":"right"}}> 
+                                        ₹​{item.amount} 
+                                        <span className={item.iconClr}> <i class="fas fa-circle small-icon"></i> </span> 
+                                    </td>
+                                    <td> 
+                                        <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient={item.button} />
+                                    </td>
+                                </tr>
+                                )
+                            })}
+
+                        </tbody>
+                        <tfoot className="table-footer" >
+                            <tr>
+                                <td>{mobileAuthoriseBtn}</td>
+                                <td></td>
+                                <td>
+                                {webMinTotal}
                                 </td>
-                                <td style={{"textAlign":"right"}}> 
-                                    ₹​{item.amount} 
-                                    <span className={item.iconClr}> <i class="fas fa-circle small-icon"></i> </span> 
+                                <td>
+                                    {webTotal}
                                 </td>
-                                <td> 
-                                    <ButtonDropdown hideHeaderFilter={()=>this.setState({selectedHeader:null})} varient={item.button} />
+                                <td>
+                                    {webAuthoriseBtn}   
+                                    {mobileTotal}                         
                                 </td>
                             </tr>
-                            )
-                        })}
-
-                    </tbody>
-                    <tfoot className="table-footer" >
-                        <tr>
-                            <td>{mobileAuthoriseBtn}</td>
-                            <td></td>
-                            <td>
-                               {webMinTotal}
-                            </td>
-                            <td>
-                                {webTotal}
-                            </td>
-                            <td>
-                                {webAuthoriseBtn}   
-                                {mobileTotal}                         
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
             <div className="maker-filter-section maker-filter-custom">
                     <span> View </span>
