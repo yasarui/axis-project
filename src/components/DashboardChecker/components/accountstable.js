@@ -107,7 +107,7 @@ class AccountsTable extends React.Component{
                                     <span onClick={(e)=>this.sortDessending(e,'amount')}className="headerSortDown"></span>
                                 </div>
                             </th>
-                            <th style={{"width":"100px"}}>  <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                            <th style={{"width":"170px"}}>  <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
                             {this.state.selectedHeader === 0 ? 
                                 <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                             </tr>

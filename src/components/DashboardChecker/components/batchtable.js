@@ -80,7 +80,7 @@ class BatchTable extends React.Component{
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th> 
+                        <th style={{"width":"180px"}}> 
                             Last action date 
                             <div className="sortIconsWrapper">
                                 <span className="headerSortUp"></span>
@@ -101,7 +101,7 @@ class BatchTable extends React.Component{
                                 <span className="headerSortDown"></span>
                             </div>
                         </th>
-                        <th style={{"width":"100px"}}> <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
+                        <th style={{"width":"170px"}}> <div className="select-wrap table-actions"><span onClick={()=>this.openAction(0)} > Action </span></div>
                             {this.state.selectedHeader === 0 ? 
                                 <ActionStatus tableIndex="1" columnName="_id" />: ""}</th>
                     </tr>
